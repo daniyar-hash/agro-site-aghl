@@ -1,0 +1,39 @@
+.breadcrumbs{
+    
+
+    color: var(--color-gray-alt);
+    font-size: 12px;
+    padding-top: 90px;
+    padding-bottom: 16px;
+
+    &__list {
+        display: flex;
+        column-gap: 16px;
+        align-items: center;
+    }
+
+
+    &__item{
+        &:not(.is-current) .breadcrumbs__link{
+
+            @include hover{
+                color: var(--color-green-alt);
+        }
+
+        }
+    }
+
+    &__link{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 16px;
+
+  
+
+    }
+
+
+
+
+}
