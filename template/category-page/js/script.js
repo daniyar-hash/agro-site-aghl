@@ -4,6 +4,23 @@
   const sorterVeiewButtons    = document.querySelectorAll(".category-products_sort-button");
   const categoryProductslist  = document.querySelector(".category-products__list");
   const categoryProductsItems = document.querySelectorAll(".category-products__item");
+  const categoryAsideLink     = document.querySelectorAll('.categories-aside__link');
+  const categoryPageTitle = document.querySelector('.category-page__title');
+
+
+  categoryAsideLink.forEach((element)=>{
+    if(categoryPageTitle.textContent === element.innerText){
+
+      element.nextElementSibling.style.display="flex";
+
+ }
+    
+   
+  })
+
+
+
+
 
 
 
@@ -38,8 +55,6 @@
 
     })
   })
-
-
 
 
 
@@ -88,11 +103,6 @@ function deleteWrapInnerElement(wrapperClass) {
   });
 }
 
-
-
-
-
-
     function addClassProductsItem(elementList, className){
       elementList.forEach(item=>{
      
@@ -113,15 +123,8 @@ function deleteWrapInnerElement(wrapperClass) {
     item.addEventListener('click', (event) => {
       // Code to execute when an <li> is clicked
       const dropDown = item.querySelector(".categories-aside__dropdown");
-
-
-
    
      item.classList.toggle("is-open");
-     // item.style.backgroundColor = 'gray'; // Example: change background color
-    
-     
-    // dropDown.style.display = "none" ? 'flex': 'none';
 
      dropDown.classList.toggle("to-show");
     
@@ -144,6 +147,9 @@ function deleteWrapInnerElement(wrapperClass) {
       header.classList.add('transparent');
     }
   }
+
+
+
 
   // Проверка при загрузке страницы
   window.addEventListener('load', updateHeaderClass);

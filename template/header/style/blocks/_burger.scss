@@ -3,11 +3,12 @@
     @include square(48px);
     position: relative;
     align-self: center;
+    
 
 
 
     @include hover{
-        background-color: var(--color-green-alt);
+        background-color: var( --color-green-alt);
     }
 
     &::after{

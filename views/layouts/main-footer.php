@@ -172,7 +172,7 @@
             
             <video id="video" width="500" height="500"controls="controls" poster="video/test.jpg">
             <!-- <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
-            <source src="../../template/main-page/video/test.mp4" type='video/mp4'>
+            <source src="../../template/main-footer/video/test.mp4" type='video/mp4'>
             <!-- <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'> -->
             </video>
 

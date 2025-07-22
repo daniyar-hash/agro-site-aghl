@@ -1,4 +1,4 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/main-header.php'; ?>
 
    <main class="content ">
         <section class="banner section">
@@ -334,4 +334,4 @@
    
     </main>
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/main-footer.php'; ?>
