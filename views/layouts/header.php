@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="../../template/header/style/style.css">
     <link rel="stylesheet" href="../../template/footer/style/style.css">
     <link rel="stylesheet" href="../../template/category-page/style/style.css">
+    <link rel="stylesheet" href="../../template/product/style/style.css">
 
 
     <script src="../../template/category-page/js/script.js" defer></script>
+    <script src="../../template/product/js/script.js" defer></script>
+
 </head>
 <body>
      <header class="header transparent">
@@ -184,6 +187,11 @@
                     <li class="header__menu-item">
                         <a href="#" class="header__menu-link">
                             Контакты
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#" class="header__menu-link">
+                            Галерея
                         </a>
                     </li>
                 </ul>

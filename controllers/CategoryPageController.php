@@ -25,5 +25,23 @@ class CategoryPageController
         return true;
     }
 
+
+
+        public function actionSubCategory()
+    {
+        // Список категорий для левого меню
+        $categories = Category::getCategoriesList();
+
+        // Список последних товаров
+        $latestProducts = Product::getLatestProducts(6);
+
+        // Список товаров для слайдера
+        $sliderProducts = Product::getRecommendedProducts();
+
+        // Подключаем вид
+        require_once(ROOT . '/views/category-page/subcategory.php');
+        return true;
+    }
+
     
 }

@@ -14,14 +14,10 @@ class ProductController
     public function actionView($productId)
     {
         // Список категорий для левого меню
-        // $categories = Category::getCategoriesList();
+        $categories = Category::getCategoriesList();
 
-        // // Получаем инфомрацию о товаре
-         $product = Product::getProductById($productId);
-
-         var_dump($product);
-
-         
+        // Получаем инфомрацию о товаре
+        $product = Product::getProductById($productId);
 
         // Подключаем вид
         require_once(ROOT . '/views/product/view.php');

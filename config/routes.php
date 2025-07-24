@@ -2,16 +2,28 @@
 
 return array(
     // Товар:
-    'product/([0-9]+)' => 'product/view/$1', // actionView в ProductController
+   // 'product/([0-9]+)' => 'product/view/$1', // actionView в ProductController
     // Каталог:
     'catalog' => 'catalog/index', // actionIndex в CatalogController
     // Категория товаров:
     'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2', // actionCategory в CatalogController   
     'category/([0-9]+)' => 'catalog/category/$1', // actionCategory в CatalogController
 
-    //Страница категории
+
+  
+    //страница товара
+     'pesticidy/gerbicidy/^[A-Za-z]+$' => 'product/view/$1',
+
+    //страница подкатегории
+    'pesticidy/gerbicidy' => 'categoryPage/subCategory',
+
+    
+
+  //Страница категории
     'pesticidy'=>'categoryPage/index',
     'udobrenie'=>'categoryPage/index',
+
+
 
 
 

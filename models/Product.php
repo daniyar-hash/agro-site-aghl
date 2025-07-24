@@ -95,17 +95,17 @@ class Product
      * @param integer $id <p>id товара</p>
      * @return array <p>Массив с информацией о товаре</p>
      */
-    public static function getProductById($id)
+    public static function getProductById($name)
     {
         // Соединение с БД
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'SELECT * FROM product WHERE id = :id';
+        $sql = 'SELECT * FROM product WHERE name = :name';
 
         // Используется подготовленный запрос
         $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':name', $name, PDO::PARAM_INT);
 
         // Указываем, что хотим получить данные в виде массива
         $result->setFetchMode(PDO::FETCH_ASSOC);

@@ -6,12 +6,22 @@
   const categoryProductsItems = document.querySelectorAll(".category-products__item");
   const categoryAsideLink     = document.querySelectorAll('.categories-aside__link');
   const categoryPageTitle = document.querySelector('.category-page__title');
+  const categoryAsideSubLink = document.querySelectorAll('.categories-aside__sublink');
+
+
+  categoryAsideSubLink.forEach((element) =>{
+    if(categoryPageTitle.textContent === element.innerText){
+         element.closest('.categories-aside__item').classList.add('is-open')
+         element.style.color="#fff";
+
+    }
+  })
 
 
   categoryAsideLink.forEach((element)=>{
     if(categoryPageTitle.textContent === element.innerText){
 
-      element.nextElementSibling.style.display="flex";
+      element.closest('.categories-aside__item').classList.add('is-open')
 
  }
     
@@ -120,19 +130,21 @@ function deleteWrapInnerElement(wrapperClass) {
 //  function openCategoryList(){
 
   categoriesAsideItems.forEach(item => {
+
+    const dropDown = item.querySelector(".categories-aside__dropdown");
+
     item.addEventListener('click', (event) => {
       // Code to execute when an <li> is clicked
-      const dropDown = item.querySelector(".categories-aside__dropdown");
    
      item.classList.toggle("is-open");
-
      dropDown.classList.toggle("to-show");
-    
-
      
-
-
       });
+
+
+      if(item.classList.contains('is-open')){
+        dropDown.classList.toggle("to-show")
+      }
 
     });
 //  }

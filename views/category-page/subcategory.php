@@ -19,15 +19,23 @@
                             </svg>
                         </a>
                     </li>
-                        <li class="breadcrumbs__item is-current">
-                        <a class="breadcrumbs__link">Пестициды</a>
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link">Пестициды
+                        <span class="visually-hidden">Стрелка навигации</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
+                        </svg>
+                        </a>
+                    </li>
+                    <li class="breadcrumbs__item is-current">
+                        <a class="breadcrumbs__link">Гербициды</a>
                     </li>
                 </ul>
             </div>
         </div>
         <section class="section category-page">
             <div class="category-page__inner container">
-                <h1 class="category-page__title h2">Пестициды</h1>
+                <h1 class="category-page__title h2">Гербициды</h1>
                 <div class="category-page__body">
                     <div class="block-left">
                         <div class="categories-aside">
@@ -44,7 +52,7 @@
                                                 <a href="/agro-product-page" class="categories-aside__sublink">Фунгициды</a>
                                             </li>
                                             <li class="categories-aside__subItem">
-                                                <a href="/pesticidy/gerbicidy" class="categories-aside__sublink">Гербициды</a>
+                                                <a href="#" class="categories-aside__sublink">Гербициды</a>
                                             </li>
                                             <li class="categories-aside__subItem">
                                                 <a href="#" class="categories-aside__sublink">Акарициды</a>
@@ -94,34 +102,8 @@
                     </div>
                 
                     <div class="category-products">
-                        <header class="sort-products">
-                            <ul class="sort-products__list">
-                                <li class="sort-products__item">
-                                    <a href="/pesticidy/gerbicidy" class="sort-products__link">
-                                        <span class="sort-products__title h4">Гербициды</span>
-                                    </a>
-                                </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Акарициды</span>
-                                    </a>
-                                </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Фунгициды</span>
-                                    </a>
-                                </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Инсектициды</span>
-                                    </a>
-                                </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Протравители</span>
-                                    </a>
-                                </li>
-                            </ul>
+                        <header class="sort-products subcategory-sort">
+                       
                             <div class="category-products__sort-view">
                                 <span class="category-products__sort-text">Вид:</span>
                                 <button class="category-products_sort-button list"  aria-label="Вид каталога: плитка" type="button">
@@ -148,7 +130,7 @@
                         </header>
                         <ul class="category-products__list grid grid--3">
                             <li class="category-products__item">
-                                <a href="#" class="category-products__link">
+                                <a href="/pesticidy/gerbicidy/benagro" class="category-products__link">
                                     <div class="category-products__image-wrapper">
                                         <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
                                     </div>                                   
@@ -251,5 +233,4 @@
 <?php include ROOT . '/views/layouts/footer.php'; ?>
 
 
-
-<?php echo "category page";?>
+<?php echo "subcategory-page";?>

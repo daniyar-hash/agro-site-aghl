@@ -671,8 +671,6 @@ h4, .h4 {
 }
 .breadcrumbs__list {
   display: flex;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
   align-items: center;
 }
 @media (hover: hover) {
@@ -689,8 +687,6 @@ h4, .h4 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
 }
 
 .categories-aside {
@@ -862,6 +858,9 @@ h4, .h4 {
 .sort-products {
   display: flex;
   justify-content: space-between;
+}
+.sort-products.subcategory-sort {
+  justify-content: end;
 }
 .sort-products__list {
   display: flex;
