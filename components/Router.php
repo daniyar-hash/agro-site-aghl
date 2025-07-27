@@ -20,9 +20,12 @@ class Router
     {
         // Путь к файлу с роутами
         $routesPath = ROOT . '/config/routes.php';
-
+ 
         // Получаем роуты из файла
         $this->routes = include($routesPath);
+
+//          var_dump($this->routes);
+   
     }
 
     /**
@@ -42,24 +45,35 @@ class Router
     {
         // Получаем строку запроса
         $uri = $this->getURI();
+              
 
         // Проверяем наличие такого запроса в массиве маршрутов (routes.php)
         foreach ($this->routes as $uriPattern => $path) {
 
             // Сравниваем $uriPattern и $uri
             if (preg_match("~$uriPattern~", $uri)) {
+              //  var_dump($uriPattern);
+               // var_dump($uri);
+
 
                 // Получаем внутренний путь из внешнего согласно правилу.
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+
+               
 
                 // Определить контроллер, action, параметры
 
                 $segments = explode('/', $internalRoute);
 
+
+     
+
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
 
                 $actionName = 'action' . ucfirst(array_shift($segments));
+
+                 
 
                 $parameters = $segments;
 

@@ -12,12 +12,13 @@ return array(
 
   
     //страница товара
-     'pesticidy/gerbicidy/^[A-Za-z]+$' => 'product/view/$1',
 
-    //страница подкатегории
+    'pesticidy/gerbicidy/([A-Za-z]+)' => 'product/view/$1',
+
+
+      //страница подкатегории
     'pesticidy/gerbicidy' => 'categoryPage/subCategory',
-
-    
+   
 
   //Страница категории
     'pesticidy'=>'categoryPage/index',

@@ -9,19 +9,39 @@ class ProductController
 
     /**
      * Action для страницы просмотра товара
-     * @param integer $productId <p>id товара</p>
+     * @param string $productId <p>id товара</p>
      */
-    public function actionView($productId)
+    public function actionView($slug)
     {
         // Список категорий для левого меню
         // $categories = Category::getCategoriesList();
 
         // // Получаем инфомрацию о товаре
-         $product = Product::getProductById($productId);
+         $product = Product::getProductBySlug($slug);
 
-         var_dump($product);
+         $productId = $product['id'];
+         $categoryId = $product['category_id'];
+         $subCategoryId = $product['subcategory_id'];
+
 
          
+         $categoryProduct = Category::getCategoryById($categoryId);
+         $subCategoryProduct = Category::getSubCategoryById($subCategoryId);
+
+      
+
+        // echo '<pre>';
+        // print_r($product['id']);
+        // echo  '</pre>';
+
+       $productTable = Product::getProductTableById($productId);
+
+
+
+
+
+
+
 
         // Подключаем вид
         require_once(ROOT . '/views/product/view.php');

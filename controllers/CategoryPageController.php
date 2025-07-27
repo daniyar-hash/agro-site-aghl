@@ -13,12 +13,26 @@ class CategoryPageController
     {
         // Список категорий для левого меню
         $categories = Category::getCategoriesList();
+        $subCategories = Category::getSubCategoriesList();
+
+
+        foreach ($subCategories as $subCategory){
+         $categoryId =  $subCategory['category_id'];
+         $category  = Category::getCategoryById($categoryId);
+            echo '<pre>';
+            print_r($category);
+            echo  '</pre>';
+
+
+        }
+
+
 
         // Список последних товаров
-        $latestProducts = Product::getLatestProducts(6);
+      //  $latestProducts = Product::getLatestProducts(6);
 
         // Список товаров для слайдера
-        $sliderProducts = Product::getRecommendedProducts();
+      //  $sliderProducts = Product::getRecommendedProducts();
 
         // Подключаем вид
         require_once(ROOT . '/views/category-page/index.php');
@@ -30,7 +44,7 @@ class CategoryPageController
         public function actionSubCategory()
     {
         // Список категорий для левого меню
-        $categories = Category::getCategoriesList();
+        //$categories = Category::getCategoriesList();
 
         // Список последних товаров
         $latestProducts = Product::getLatestProducts(6);

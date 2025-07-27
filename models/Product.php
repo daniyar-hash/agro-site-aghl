@@ -90,22 +90,63 @@ class Product
         return $products;
     }
 
+    public static function getProductTableById($productId){
+
+        
+        $db = Db::getConnection();
+
+        //  var_dump($db); 
+
+        $sql = 'SELECT  `id`,`agricultural_crop`, `сonsumption_rate`, `harmful_object`,
+         `limitations`, `treatment_period` FROM `product_table` WHERE `product_id` = :product_id';
+
+         $result = $db->prepare($sql);
+                
+         $result->bindParam(':product_id', $productId, PDO::PARAM_STR);
+
+         $result->setFetchMode(PDO::FETCH_ASSOC);
+
+         $result->execute();
+
+
+                // Получение и возврат результатов
+        $i = 0;
+        $products = array();
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['agricultural_crop'] = $row['agricultural_crop'];
+            $products[$i]['сonsumption_rate'] = $row['сonsumption_rate'];
+            $products[$i]['harmful_object'] = $row['harmful_object'];
+            $products[$i]['limitations'] = $row['limitations'];
+            $products[$i]['treatment_period'] = $row['treatment_period'];
+
+            $i++;
+        }
+        return $products;
+    
+
+
+        
+
+    }
+
     /**
      * Возвращает продукт с указанным id
      * @param integer $id <p>id товара</p>
      * @return array <p>Массив с информацией о товаре</p>
      */
-    public static function getProductById($name)
+    public static function getProductBySlug($slug)
     {
         // Соединение с БД
         $db = Db::getConnection();
-
+    
         // Текст запроса к БД
-        $sql = 'SELECT * FROM product WHERE name = :name';
+        $sql = 'SELECT * FROM product WHERE slug = :slug';
 
         // Используется подготовленный запрос
         $result = $db->prepare($sql);
-        $result->bindParam(':name', $name, PDO::PARAM_INT);
+     
+        $result->bindParam(':slug', $slug, PDO::PARAM_STR);
 
         // Указываем, что хотим получить данные в виде массива
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -115,6 +156,7 @@ class Product
 
         // Получение и возврат результатов
         return $result->fetch();
+
     }
 
     /**
@@ -182,23 +224,23 @@ class Product
      */
     public static function getRecommendedProducts()
     {
-        // Соединение с БД
-        $db = Db::getConnection();
+        // // Соединение с БД
+        // $db = Db::getConnection();
 
-        // Получение и возврат результатов
-        $result = $db->query('SELECT id, name, price, is_new FROM product '
-                . 'WHERE status = "1" AND is_recommended = "1" '
-                . 'ORDER BY id DESC');
-        $i = 0;
-        $productsList = array();
-        while ($row = $result->fetch()) {
-            $productsList[$i]['id'] = $row['id'];
-            $productsList[$i]['name'] = $row['name'];
-            $productsList[$i]['price'] = $row['price'];
-            $productsList[$i]['is_new'] = $row['is_new'];
-            $i++;
-        }
-        return $productsList;
+        // // Получение и возврат результатов
+        // $result = $db->query('SELECT id, name, price, is_new FROM product '
+        //         . 'WHERE status = "1" AND is_recommended = "1" '
+        //         . 'ORDER BY id DESC');
+        // $i = 0;
+        // $productsList = array();
+        // while ($row = $result->fetch()) {
+        //     $productsList[$i]['id'] = $row['id'];
+        //     $productsList[$i]['name'] = $row['name'];
+        //     $productsList[$i]['price'] = $row['price'];
+        //     $productsList[$i]['is_new'] = $row['is_new'];
+        //     $i++;
+        // }
+        // return $productsList;
     }
 
     /**
