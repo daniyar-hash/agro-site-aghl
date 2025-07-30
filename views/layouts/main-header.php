@@ -95,9 +95,10 @@
                                 Каталог     </a>
                                 <div class="header__catalog-aside">
                                     <ul class="header__catalog-menu">
+                                        <?php foreach ($categoryWithSubCategories as $category): ?>
                                         <li class="header__catalog-item">
-                                            <a href="/pesticidy" class="header__catalog-link">
-                                                <span class="header__catalog-link-text">Пестициды</span>
+                                            <a href="/<?= htmlspecialchars($category['category_link']) ?>" class="header__catalog-link">
+                                                <span class="header__catalog-link-text"><?= htmlspecialchars($category['name'])  ?></span>
                                                 <span class="header__catalog-link-icon">
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
@@ -105,81 +106,33 @@
                                                 </span>
                                             </a>
                                             <div class="header__catalog-dropdown">
+
+                                            <?php if(!empty($category['subcategories'])) : ?>
                                                 <ul class="header__catalog-menu">
+
+                                                <?php  
+                                                $subs = $category['subcategories'];
+                                                
+                                                for($i=0; $i<count($subs); $i+=2):
+                                                    $link = $subs[$i];
+                                                    $subname = $subs[$i+1];
+                                                
+                                            
+                                                ?>
                                                     <li class="header__catalog-item">
-                                                        <a href="/udobrenie" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Фунгициды</span>
+                                                        <a href="/<?= $category['category_link'] ?>/<?= htmlspecialchars($link) ?>" class="header__catalog-link">
+                                                            <span class="header__catalog-link-text"><?= htmlspecialchars($subname) ?></span>
                                                         </a>
                                                     </li>
-                                                    <li class="header__catalog-item">
-                                                        <a href="#" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Гербициды</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="header__catalog-item">
-                                                        <a href="#" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Инсектициды</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="header__catalog-item">
-                                                        <a href="#" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Акарициды</span>
-                                                        </a>
-                                                    </li>
+                                              <?php endfor; ?>
                                                 </ul>
-                                            </div>
+
+                                              <?php endif; ?>
+                                           </div>
                                         </li>
-                                        <li class="header__catalog-item">
-                                            <a href="#" class="header__catalog-link">
-                                                <span class="header__catalog-text">Удобрения</span>
-                                                <span class="header__catalog-link-icon">
-                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                            <div class="header__catalog-dropdown">
-                                                <ul class="header__catalog-menu">
-                                                    <li class="header__catalog-item">
-                                                        <a href="#" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Стимуляторы роста</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="header__catalog-item">
-                                                        <a href="#" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Регуляторы роста</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="header__catalog-item">
-                                            <a href="#" class="header__catalog-link">
-                                                <span class="header__catalog-text">Семена</span>
-                                                <span class="header__catalog-link-icon">
-                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                                <div class="header__catalog-dropdown">
-                                                <ul class="header__catalog-menu">
-                                                    <li class="header__catalog-item">
-                                                        <a href="#" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Текст</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="header__catalog-item">
-                                                        <a href="#" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text">Текст</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                        
+                                        <?php endforeach; ?>
+                                     </ul >
+                                 </div>
                         </li>
                      
                         <li class="header__menu-item">

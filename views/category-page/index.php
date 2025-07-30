@@ -11,85 +11,55 @@
                             </svg>
                         </a>
                     </li>
-                     <li class="breadcrumbs__item">
-                        <a href="/agro-site-catalog-page"  class="breadcrumbs__link">Каталог
-                            <span class="visually-hidden">Стрелка навигации</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
-                            </svg>
-                        </a>
-                    </li>
-                        <li class="breadcrumbs__item is-current">
-                        <a class="breadcrumbs__link">Пестициды</a>
+                    <li class="breadcrumbs__item is-current">
+                        <a class="breadcrumbs__link"><?= $categoryBySlug['name'] ?></a>
                     </li>
                 </ul>
             </div>
         </div>
         <section class="section category-page">
             <div class="category-page__inner container">
-                <h1 class="category-page__title h2">Пестициды</h1>
+                <h1 class="category-page__title h2"><?= $categoryBySlug['name'] ?></h1>
                 <div class="category-page__body">
                     <div class="block-left">
                         <div class="categories-aside">
                             <ul class="categories-aside__menu">
+
+                            <?php foreach ($categoryWithSubCategories as $category): ?>
                                 <li class="categories-aside__item">
-                                    <a href="#" class="categories-aside__link">Пестициды
+                            
+                                    <a href="#" class="categories-aside__link"><?= htmlspecialchars($category['name'])  ?>
                                     <svg class="categories-aside__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M16 8L10 12L4 8" stroke="white" stroke-width="4"/>
                                     </svg>
                                     </a>
                                     <div class="categories-aside__dropdown">
+
+                                    <?php if(!empty($category['subcategories'])):  ?>
                                         <ul class="categories-aside__submenu">
+
+                                        <?php 
+
+                                        $subs = $category['subcategories'];
+                                        for($i = 0; $i < count($subs); $i+=2):
+
+                                            $link = $subs[$i];
+                                            $subname = $subs[$i+1];
+                                        
+                                        ?>
                                             <li class="categories-aside__subItem">
-                                                <a href="/agro-product-page" class="categories-aside__sublink">Фунгициды</a>
+                                                <a href="/<?= htmlspecialchars($category['category_link']) ?>/<?= htmlspecialchars($link) ?>" class="categories-aside__sublink"><?= htmlspecialchars($subname) ?></a>
                                             </li>
-                                            <li class="categories-aside__subItem">
-                                                <a href="/pesticidy/gerbicidy" class="categories-aside__sublink">Гербициды</a>
-                                            </li>
-                                            <li class="categories-aside__subItem">
-                                                <a href="#" class="categories-aside__sublink">Акарициды</a>
-                                            </li>
-                                            <li class="categories-aside__subItem">
-                                                <a href="#" class="categories-aside__sublink">Инсектициды</a>
-                                            </li>
+                                            <?php endfor; ?>
                                         </ul>
+
+                                        <?php endif; ?>
                                     </div>
                                 </li>
-                                <li class="categories-aside__item">
-                                    <a href="#" class="categories-aside__link">Удобрения
-                                        <svg class="categories-aside__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 8L10 12L4 8" stroke="white" stroke-width="4"/>
-                                        </svg>
-                                    </a>                                
-                                    <div class="categories-aside__dropdown">
-                                    <ul class="categories-aside__submenu">
-                                        <li class="categories-aside__subItem">
-                                            <a href="/agro-product-page" class="categories-aside__sublink">Стимуляторы роста</a>
-                                        </li>
-                                        <li class="categories-aside__subItem">
-                                            <a href="#" class="categories-aside__sublink">Регуляторы роста</a>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                </li>
-                                <li class="categories-aside__item">
-                                    <a href="#" class="categories-aside__link">Прочее
-                                    <svg class="categories-aside__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 8L10 12L4 8" stroke="white" stroke-width="4"/>
-                                    </svg>
-                                    </a>
-                                    <div class="categories-aside__dropdown">
-                                        <ul class="categories-aside__submenu">
-                                            <li class="categories-aside__subItem">
-                                                <a href="/agro-product-page" class="categories-aside__sublink">Текст</a>
-                                            </li>
-                                            <li class="categories-aside__subItem">
-                                                <a href="#" class="categories-aside__sublink">Текст</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
+                      
+                                <?php endforeach; ?>
                             </ul>
+                       
                         </div>
                     </div>
                 

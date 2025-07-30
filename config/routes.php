@@ -17,12 +17,16 @@ return array(
 
 
       //страница подкатегории
-    'pesticidy/gerbicidy' => 'categoryPage/subCategory',
-   
+    // 'pesticidy/gerbicidy' => 'categoryPage/subCategory',
+    
+    'pesticidy/([A-Za-z]+)' =>'categoryPage/subCategory/$1',
+    'udobrenie/([A-Za-z]+)' =>'categoryPage/subCategory/$1',
+    'semena/([A-Za-z]+)' =>'categoryPage/subCategory/$1',
+
 
   //Страница категории
-    'pesticidy'=>'categoryPage/index',
-    'udobrenie'=>'categoryPage/index',
+    '([A-Za-z]+)'=>'categoryPage/index/$1',
+
 
 
 
