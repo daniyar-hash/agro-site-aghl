@@ -239,6 +239,9 @@ h4, .h4 {
   width: 100%;
   padding-bottom: 10px;
   font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .pagination__inner {
   display: flex;
@@ -253,11 +256,11 @@ h4, .h4 {
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
-.pagination__item.is-current {
+.pagination__item.active {
   color: var(--color-light);
   background-color: var(--color-green-alt);
 }
-.pagination__item.is-current .pagination__link {
+.pagination__item.active .pagination__link {
   cursor: default;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -269,6 +272,16 @@ h4, .h4 {
   display: flex;
   width: 30px;
   height: 30px;
+}
+@media (hover: hover) {
+  .pagination__link:hover {
+    opacity: 0.6;
+  }
+}
+@media (hover: none) {
+  .pagination__link:active {
+    opacity: 0.6;
+  }
 }
 .pagination .pagination__button {
   background-color: transparent;

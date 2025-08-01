@@ -4,7 +4,7 @@
             <div class="breadcrumbs__inner">
                 <ul class="breadcrumbs__list">
                     <li class="breadcrumbs__item ">
-                        <a href="/agro-site-main-page" class="breadcrumbs__link">Главная
+                        <a href="/" class="breadcrumbs__link">Главная
                             <span class="visually-hidden">Стрелка навигации</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
@@ -66,32 +66,20 @@
                     <div class="category-products">
                         <header class="sort-products">
                             <ul class="sort-products__list">
+                                <?php foreach($subcategiesByCategory as $subName): 
+                                    
+                                    ?>
+                          
                                 <li class="sort-products__item">
-                                    <a href="/pesticidy/gerbicidy" class="sort-products__link">
-                                        <span class="sort-products__title h4">Гербициды</span>
+                                    <a href="/<?=htmlspecialchars($subName['category_slug'])  ?>/<?= htmlspecialchars($subName['sub_category_slug']) ?>" class="sort-products__link">
+                                        <span class="sort-products__title h4"><?= htmlspecialchars($subName['sub_name']) ?></span>
                                     </a>
                                 </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Акарициды</span>
-                                    </a>
-                                </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Фунгициды</span>
-                                    </a>
-                                </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Инсектициды</span>
-                                    </a>
-                                </li>
-                                <li class="sort-products__item">
-                                    <a href="" class="sort-products__link">
-                                        <span class="sort-products__title h4">Протравители</span>
-                                    </a>
-                                </li>
+
+                                <?php endforeach;  ?>
+                             
                             </ul>
+
                             <div class="category-products__sort-view">
                                 <span class="category-products__sort-text">Вид:</span>
                                 <button class="category-products_sort-button list"  aria-label="Вид каталога: плитка" type="button">
@@ -117,75 +105,30 @@
                             </div>
                         </header>
                         <ul class="category-products__list grid grid--3">
+                            <?php foreach($categoryProducts as $product):  ?>
                             <li class="category-products__item">
-                                <a href="#" class="category-products__link">
+                                <a href="<?= htmlspecialchars($product['slug']) ?>" class="category-products__link">
                                     <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
+                                        <img src="<?php echo Product::getImage($product['id']) ?>" width="260" height="260" alt="Product" loading="lazy" >
                                     </div>                                   
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
+                                    <h2 class="category-products__title h4"><?= htmlspecialchars($product['name']) ?></h2>
+                                    <p class="category-products__price"><?= htmlspecialchars($product['price']) ?>тнг.</p>
                                     <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
                                 </a>
                             </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
+                            <?php endforeach;  ?>
                         </ul>
                         <div class="pagination">
-                            <div class="pagination__inner">
+
+                             <?php echo $pagination->get(); ?>
+                            <!-- <div class="pagination__inner">
                                 <button class="pagination__button btn-back">
                                     <span class="visually-hidden">Preview page</span>     
                                     <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
+
                                 <ul class="pagination__list">
                                     <li class="pagination__item is-current">
                                         <a href="" class="pagination__link ">1</a>
@@ -203,7 +146,7 @@
                                     <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

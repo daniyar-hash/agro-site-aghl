@@ -9,14 +9,36 @@ class CategoryPageController
     /**
      * Action для главной страницы
      */
-    public function actionIndex($slug)
+    public function actionIndex($slug, $page=1)
     {
      
         // Список категорий для левого меню
         $categories = Category::getCategoriesList();
 
+        // var_dump($page);
+
         $categoryBySlug = Category::getCategoryBySlug($slug);
-        $categoryWithSubCategories = Category::getCategoryWithSubCategories();        // Список категорий для левого меню
+
+        $categoryId = $categoryBySlug['id'];
+
+        $categoryWithSubCategories = Category::getCategoryWithSubCategories(); // Список категорий для левого меню
+        $subcategiesByCategory = Category::getSubCategoriesByCategory($slug);
+
+               // Список товаров в категории
+        $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
+
+        // echo'<pre>';
+        // echo print_r($categoryProducts);
+        // echo '</pre>';
+
+        // Общее количетсво товаров (необходимо для постраничной навигации)
+        $total = Product::getTotalProductsInCategory($categoryId);
+          
+
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page=');
+
+          //Product::createProductsInTable();
+     
            
          // Подключаем вид
         require_once(ROOT . '/views/category-page/index.php');

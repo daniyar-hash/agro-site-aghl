@@ -4,6 +4,9 @@
 	width: 100%;
 	padding-bottom: 10px;
 	font-size: 16px;
+	
+	@include flex-center;
+
 
 &__inner{
 
@@ -22,7 +25,7 @@
 }
 
 &__item{
-		&.is-current{
+		&.active{
 		color: var(--color-light);
 		background-color: var(--color-green-alt);
 
@@ -38,6 +41,10 @@
 	@include flex-center;
 	width: 30px;
 	height: 30px;
+
+	@include hover{
+		opacity: 0.6;
+	}
 
 }
 

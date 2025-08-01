@@ -188,7 +188,7 @@ body {
   font-size: clamp(12px, 1.6666666667vw, 24px);
   font-family: var(--font-family-base);
   font-weight: 500;
-  color: var(--color-light);
+  color: var(--color-dark);
 }
 
 a,

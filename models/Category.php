@@ -230,6 +230,7 @@ class Category
 
 
 
+
         /**
      * Возвращает категорию с указанным id
      * @param string $id <p>id категории</p>
@@ -259,6 +260,42 @@ class Category
         // Возвращаем данные
         return $row;
     }
+
+
+    
+        /**
+     * Возвращает категорию с указанным id
+     * @param string $id <p>id категории</p>
+     * @return array <p>Массив с информацией о категории</p>
+     */
+    public static function getSubCategoriesByCategory($slug)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT category.name AS category_name, category.slug AS category_slug, sub_category.slug AS
+         sub_category_slug, sub_category.name AS sub_name
+          FROM sub_category INNER JOIN category ON sub_category.category_id = category.id
+         WHERE category.slug = :slug; ';
+
+        // Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':slug', $slug, PDO::PARAM_STR);
+
+        // Указываем, что хотим получить данные в виде массива
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        // Выполняем запрос
+        $result->execute();
+        $row =  $result->fetchAll();
+        if(!$row){
+            echo "Error, does not category";
+        }
+          
+        // Возвращаем данные
+        return $row;
+    }
+
 
     /**
      * Возвращает категорию с указанным id

@@ -64,7 +64,7 @@ class Product
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'SELECT id, name, price, is_new FROM product '
+        $sql = 'SELECT id, name, price FROM product '
                 . 'WHERE status = 1 AND category_id = :category_id '
                 . 'ORDER BY id ASC LIMIT :limit OFFSET :offset';
 
@@ -84,7 +84,7 @@ class Product
             $products[$i]['id'] = $row['id'];
             $products[$i]['name'] = $row['name'];
             $products[$i]['price'] = $row['price'];
-            $products[$i]['is_new'] = $row['is_new'];
+        
             $i++;
         }
         return $products;
@@ -170,7 +170,7 @@ class Product
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'SELECT count(id) AS count FROM product WHERE status="1" AND category_id = :category_id';
+        $sql = 'SELECT count(id) AS count FROM product WHERE status=1 AND category_id = :category_id';
 
         // Используется подготовленный запрос
         $result = $db->prepare($sql);
@@ -394,7 +394,7 @@ class Product
         $noImage = 'no-image.jpg';
 
         // Путь к папке с товарами
-        $path = '/upload/images/products/';
+        $path = '/template/category-page/img/category-products/';
 
         // Путь к изображению товара
         $pathToProductImage = $path . $id . '.jpg';
@@ -408,5 +408,34 @@ class Product
         // Возвращаем путь изображения-пустышки
         return $path . $noImage;
     }
+
+
+ public static function createProductsInTable()
+{
+    $db = Db::getConnection();
+
+    for ($i = 1; $i <= 60; $i++) {
+
+        $price = 120 + $i;
+        $slug = "product-$i";
+        $name = "product$i";
+
+        $sql = "INSERT INTO product (slug, name, category_id, subcategory_id, price)
+                VALUES (:slug, :name, :category_id, :subcategory_id, :price)";
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute([
+            ':slug' => $slug,
+            ':name' => $name,
+            ':category_id' => 1,
+            ':subcategory_id' => 1,
+            ':price' => $price
+        ]);
+    }
+
+    return true; // возвращаем успех после выполнения всего цикла
+}
+
+
 
 }

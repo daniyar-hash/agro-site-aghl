@@ -22,9 +22,7 @@ class ProductController
          $productId = $product['id'];
          $categoryId = $product['category_id'];
          $subCategoryId = $product['subcategory_id'];
-
-
-         
+        
          $categoryProduct = Category::getCategoryById($categoryId);
          $subCategoryProduct = Category::getSubCategoryById($subCategoryId);
 

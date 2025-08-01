@@ -9,11 +9,13 @@ return array(
     'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2', // actionCategory в CatalogController   
     'category/([0-9]+)' => 'catalog/category/$1', // actionCategory в CatalogController
 
-
-  
     //страница товара
 
     'pesticidy/gerbicidy/([A-Za-z]+)' => 'product/view/$1',
+
+
+      //Страница категории
+    '([A-Za-z]+)/page=([0-9]+)'=>'categoryPage/index/$1/$2',
 
 
       //страница подкатегории
@@ -24,8 +26,7 @@ return array(
     'semena/([A-Za-z]+)' =>'categoryPage/subCategory/$1',
 
 
-  //Страница категории
-    '([A-Za-z]+)'=>'categoryPage/index/$1',
+
 
 
 
