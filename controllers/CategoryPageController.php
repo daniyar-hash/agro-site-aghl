@@ -13,10 +13,7 @@ class CategoryPageController
     {
      
         // Список категорий для левого меню
-        $categories = Category::getCategoriesList();
-
-        // var_dump($page);
-
+    
         $categoryBySlug = Category::getCategoryBySlug($slug);
 
         $categoryId = $categoryBySlug['id'];
@@ -26,19 +23,12 @@ class CategoryPageController
 
                // Список товаров в категории
         $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
-
-        // echo'<pre>';
-        // echo print_r($categoryProducts);
-        // echo '</pre>';
-
+   
         // Общее количетсво товаров (необходимо для постраничной навигации)
         $total = Product::getTotalProductsInCategory($categoryId);
-          
 
         $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page=');
-
-          //Product::createProductsInTable();
-     
+    
            
          // Подключаем вид
         require_once(ROOT . '/views/category-page/index.php');
@@ -47,34 +37,27 @@ class CategoryPageController
 
 
 
- public function actionSubCategory($slug)
+ public function actionSubCategory($slug,  $page=1)
     {
-        // Список категорий для левого меню
-        //$categories = Category::getCategoriesList();
 
-        // Список последних товаров
-        //$latestProducts = Product::getLatestProducts(6);
-
-        // Список товаров для слайдера
-     //   $sliderProducts = Product::getRecommendedProducts();
-       // Список категорий для левого меню
-
-//    var_dump($slug);
-    
-
+   
         
         $subCategoryBySlug = Category::getSubCategoryBySlug($slug);//action title
 
+        // echo '<pre>';
+        // echo print_r();
+        // echo '</pre>';
 
         $categoryFromSubCategory = Category::getCategoryFromSubCategory($slug);  //get category and subcategory for breadcrumbs;
-
-
         $categoryWithSubCategories = Category::getCategoryWithSubCategories();  //for left menu
+        
+        $subCategoryId = $subCategoryBySlug['id'];
+        $categoryProducts = Product::getProductsListByCategory($subCategoryId, $page);
+       // Общее количетсво товаров (необходимо для постраничной навигации)
+        $total = Product::getTotalProductsInCategory($subCategoryId);
 
-       
-        // echo'<pre>';
-        // echo print_r($categoryWithSubCategories);
-        // echo '</pre>';
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page=');
+    
 
         // Подключаем вид
         require_once(ROOT . '/views/category-page/subcategory.php');

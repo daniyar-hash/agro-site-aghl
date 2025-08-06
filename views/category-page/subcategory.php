@@ -104,94 +104,22 @@
                                 </button>
                             </div>
                         </header>
-                        <ul class="category-products__list grid grid--3">
+                       <ul class="category-products__list grid grid--3">
+                            <?php foreach($categoryProducts as $product):  ?>
                             <li class="category-products__item">
-                                <a href="/pesticidy/gerbicidy/benagro" class="category-products__link">
+                                <a href="<?= htmlspecialchars($product['name']) ?>" class="category-products__link">
                                     <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
+                                        <img src="<?php echo Product::getImage($product['id']) ?>" width="260" height="260" alt="Product" loading="lazy" >
                                     </div>                                   
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
+                                    <h2 class="category-products__title h4"><?= htmlspecialchars($product['name']) ?></h2>
+                                    <p class="category-products__price"><?= htmlspecialchars($product['price']) ?>тнг.</p>
+                                    <a href="<?= htmlspecialchars($product['name']) ?>" class="button category-products__button">Подробнее</a>
                                 </a>
                             </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
-                              <li class="category-products__item">
-                                <a href="#" class="category-products__link">
-                                    <div class="category-products__image-wrapper">
-                                        <img src="../../template/category-page/img/category-products/1.jpg" width="260" height="260" alt="Product" loading="lazy" >
-                                    </div> 
-                                    <h2 class="category-products__title h4">Product-1</h2>
-                                    <p class="category-products__price">1200 тнг.</p>
-                                    <a href="/agro-product-page" class="button category-products__button">Подробнее</a>
-                                </a>
-                            </li>
+                            <?php endforeach;  ?>
                         </ul>
                         <div class="pagination">
-                            <div class="pagination__inner">
-                                <button class="pagination__button btn-back">
-                                    <span class="visually-hidden">Preview page</span>     
-                                    <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <ul class="pagination__list">
-                                    <li class="pagination__item is-current">
-                                        <a href="" class="pagination__link ">1</a>
-                                    </li>
-                                    <li class="pagination__item ">
-                                        <a href="#" class="pagination__link">2</a>
-                                    </li>
-                                    <li class="pagination__item ">
-                                        <a href="#" class="pagination__link">3</a>
-                                    </li>
-                                </ul>
-                                <button class="pagination__button btn-next">
-                                    <span class="visually-hidden">Next page</span>     
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
+                             <?php echo $pagination->get(); ?>
                         </div>
                     </div>
                 </div>

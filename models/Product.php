@@ -63,10 +63,22 @@ class Product
         // Соединение с БД
         $db = Db::getConnection();
 
-        // Текст запроса к БД
-        $sql = 'SELECT id, name, price FROM product '
-                . 'WHERE status = 1 AND category_id = :category_id '
-                . 'ORDER BY id ASC LIMIT :limit OFFSET :offset';
+
+        $sql = 'SELECT 
+                p.id,
+                p.name,
+                p.slug AS product_slug,
+                p.price,
+                c.slug AS category_slug,
+                sc.slug AS subcategory_slug
+            FROM product p
+            JOIN category c ON p.category_id = c.id
+            JOIN sub_category sc ON p.subcategory_id = sc.id
+            WHERE p.status = 1 AND p.category_id = :category_id
+            ORDER BY p.id ASC
+            LIMIT :limit OFFSET :offset
+            ';
+
 
         // Используется подготовленный запрос
         $result = $db->prepare($sql);
@@ -77,6 +89,11 @@ class Product
         // Выполнение коменды
         $result->execute();
 
+        // echo'<pre>';
+        // echo print_r($result->fetchAll());
+        // echo '</pre>';
+
+
         // Получение и возврат результатов
         $i = 0;
         $products = array();
@@ -84,6 +101,9 @@ class Product
             $products[$i]['id'] = $row['id'];
             $products[$i]['name'] = $row['name'];
             $products[$i]['price'] = $row['price'];
+            $products[$i]['category_slug'] = $row['category_slug'];
+            $products[$i]['subcategory_slug'] = $row['subcategory_slug'];
+
         
             $i++;
         }
