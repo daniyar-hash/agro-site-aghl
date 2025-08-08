@@ -101,6 +101,7 @@ class Product
             $products[$i]['id'] = $row['id'];
             $products[$i]['name'] = $row['name'];
             $products[$i]['price'] = $row['price'];
+            $products[$i]['product_slug'] = $row['product_slug'];
             $products[$i]['category_slug'] = $row['category_slug'];
             $products[$i]['subcategory_slug'] = $row['subcategory_slug'];
 
@@ -110,19 +111,86 @@ class Product
         return $products;
     }
 
+    /**
+     * Возвращает список товаров в указанной подкатегории
+     * @param type $categoryId <p>id категории</p>
+     * @param type $page [optional] <p>Номер страницы</p>
+     * @return type <p>Массив с товарами</p>
+     */
+    public static function getProductsListBySubCategory($subCategoryId, $page = 1)
+    {
+        $limit = Product::SHOW_BY_DEFAULT;
+        // Смещение (для запроса)
+        $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+
+        // Соединение с БД
+        $db = Db::getConnection();
+
+
+        $sql = 'SELECT 
+                p.id,
+                p.name,
+                p.slug AS product_slug,
+                p.price,
+                c.slug AS category_slug,
+                sc.slug AS subcategory_slug
+            FROM product p
+            JOIN category c ON p.category_id = c.id
+            JOIN sub_category sc ON p.subcategory_id = sc.id
+            WHERE p.status = 1 AND p.subcategory_id = :subcategory_id
+            ORDER BY p.id ASC
+            LIMIT :limit OFFSET :offset
+            ';
+
+
+        // Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':subcategory_id', $subCategoryId, PDO::PARAM_INT);
+        $result->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $result->bindParam(':offset', $offset, PDO::PARAM_INT);
+
+        // Выполнение коменды
+        $result->execute();
+
+        // echo'<pre>';
+        // echo print_r($result->fetchAll());
+        // echo '</pre>';
+
+
+        // Получение и возврат результатов
+        $i = 0;
+        $products = array();
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['name'] = $row['name'];
+            $products[$i]['price'] = $row['price'];
+            $products[$i]['product_slug'] = $row['product_slug'];
+            $products[$i]['category_slug'] = $row['category_slug'];
+            $products[$i]['subcategory_slug'] = $row['subcategory_slug'];
+
+        
+            $i++;
+        }
+        return $products;
+    }
+
+
     public static function getProductTableById($productId){
 
         
         $db = Db::getConnection();
 
-        //  var_dump($db); 
 
-        $sql = 'SELECT  `id`,`agricultural_crop`, `сonsumption_rate`, `harmful_object`,
-         `limitations`, `treatment_period` FROM `product_table` WHERE `product_id` = :product_id';
+        //$groups = $db->query("SELECT * FROM product_table WHERE `product_id` = :product_id ")->fetchAll(PDO::FETCH_ASSOC);
+
+    
+
+
+        $sql = 'SELECT * FROM product_table WHERE `product_id` = :product_id';
 
          $result = $db->prepare($sql);
                 
-         $result->bindParam(':product_id', $productId, PDO::PARAM_STR);
+         $result->bindParam(':product_id', $productId, PDO::PARAM_INT);
 
          $result->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -142,6 +210,9 @@ class Product
 
             $i++;
         }
+
+
+        
         return $products;
     
 
@@ -430,31 +501,31 @@ class Product
     }
 
 
- public static function createProductsInTable()
-{
-    $db = Db::getConnection();
+//  public static function createProductsInTable()
+// {
+//     $db = Db::getConnection();
 
-    for ($i = 1; $i <= 60; $i++) {
+//     for ($i = 1; $i <= 60; $i++) {
 
-        $price = 120 + $i;
-        $slug = "product-$i";
-        $name = "product$i";
+//         $price = 120 + $i;
+//         $slug = "product-$i";
+//         $name = "product$i";
 
-        $sql = "INSERT INTO product (slug, name, category_id, subcategory_id, price)
-                VALUES (:slug, :name, :category_id, :subcategory_id, :price)";
+//         $sql = "INSERT INTO product (slug, name, category_id, subcategory_id, price)
+//                 VALUES (:slug, :name, :category_id, :subcategory_id, :price)";
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute([
-            ':slug' => $slug,
-            ':name' => $name,
-            ':category_id' => 1,
-            ':subcategory_id' => 1,
-            ':price' => $price
-        ]);
-    }
+//         $stmt = $db->prepare($sql);
+//         $stmt->execute([
+//             ':slug' => $slug,
+//             ':name' => $name,
+//             ':category_id' => 1,
+//             ':subcategory_id' => 1,
+//             ':price' => $price
+//         ]);
+//     }
 
-    return true; // возвращаем успех после выполнения всего цикла
-}
+//     return true; // возвращаем успех после выполнения всего цикла
+// }
 
 
 

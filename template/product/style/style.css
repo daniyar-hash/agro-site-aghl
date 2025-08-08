@@ -188,7 +188,7 @@ body {
   font-size: clamp(12px, 1.6666666667vw, 24px);
   font-family: var(--font-family-base);
   font-weight: 500;
-  color: var(--color-dark);
+  color: var(--color-light);
 }
 
 a,
@@ -465,8 +465,6 @@ h4, .h4 {
 }
 .breadcrumbs__list {
   display: flex;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
   align-items: center;
 }
 @media (hover: hover) {
@@ -483,8 +481,6 @@ h4, .h4 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
 }
 
 .product-page {

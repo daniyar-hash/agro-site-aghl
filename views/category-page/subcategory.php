@@ -107,13 +107,13 @@
                        <ul class="category-products__list grid grid--3">
                             <?php foreach($categoryProducts as $product):  ?>
                             <li class="category-products__item">
-                                <a href="<?= htmlspecialchars($product['name']) ?>" class="category-products__link">
+                                <a href="<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="category-products__link">
                                     <div class="category-products__image-wrapper">
                                         <img src="<?php echo Product::getImage($product['id']) ?>" width="260" height="260" alt="Product" loading="lazy" >
                                     </div>                                   
                                     <h2 class="category-products__title h4"><?= htmlspecialchars($product['name']) ?></h2>
                                     <p class="category-products__price"><?= htmlspecialchars($product['price']) ?>тнг.</p>
-                                    <a href="<?= htmlspecialchars($product['name']) ?>" class="button category-products__button">Подробнее</a>
+                                    <a href="<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="button category-products__button">Подробнее</a>
                                 </a>
                             </li>
                             <?php endforeach;  ?>

@@ -23,11 +23,16 @@ class CategoryPageController
 
                // Список товаров в категории
         $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
-   
+
+
+
+ 
         // Общее количетсво товаров (необходимо для постраничной навигации)
         $total = Product::getTotalProductsInCategory($categoryId);
 
         $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page=');
+
+
     
            
          // Подключаем вид
@@ -50,13 +55,22 @@ class CategoryPageController
 
         $categoryFromSubCategory = Category::getCategoryFromSubCategory($slug);  //get category and subcategory for breadcrumbs;
         $categoryWithSubCategories = Category::getCategoryWithSubCategories();  //for left menu
-        
+        $subcategiesByCategory = Category::getSubCategoriesByCategory($slug);//for left menu
+
         $subCategoryId = $subCategoryBySlug['id'];
-        $categoryProducts = Product::getProductsListByCategory($subCategoryId, $page);
+        $categoryProducts = Product::getProductsListBySubCategory($subCategoryId, $page);
+
+
+        // echo '<pre>';
+        // echo print_r($categoryProducts);
+        // echo '</pre>';
+
        // Общее количетсво товаров (необходимо для постраничной навигации)
         $total = Product::getTotalProductsInCategory($subCategoryId);
 
         $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page=');
+
+
     
 
         // Подключаем вид

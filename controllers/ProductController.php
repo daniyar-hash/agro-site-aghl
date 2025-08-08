@@ -19,6 +19,9 @@ class ProductController
         // // Получаем инфомрацию о товаре
          $product = Product::getProductBySlug($slug);
 
+
+     
+
          $productId = $product['id'];
          $categoryId = $product['category_id'];
          $subCategoryId = $product['subcategory_id'];
@@ -26,19 +29,11 @@ class ProductController
          $categoryProduct = Category::getCategoryById($categoryId);
          $subCategoryProduct = Category::getSubCategoryById($subCategoryId);
 
-      
-
-        // echo '<pre>';
-        // print_r($product['id']);
-        // echo  '</pre>';
+     //   $categoryFromSubCategory = Category::getCategoryFromSubCategory($slug);  //get category and subcategory for breadcrumbs;
+        $categoryWithSubCategories = Category::getCategoryWithSubCategories();  //for left menu
+      //  $subcategiesByCategory = Category::getSubCategoriesByCategory($slug);//for left menu
 
        $productTable = Product::getProductTableById($productId);
-
-
-
-
-
-
 
 
         // Подключаем вид

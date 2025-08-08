@@ -142,22 +142,22 @@ class Pagination
     private function limits()
     {
         # Вычисляем ссылки слева (чтобы активная ссылка была посередине)
-        $left = $this->current_page - round($this->max / 2); //6-  5/2  = 3;
+        $left = $this->current_page - round($this->max / 2); //6-  5/2  = 3;   amount = 60/6 = 10 max = 5 
 
 
         # Вычисляем начало отсчёта
         $start = $left > 0 ? $left : 1;
 
         # Если впереди есть как минимум $this->max страниц
-        if ($start + $this->max <= $this->amount) {
+        if ($start + $this->max <= $this->amount) {   // start=3 3+5 10  
         # Назначаем конец цикла вперёд на $this->max страниц или просто на минимум
-            $end = $start > 1 ? $start + $this->max : $this->max;
+            $end = $start > 1 ? $start + $this->max : $this->max;  // start =2  end=7
         } else {
-            # Конец - общее количество страниц
+            # Конец - общее количество страниц  //  9-5 = 5  start 5  5+10  10  10-10   
             $end = $this->amount;
 
             # Начало - минус $this->max от конца
-            $start = $this->amount - $this->max > 0 ? $this->amount - $this->max : 1;
+            $start = $this->amount - $this->max > 0 ? $this->amount - $this->max : 1; //10-10  
         }
 
         # Возвращаем
@@ -173,7 +173,7 @@ class Pagination
     private function setCurrentPage($currentPage)
     {
         # Получаем номер страницы
-        $this->current_page = $currentPage;
+        $this->current_page = $currentPage;   
 
         # Если текущая страница больше нуля
         if ($this->current_page > 0) {
@@ -194,7 +194,7 @@ class Pagination
     private function amount()
     {
         # Делим и возвращаем
-        return ceil($this->total / $this->limit);
+        return ceil($this->total / $this->limit);  
     }
 
 }
