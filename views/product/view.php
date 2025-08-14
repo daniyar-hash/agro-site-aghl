@@ -53,8 +53,12 @@
                     <div class="decription__property">
                         <ul class="description__property-list">
                             <li class="description__property-item">
+
+                                <?php  if(!empty($product['concentration'])): ?>
                                 <span class="decription__property-text"><strong>Действующее вещество, концентрация (г/л):</strong></span>
                                 <span class="decription__property-text"><?= $product['concentration'] ?></span>
+
+                                <?php endif; ?>
                             </li>
                             <li class="description__property-item">
                                 <span class="decription__property-text"><strong> Препаративная форма:</strong></span>
@@ -69,13 +73,17 @@
                    
 
                         <table  cellpadding="5" cellspacing="0">
+                            <caption>Регламенты применения</caption>
                             <thead>
                                 <tr>
                                     <th>Культура, обрабатываемый объект</th>
+                                    <th class="th-result_impact">Результат воздействия</th>
                                     <th>Норма расхода г/кг</th>
-                                    <th>Вредный объект</th>
-                                    <th>Способ, время обработки, ограничения</th>
-                                    <th>Срок последней обработки, в днях до сбора урожая</th>
+                                    <th class="th-consumption_solution">Расход рабочего раствора</th>
+                                    <th class="th-application_features">Способо, время обработки, особенности применения</th>
+                                    <th class="th-harmful_object">Вредный объект</th>
+                                    <th class="th-limitations">Способ, время обработки, ограничения</th>
+                                    <th class="th-treatment_period">Срок последней обработки, в днях до сбора урожая (максимальная кратность обработки)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -91,48 +99,103 @@
                                    // if (!$items) continue; // если нет элементов — пропустить 
 
                                     $rowspan = count($items);
+                                
 
-                                //    var_dump($group['agricultural_crop']); 
+                                   
                                     ?>
                                     <tr>
-                                        <?php if($rowspan):  ?>
-                                            <td rowspan="<?= $rowspan ?>"><?= htmlspecialchars($group['agricultural_crop']) ?> 
-                                         <?php  else:  ?>
-                                         <td><?= htmlspecialchars($group['agricultural_crop']) ?></td>
-                                         <?php endif;  ?>
+                                      
+                                         
+                                         <td rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['agricultural_crop']) ?></td>
+                                        
+                                        <?php if(!empty($items[0]['result_impact'])): ?>
+                                            <td class="td-result_impact" ><?= htmlspecialchars($items[0]['result_impact']) ?></td>
+                                            <?php  else :  ?>
+                                            <td class="td-result_impact" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['result_impact']) ?></td>
 
-                                        <?php if($items):?>
-                                        <td><?= htmlspecialchars($items[0]['consumption_rate']) ?></td>
-                                        <td><?= htmlspecialchars($items[0]['harmful_object']) ?></td>
-                                        <?php else:  ?>
+                                        <?php endif; ?>
 
-                                        <td><?= htmlspecialchars($group['сonsumption_rate']) ?></td>
-                                        <td><?= htmlspecialchars($group['harmful_object']) ?></td>
 
-                                        <?php  endif;  ?>
+
+
+
+
+                                                                               
+                                        <?php if(!empty($items[0]['сonsumption_rate'])): ?>
+                                            <td><?= htmlspecialchars($items[0]['сonsumption_rate']) ?></td>
+                                            <?php  else :  ?>
+                                            <td rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['сonsumption_rate']) ?></td>
+
+                                        <?php endif; ?>
+
+
+                                           
+                                        <?php if(!empty($items[0]['consumption_solution'])): ?>
+                                            <td class="td-consumption_solution"><?= htmlspecialchars($items[0]['consumption_solution']) ?></td>
+                                            <?php  else :  ?>
+                                            <td class="td-consumption_solution" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['consumption_solution']) ?></td>
+
+                                        <?php endif; ?>
+
+                                        <?php if(!empty($items[0]['application_features'])): ?>
+                                            <td class="td-application_features"><?= htmlspecialchars($items[0]['application_features']) ?></td>
+                                            <?php  else :  ?>
+                                            <td class="td-application_features" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['application_features']) ?></td>
+
+                                        <?php endif; ?>
 
                                         
-                                        <?php if($rowspan):  ?>
-                                            <td rowspan="<?= $rowspan ?>"><?= htmlspecialchars($group['limitations']) ?></td>
-                                         <?php  else:  ?>
-                                         <td><?= htmlspecialchars($group['limitations']) ?></td>
-                                        <?php  endif; ?>
+                                        <?php if(!empty($items[0]['harmful_object'])): ?>
+                                            <td class="td-harmful_object" ><?= htmlspecialchars($items[0]['harmful_object']) ?></td>
+                                            <?php  else :  ?>
+                                            <td class="td-harmful_object" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['harmful_object']) ?></td>
 
-                                       <?php if($rowspan):  ?>
-                                            <td rowspan="<?= $rowspan ?>"><?= htmlspecialchars($group['treatment_period']) ?></td>
-                                         <?php  else:  ?>
-                                            
-                                        <td><?= htmlspecialchars($group['treatment_period']) ?></td>
+                                        <?php endif; ?>
 
-                                        <?php  endif; ?>
+
+                                        <?php if(!empty($items[0]['limitations'])): ?>
+                                            <td class="td-limitations"><?= htmlspecialchars($items[0]['limitations']) ?></td>
+                                            <?php  else :  ?>
+
+
+                                          
+
+                                            <td style="white-space: pre-line; min-width:215px;" class="td-limitations" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['limitations']) ?></td>
+
+                                        <?php endif; ?>
+
+                                        <td class="td-treatment_period" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['treatment_period']) ?></td>
+
                                     </tr>
-
 
                                     <?php if($rowspan):  ?>
                                     <?php for ($i = 1; $i < $rowspan; $i++): ?>
                                         <tr>
-                                            <td><?= htmlspecialchars($items[$i]['consumption_rate']) ?></td>
-                                            <td><?= htmlspecialchars($items[$i]['harmful_object']) ?></td>
+
+                                            <?php if (!empty($items[$i]['сonsumption_rate'])): ?>
+                                                <td><?= htmlspecialchars($items[$i]['сonsumption_rate']) ?></td>
+                                            <?php endif; ?>
+
+                                             <?php if (!empty($items[$i]['consumption_solution'])): ?>
+                                                <td><?= htmlspecialchars($items[$i]['consumption_solution']) ?></td>
+                                            <?php endif; ?>
+
+
+                                             <?php if (!empty($items[$i]['application_features'])): ?>
+                                                <td><?= htmlspecialchars($items[$i]['application_features']) ?></td>
+                                            <?php endif; ?>
+                                            
+                                            
+                                            <?php if (!empty($items[$i]['harmful_object'])): ?>
+                                                <td><?= htmlspecialchars($items[$i]['harmful_object']) ?></td>
+                                            <?php endif; ?>
+
+
+                                            <?php if (!empty($items[$i]['limitations'])): ?>
+                                                <td><?= htmlspecialchars($items[$i]['limitations']) ?></td>
+                                            <?php endif; ?>
+
+                                           
                                         </tr>
                                     <?php endfor; ?>
 
@@ -140,9 +203,6 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-
-
-
                     </div>
                 </div>
             </div>

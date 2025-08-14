@@ -31,4 +31,17 @@
 
       }
 
+      &__total-products{
+        line-height: 2.5;
+        color: var(--color-gray-alt);
+      }
+
+      &__title-and-count-wrapper{
+        display: flex;
+        column-gap: 10px;
+
+          
+
+      }
+
 }

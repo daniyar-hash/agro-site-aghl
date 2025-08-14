@@ -36,6 +36,13 @@ class ProductController
        $productTable = Product::getProductTableById($productId);
 
 
+        // echo'<pre>';
+        // echo print_r($productTable);
+        // echo '</pre>';
+
+
+
+
         // Подключаем вид
         require_once(ROOT . '/views/product/view.php');
         return true;

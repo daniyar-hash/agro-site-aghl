@@ -207,6 +207,10 @@ class Product
             $products[$i]['harmful_object'] = $row['harmful_object'];
             $products[$i]['limitations'] = $row['limitations'];
             $products[$i]['treatment_period'] = $row['treatment_period'];
+            $products[$i]['consumption_solution'] = $row['consumption_solution'];
+            $products[$i]['application_features'] = $row['application_features'];
+            $products[$i]['result_impact'] = $row['result_impact'];
+
 
             $i++;
         }
@@ -266,6 +270,33 @@ class Product
         // Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
+
+        // Выполнение коменды
+        $result->execute();
+
+        // Возвращаем значение count - количество
+        $row = $result->fetch();
+        return $row['count'];
+    }
+
+
+
+        /**
+     * Возвращаем количество товаров в указанной категории
+     * @param integer $categoryId
+     * @return integer
+     */
+    public static function getTotalProductsInSubCategory($subCategoryId)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT count(id) AS count FROM product WHERE status=1 AND subcategory_id = :subcategory_id';
+
+        // Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':subcategory_id', $subCategoryId, PDO::PARAM_INT);
 
         // Выполнение коменды
         $result->execute();

@@ -1,5 +1,75 @@
   
-  //const header = document.querySelector('.header');
+  const thTablePeriod = document.querySelector('.th-treatment_period');
+  const thTableSolution = document.querySelector('.th-consumption_solution');
+  const thTableFeatures = document.querySelector('.th-application_features');
+  const thTableHarmfull = document.querySelector('.th-harmful_object');
+  const thTableLimit = document.querySelector('.th-limitations');
+  const thTableResultImpact = document.querySelector('.th-result_impact');
+
+
+
+  const tdTablePeriod = document.querySelectorAll('.td-treatment_period');
+  const tdTableSolution = document.querySelectorAll('.td-consumption_solution');
+  const tdTableFeatures = document.querySelectorAll('.td-application_features');
+  const tdTableHarmfull = document.querySelectorAll('.td-harmful_object');  
+  const tdTableLimit = document.querySelectorAll('.td-limitations');
+  const tdTableResultImpact = document.querySelectorAll('.td-result_impact');
+
+
+
+const allEmpty1 = Array.from(tdTablePeriod).every(td => td.textContent.trim() === '');
+const allEmpty2 = Array.from(tdTableSolution).every(td => td.textContent.trim() === '');
+const allEmpty3 = Array.from(tdTableFeatures).every(td => td.textContent.trim() === '');
+const allEmpty4 = Array.from(tdTableHarmfull).every(td => td.textContent.trim() === '');
+const allEmpty5 = Array.from(tdTableLimit).every(td => td.textContent.trim() === '');
+const allEmpty6 = Array.from(tdTableResultImpact).every(td => td.textContent.trim() === '');
+
+
+
+if(allEmpty1) {
+    thTablePeriod.style.display='none';
+    tdTablePeriod.forEach((td)=>{
+        td.style.display='none';
+  })
+}
+
+
+if(allEmpty2) {
+    thTableSolution.style.display='none';
+    tdTableSolution.forEach((td)=>{
+        td.style.display='none';
+  })
+}
+
+if(allEmpty3) {
+    thTableFeatures.style.display='none';
+    tdTableFeatures.forEach((td)=>{
+        td.style.display='none';
+  })
+}
+
+if(allEmpty4) {
+    thTableHarmfull.style.display='none';
+    tdTableHarmfull.forEach((td)=>{
+        td.style.display='none';
+  })
+}
+
+if(allEmpty5) {
+    thTableLimit.style.display='none';
+    tdTableLimit.forEach((td)=>{
+        td.style.display='none';
+  })
+}
+
+if(allEmpty6) {
+    thTableResultImpact.style.display='none';
+    tdTableResultImpact.forEach((td)=>{
+        td.style.display='none';
+  })
+}
+
+
 
 
     function addClassProductsItem(elementList, className){

@@ -19,7 +19,25 @@
         </div>
         <section class="section category-page">
             <div class="category-page__inner container">
+                  <div class="category-page__title-and-count-wrapper">
+
+
+                     <?php
+                        function pluralForm($n, $forms) {
+                            $n = abs($n) % 100;
+                            $n1 = $n % 10;
+
+                            if ($n > 10 && $n < 20) return $forms[2];
+                            if ($n1 > 1 && $n1 < 5) return $forms[1];
+                            if ($n1 == 1) return $forms[0];
+                            return $forms[2];
+                        }
+
+                        $word = pluralForm($total, ['товар', 'товара', 'товаров']);
+                    ?>
                 <h1 class="category-page__title h2"><?= $categoryBySlug['name'] ?></h1>
+                    <span class="category-page__total-products h3"><?= $total .' '.$word ?></span>
+                    </div>
                 <div class="category-page__body">
                     <div class="block-left">
                         <div class="categories-aside">

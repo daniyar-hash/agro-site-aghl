@@ -780,6 +780,15 @@ h4, .h4 {
   flex-direction: column;
   color: var(--color-green-alt);
 }
+.category-page__total-products {
+  line-height: 2.5;
+  color: var(--color-gray-alt);
+}
+.category-page__title-and-count-wrapper {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
 
 .category-products {
   color: var(--color-dark);

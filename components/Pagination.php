@@ -78,10 +78,6 @@ class Pagination
 
         # Получаем ограничения для цикла
         $limits = $this->limits();
-
-    
-
-
         
         $html = '<ul class="pagination__list">';
         # Генерируем ссылки
@@ -102,7 +98,7 @@ class Pagination
             # Создаём ссылку "На первую"
                 $links = $this->generateHtml(1, '&lt;') . $links;
 
-            # Если текущая страница не первая
+            # Если текущая страница не последняя
             if ($this->current_page < $this->amount)
             # Создаём ссылку "На последнюю"
                 $links .= $this->generateHtml($this->amount, '&gt;');
@@ -127,7 +123,7 @@ class Pagination
         # Указываем, что текст - цифра страницы
             $text = $page;
 
-        $currentURI = rtrim($_SERVER['REQUEST_URI'], '/') . '/';
+        $currentURI = rtrim($_SERVER['REQUEST_URI'], '/') . '/';// pestytsidy/page=2
         $currentURI = preg_replace('~/page=[0-9]+~', '', $currentURI);
         # Формируем HTML код ссылки и возвращаем
         return
@@ -148,7 +144,7 @@ class Pagination
         # Вычисляем начало отсчёта
         $start = $left > 0 ? $left : 1;
 
-        # Если впереди есть как минимум $this->max страниц
+        # Если впереди есть как максимум $this->max страниц
         if ($start + $this->max <= $this->amount) {   // start=3 3+5 10  
         # Назначаем конец цикла вперёд на $this->max страниц или просто на минимум
             $end = $start > 1 ? $start + $this->max : $this->max;  // start =2  end=7

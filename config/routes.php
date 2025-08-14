@@ -10,7 +10,7 @@ return array(
     // 'category/([0-9]+)' => 'catalog/category/$1', // actionCategory в CatalogController
   
 // 1. Страница товара (с исключением page=...)
-'(pesticidy|udobrenie|semena)/([a-z]+)/(?!page=)([a-z0-9-]+)' => 'product/view/$3',
+'(pesticidy|udobrenie|semena)/([a-z-]+)/(?!page=)([a-z0-9-]+)' => 'product/view/$3',
 
 // 2. Подкатегория с пагинацией
 '(pesticidy|udobrenie|semena)/([a-z]+)/page=([0-9]+)' => 'categoryPage/subCategory/$2/$3',

@@ -101,7 +101,7 @@
                                  <?php foreach ($categoryWithSubCategories as $category): ?>
 
                                     <li class="header__catalog-item">
-                                        <a href="<?= htmlspecialchars($category['category_link']) ?>" class="header__catalog-link">
+                                        <a href="/<?= htmlspecialchars($category['category_link']) ?>" class="header__catalog-link">
                                             <span class="header__catalog-link-text"><?= htmlspecialchars($category['name'])  ?></span>
                                             <span class="header__catalog-link-icon">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

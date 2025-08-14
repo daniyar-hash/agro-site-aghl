@@ -66,9 +66,13 @@ class CategoryPageController
         // echo '</pre>';
 
        // Общее количетсво товаров (необходимо для постраничной навигации)
-        $total = Product::getTotalProductsInCategory($subCategoryId);
+        $total = Product::getTotalProductsInSubCategory($subCategoryId);
+
+    
 
         $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page=');
+
+        
 
 
     

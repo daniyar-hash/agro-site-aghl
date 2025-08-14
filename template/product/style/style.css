@@ -528,6 +528,8 @@ h4, .h4 {
 .description__table-wrapper caption {
   font-weight: 700;
   padding-block: 5px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
 }
 
 .product__image-wrapper, .product__info {

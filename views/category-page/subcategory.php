@@ -28,10 +28,31 @@
         </div>
         <section class="section category-page">
             <div class="category-page__inner container">
-                <h1 class="category-page__title h2"><?= htmlspecialchars($subCategoryBySlug['name']) ?></h1>
+                <div class="category-page__title-and-count-wrapper">
+
+
+                    <?php
+                        function pluralForm($n, $forms) {
+                            $n = abs($n) % 100; // 22%100  =  22
+                            $n1 = $n % 10;  //22%10  = 2 
+
+                            $total1 = 9;
+
+                            if ($n > 10 && $n < 20) return $forms[2];
+                            if ($n1 > 1 && $n1 < 5) return $forms[1];
+                            if ($n1 == 1) return $forms[0];
+                            return $forms[2];
+                        }
+
+                        $word = pluralForm($total, ['товар', 'товара', 'товаров']);
+                    ?>
+                    <h1 class="category-page__title h2"><?= htmlspecialchars($subCategoryBySlug['name']) ?></h1>
+                    <span class="category-page__total-products h3"><?= $total .' '.$word ?></span>
+                </div>
+       
                 <div class="category-page__body">
                   
-   <div class="block-left">
+                <div class="block-left">
                         <div class="categories-aside">
                             <ul class="categories-aside__menu">
 
@@ -107,7 +128,7 @@
                        <ul class="category-products__list grid grid--3">
                             <?php foreach($categoryProducts as $product):  ?>
                             <li class="category-products__item">
-                                <a href="<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="category-products__link">
+                                <a href="/<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="category-products__link">
                                     <div class="category-products__image-wrapper">
                                         <img src="<?php echo Product::getImage($product['id']) ?>" width="260" height="260" alt="Product" loading="lazy" >
                                     </div>                                   
@@ -119,6 +140,7 @@
                             <?php endforeach;  ?>
                         </ul>
                         <div class="pagination">
+                       
                              <?php echo $pagination->get(); ?>
                         </div>
                     </div>
