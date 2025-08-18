@@ -210,6 +210,8 @@ class Product
             $products[$i]['consumption_solution'] = $row['consumption_solution'];
             $products[$i]['application_features'] = $row['application_features'];
             $products[$i]['result_impact'] = $row['result_impact'];
+            $products[$i]['waiting_period'] = $row['waiting_period'];
+
 
 
             $i++;
@@ -339,6 +341,28 @@ class Product
         }
         return $products;
     }
+
+
+        /**
+     * Возвращает список рекомендуемых товаров
+     * @return array <p>Массив с товарами</p>
+     */
+    public static function getSeasonProducts()
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Получение и возврат результатов
+        $result = $db->query('SELECT p.id, p.name , p.slug, p.price, category.slug as category_slug , sub_category.slug as sub_category_slug FROM product p 
+        INNER JOIN category ON p.category_id = category.id 
+         INNER JOIN sub_category ON p.subcategory_id = sub_category.id WHERE p.is_season =1 ORDER BY p.id DESC ');
+
+         $result->setFetchMode(PDO::FETCH_ASSOC);
+         $productsList = $result->fetchAll();
+ 
+        return $productsList;
+    }
+
 
     /**
      * Возвращает список рекомендуемых товаров

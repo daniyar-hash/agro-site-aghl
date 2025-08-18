@@ -35,11 +35,15 @@
             color: var(--color-dark);
         }
 
+        th, caption{
+            padding-block: 10px;
+        }
+
         caption{
             font-weight: 700;
-            padding-block: 5px;
             color:var(--color-light);
             background-color: var(--color-dark);
+            text-transform: uppercase;
         }
     }
 }

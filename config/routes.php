@@ -13,7 +13,7 @@ return array(
 '(pesticidy|udobrenie|semena)/([a-z-]+)/(?!page=)([a-z0-9-]+)' => 'product/view/$3',
 
 // 2. Подкатегория с пагинацией
-'(pesticidy|udobrenie|semena)/([a-z]+)/page=([0-9]+)' => 'categoryPage/subCategory/$2/$3',
+'(pesticidy|udobrenie|semena)/([a-z-]+)/page=([0-9]+)' => 'categoryPage/subCategory/$2/$3',
 
 // 3. Подкатегория без пагинации
 '(pesticidy|udobrenie|semena)/(?!page=)([a-z]+)' => 'categoryPage/subCategory/$2',
@@ -21,8 +21,13 @@ return array(
 // 4. Категория с пагинацией
 '([a-z]+)/page=([0-9]+)' => 'categoryPage/index/$1/$2',
 
+//'search/query' => 'search/index',
+
 // 5. Просто категория
 '([a-z]+)' => 'categoryPage/index/$1',
+
+
+
 
 
 

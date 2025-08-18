@@ -6,6 +6,16 @@
   const popup = document.querySelector('.modal');
   const btnModalClose = document.querySelector('.modal-close');
   const video = document.getElementById('video');
+  const headerSearchBtn = document.querySelector('.search__button');
+  const headerSearchWrapper = document.querySelector('.search__wrapper-field');
+
+
+  headerSearchBtn.addEventListener('click', (e)=>{
+
+
+    headerSearchWrapper.classList.toggle('hidden');
+
+  })
 
 
 
@@ -58,12 +68,12 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
 
 
 
-  btnModalVideo.addEventListener("click", (e)=>{
-      e.preventDefault();
-      popup.classList.add('modal-show');
-      popup.style.display = "block";
-      popup.querySelector('#video').play();
-  })
+  // btnModalVideo.addEventListener("click", (e)=>{
+  //     e.preventDefault();
+  //     popup.classList.add('modal-show');
+  //     popup.style.display = "block";
+  //     popup.querySelector('#video').play();
+  // })
 
     btnModalClose.addEventListener("click", (e)=>{
 
@@ -82,10 +92,8 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
   function updateHeaderClass() {
 
 
-    console.log(window.scrollY);
     if (window.scrollY > 100) {
 
-      console.log(window.scrollY);
       header.classList.remove('transparent');
       header.classList.add('solid');
       header__inner.classList.remove('flex-column');
@@ -117,15 +125,18 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
   window.addEventListener('scroll', updateHeaderClass);
 
 
-        //  window.addEventListener("keydown", function(evt) {
-        //     if (evt.keyCode === 27) {
-        //             evt.preventDefault();
 
-        //             if(popup.classList.contains("modal-show")){
-        //                 popup.classList.remove("modal-show");
-        //                 popup.classList.remove("modal-error");
 
-        //             }
-              
+document.getElementById("searchInput").addEventListener("keyup", function () {
+    let query = this.value;
 
-        //     }
+    console.log(query)
+
+    fetch("/views/site/search.php?word=" + encodeURIComponent(query))
+        .then(response => response.text())
+        .then(data => {
+
+          console.log(data)
+            document.querySelector(".search__results-list").innerHTML = data;
+        });
+});

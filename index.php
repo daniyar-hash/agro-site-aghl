@@ -8,9 +8,12 @@ error_reporting(E_ALL);
 
 session_start();
 
-// Подключение файлов системы
-define('ROOT', dirname(__FILE__));
-require_once(ROOT.'/components/Autoload.php');
+// index.php
+require_once __DIR__ . '/config/paths.php';
+
+
+
+ require_once(ROOT.'/components/Autoload.php');
 
 
 

@@ -1,6 +1,7 @@
-.products{
+.products-season{
     padding-block: 20px;
     line-height: 1;
+    color: var(--color-dark);
 
     @include tablet{
         padding-block: 50px;
@@ -8,10 +9,6 @@
 
     @include mobile{
         padding-block: 30px;
-    }
-
-    & .section__header{
-        color: var(--color-dark);
     }
 
 
@@ -38,137 +35,113 @@
     }
 
 
-    &__images{
 
-        &-list {
-           
-            gap:20px;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            grid-auto-rows: 240px;
-         
-
-
-
-            @include mobile-s{
-                --gridColumns:2;
-                gap: 12px;
-            }
-
-        }
-
-        &-item{
-           
-
-            &:focus-within .products__images-hover{
-
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-            }
-
-
-        }
-
+    &__list {
         
-        &-link:hover &-hover
-     
-        {
-               
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-        }
-
-
-
-
-        &-link{
-            position: relative;
-       
-         //   display: inline-flex;
+        gap:20px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-auto-rows: auto;
         
+
+
+
+        @include mobile-s{
+            --gridColumns:2;
+            gap: 12px;
         }
-
-        &-image{
-
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            display: block; /* убирает лишние отступы снизу у img */
-
-      
-        }
-        &-title{
-
-              font-weight: 500;
-            //   font-size: 24px;
-
-        }
-
-        &-button{
-            width: 100%;
-            height: 40px;
-            padding-block: 10px;
-            padding-inline: 0;
-
-            @include mobile{
-                width: 100%;
-                padding-inline: 0;
-                padding-block: 5px;
-                height: 40px;
-            }
-
-            @include mobile-s{
-                height: 52px;
-                padding-block: 14px;
-            }
-        }
-
-
-        &-hover{
-            position: absolute;
-            text-transform: uppercase;
-            color: inherit; 
-            top: 0;
-            left: 0;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 100px;
-            padding-bottom: 35px;
-            padding-inline: 5px;
-            width: 100%;
-            height: 100%;
-            background-color: rgba($color: #000000, $alpha: .7);
-            opacity: 0;
-            display: flex;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            border-radius: 10px;
-
-
-
-
-            @include tablet{
-                padding-top: 45%;
-                padding-bottom: 15%;
-                
-
-            }
-
-            @include mobile{
-                padding-inline: 10px;
-            }
-
-            
-
-        }
-
-    
 
     }
 
+    &__item{
+        display:flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: var(--color-light);
+
+    }
+
+
+
+    &__link{
+        display: inline-block;
+    }
+
+    &__image{
+        display:block;
+        border-radius: 15px;
+
+    }
+
+     &__info{
+            
+        display:flex;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    &__subcategory{
+        font-size: 14px;
+        background-color: green;
+        align-self: start;border-radius: 10px;
+        padding-inline: 10px;
+        color: var(--color-light);
+        
+    }
+
+    &__send{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed var(--color-dark);
+        position: relative;
+        
+
+
+        span{
+            width: 20px;
+            height: 2px;
+            background-color: var(--color-dark-gray);
+            transform: rotate(-45deg);
+        }
+
+        &::before, 
+        &::after{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            background-color: var(--color-dark-gray);
+          
+
+        }
+
+          &::before{
+                top:8px;
+                transform: rotate(0deg);
+                right:8px;
+          }
+
+            &::after{
+            top: 13px;
+            right:4px;
+            transform: rotate(90deg);
+
+          }
+
+
+    }
+
+    &__wrapp-card{
+        display: flex;
+        justify-content: space-between;
+
+        align-items: center;
+    }
 
 
 

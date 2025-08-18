@@ -55,34 +55,37 @@
                             <li class="description__property-item">
 
                                 <?php  if(!empty($product['concentration'])): ?>
-                                <span class="decription__property-text"><strong>Действующее вещество, концентрация (г/л):</strong></span>
-                                <span class="decription__property-text"><?= $product['concentration'] ?></span>
+                                    <span class="decription__property-text"><strong>Действующее вещество, концентрация (г/л):</strong></span>
+                                    <span class="decription__property-text"><?= $product['concentration'] ?></span>
 
                                 <?php endif; ?>
                             </li>
                             <li class="description__property-item">
-                                <span class="decription__property-text"><strong> Препаративная форма:</strong></span>
-                                <span class="decription__property-text"><?= $product['dosage_form'] ?></span>
+                                <?php  if(!empty($product['concentration'])): ?>
+                                    <span class="decription__property-text"><strong> Препаративная форма:</strong></span>
+                                    <span class="decription__property-text"><?= $product['dosage_form'] ?></span>
+                                <?php endif; ?>
+                      
                             </li>
                         </ul>
                     </div>
-                    <div class="description__detail">
+                    <div class="description__detail" style="white-space: pre-line;">
                         <p><?= $product['description']?></p>
                     </div>
                     <div class="description__table-wrapper">
                    
-
                         <table  cellpadding="5" cellspacing="0">
-                            <caption>Регламенты применения</caption>
+                            <caption>Регламенты применения:</caption>
                             <thead>
                                 <tr>
                                     <th>Культура, обрабатываемый объект</th>
                                     <th class="th-result_impact">Результат воздействия</th>
-                                    <th>Норма расхода г/кг</th>
+                                    <th>Норма расхода на 1га <br>л/га,  г/кг, кг/га</th>
                                     <th class="th-consumption_solution">Расход рабочего раствора</th>
                                     <th class="th-application_features">Способо, время обработки, особенности применения</th>
                                     <th class="th-harmful_object">Вредный объект</th>
                                     <th class="th-limitations">Способ, время обработки, ограничения</th>
+                                    <th class="th-waiting_period">Сроки ожидание</th>
                                     <th class="th-treatment_period">Срок последней обработки, в днях до сбора урожая (максимальная кратность обработки)</th>
                                 </tr>
                             </thead>
@@ -156,13 +159,22 @@
                                         <?php if(!empty($items[0]['limitations'])): ?>
                                             <td class="td-limitations"><?= htmlspecialchars($items[0]['limitations']) ?></td>
                                             <?php  else :  ?>
-
-
-                                          
-
-                                            <td style="white-space: pre-line; min-width:215px;" class="td-limitations" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['limitations']) ?></td>
+                                       
+                                           <td style="white-space: pre-line; min-width:215px;" class="td-limitations" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['limitations']) ?></td>
 
                                         <?php endif; ?>
+
+
+
+                                              <?php if(!empty($items[0]['waiting_period'])): ?>
+                                            <td class="td-waiting_period"><?= htmlspecialchars($items[0]['waiting_period']) ?></td>
+                                            <?php  else :  ?>
+                                       
+                                           <td style="white-space: pre-line;" class="td-waiting_period" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['waiting_period']) ?></td>
+
+                                        <?php endif; ?>
+
+
 
                                         <td class="td-treatment_period" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['treatment_period']) ?></td>
 
@@ -194,7 +206,6 @@
                                             <?php if (!empty($items[$i]['limitations'])): ?>
                                                 <td><?= htmlspecialchars($items[$i]['limitations']) ?></td>
                                             <?php endif; ?>
-
                                            
                                         </tr>
                                     <?php endfor; ?>

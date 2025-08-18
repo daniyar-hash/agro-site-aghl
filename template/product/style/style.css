@@ -525,11 +525,14 @@ h4, .h4 {
   border-collapse: collapse;
   color: var(--color-dark);
 }
+.description__table-wrapper th, .description__table-wrapper caption {
+  padding-block: 10px;
+}
 .description__table-wrapper caption {
   font-weight: 700;
-  padding-block: 5px;
   color: var(--color-light);
   background-color: var(--color-dark);
+  text-transform: uppercase;
 }
 
 .product__image-wrapper, .product__info {

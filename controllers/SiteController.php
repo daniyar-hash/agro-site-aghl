@@ -21,6 +21,11 @@ class SiteController
       //  $sliderProducts = Product::getRecommendedProducts();
 
         $categoryWithSubCategories = Category::getCategoryWithSubCategories();   
+        $seasonProducts = Product::getSeasonProducts();
+
+        // echo '<pre>';
+        // print_r($seasonProducts);
+        // echo '</pre>';
 
         // Подключаем вид
         require_once(ROOT . '/views/site/index.php');

@@ -49,11 +49,9 @@ class Router
 
         // Проверяем наличие такого запроса в массиве маршрутов (routes.php)
         foreach ($this->routes as $uriPattern => $path) {
-
             // Сравниваем $uriPattern и $uri
             if (preg_match("~$uriPattern~", $uri)) {
-              //  var_dump($uriPattern);
-               // var_dump($uri);
+
 
 
                 // Получаем внутренний путь из внешнего согласно правилу.
@@ -87,6 +85,8 @@ class Router
 
                 // Создать объект, вызвать метод (т.е. action)
                 $controllerObject = new $controllerName;
+
+
 
                 /* Вызываем необходимый метод ($actionName) у определенного 
                  * класса ($controllerObject) с заданными ($parameters) параметрами

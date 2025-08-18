@@ -5,7 +5,7 @@
   const thTableHarmfull = document.querySelector('.th-harmful_object');
   const thTableLimit = document.querySelector('.th-limitations');
   const thTableResultImpact = document.querySelector('.th-result_impact');
-
+  const thTableWaitingPeriod = document.querySelector('.th-waiting_period');
 
 
   const tdTablePeriod = document.querySelectorAll('.td-treatment_period');
@@ -14,6 +14,7 @@
   const tdTableHarmfull = document.querySelectorAll('.td-harmful_object');  
   const tdTableLimit = document.querySelectorAll('.td-limitations');
   const tdTableResultImpact = document.querySelectorAll('.td-result_impact');
+  const tdTableWaitingPeriod = document.querySelectorAll('.td-waiting_period');
 
 
 
@@ -23,6 +24,7 @@ const allEmpty3 = Array.from(tdTableFeatures).every(td => td.textContent.trim() 
 const allEmpty4 = Array.from(tdTableHarmfull).every(td => td.textContent.trim() === '');
 const allEmpty5 = Array.from(tdTableLimit).every(td => td.textContent.trim() === '');
 const allEmpty6 = Array.from(tdTableResultImpact).every(td => td.textContent.trim() === '');
+const allEmpty7 = Array.from(tdTableWaitingPeriod).every(td => td.textContent.trim() === '');
 
 
 
@@ -65,6 +67,13 @@ if(allEmpty5) {
 if(allEmpty6) {
     thTableResultImpact.style.display='none';
     tdTableResultImpact.forEach((td)=>{
+        td.style.display='none';
+  })
+}
+
+if(allEmpty7) {
+    thTableWaitingPeriod.style.display='none';
+    tdTableWaitingPeriod.forEach((td)=>{
         td.style.display='none';
   })
 }

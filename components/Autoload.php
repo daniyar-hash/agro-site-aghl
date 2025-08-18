@@ -10,13 +10,14 @@ function my_autoloader($class_name)
         '/models/',
         '/components/',
         '/controllers/',
+   
     );
 
     // Проходим по массиву папок
     foreach ($array_paths as $path) {
 
         // Формируем имя и путь к файлу с классом
-        $path = ROOT . $path . $class_name . '.php';
+        $path = ROOT . $path . $class_name . '.php'; // 
 
         // Если такой файл существует, подключаем его
         if (is_file($path)) {
@@ -27,8 +28,3 @@ function my_autoloader($class_name)
 spl_autoload_register('my_autoloader');
 
 
-// function my_autoloader($class) {
-//     include 'classes/' . $class . '.class.php';
-// }
-
-// spl_autoload_register('my_autoloader');

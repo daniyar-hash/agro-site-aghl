@@ -1,4 +1,6 @@
 <?php include ROOT . '/views/layouts/main-header.php'; ?>
+<?php include ROOT . '/views/site/search.php'; ?>
+
 
    <main class="content ">
         <section class="banner section">
@@ -70,76 +72,46 @@
                 </div>
             </div>
         </section>
-        <section class=" section products">
+        <section class=" section products-season">
             <div class="section__inner container">
                  <header class="section__header">
-                    <h2 class="section__title products__title">
+                    <h2 class="section__title products-season__title">
                         Сезонные товары
                     </h2>
-                    <div class="section__description products__description ">
-                        <p>
-                       
-                        </p>
-                    </div>
+                 
                  </header>
                  <div class="section__body">
-                    <ul class="products__images-list grid grid--6">
-                        <li class="products__images-item" tabindex="0">
-                            <a href="#"class="products__images-link" tabindex="0">
-                                <img src="../../template/main-page/img/products/1.jpg" alt="Products for auto" class="products__images-image" width="250" height="290" loading="lazy">
-                                <div class="products__images-hover">
-                                    <h3 class="products__images-title h4">Аккумуляторы</h3>
+                  
+                    <ul class="products-season__list grid grid--6">
+
+                      <?php foreach($seasonProducts as $product) :  ?>
+                        <li class="products-season__item" tabindex="0">
+                            <a href="/<?= $product['category_slug'] ?>/<?= $product['sub_category_slug'] ?>/<?= $product['slug'] ?>"class="products-season__link" tabindex="0">
+                              
+                            <img src="/template/category-page/img/category-products/1.jpg" alt="Product-season" class="products-season__image" width="250" height="200" loading="lazy">
+                          
+                            </a>
+                            <div class="products-season__info">
+                                <strong class="products-season__subcategory"><?= $product['sub_category_slug']  ?></strong>
+                                <h3 class="products-season__name"><?=  $product['name']  ?></h3>
+                                <small class="products-season__desc">description</small>
+                                <div class="products-season__wrapp-card">
+                                    <span class="products-season__weight">1 кг.</span>
+                                    <a href="#" class="products-season__send"><span></span></a>
+                                </div>
+                           
+                            </div>
+
+
+                                <!-- <div class="products__images-hover">
+                                    <h3 class="products__images-title h4"></h3>
                                     <button class="products__images-button button button-medium">Заказать онлайн</button>
                                     <button class="products__images-button button button-medium open-modal-video">Отзыв о товаре</button>
-                                </div>    
-                            </a>
+                                </div>     -->
+                   
                         </li>
-                        <li class="products__images-item">
-                            <a href="#" class="products__images-link">
-                                <img src="../../template/main-page/img/products/2.jpg" alt="Products for auto" class="products__images-image" width="250" height="290" loading="lazy">
-                                <div class="products__images-hover">
-                                    <h3 class="products__images-title h4">Автомасла</h3>
-                                    <button class="button products__images-button button-medium">Заказать онлайн</button>
-                                </div>  
-                            </a>
-                        </li>
-                        <li class="products__images-item">
-                            <a href="#" class="products__images-link">
-                                <img src="../../template/main-page/img/products/3.jpg" alt="Products for auto" class="products__images-image" width="250" height="290" loading="lazy">
-                                 <div class="products__images-hover">
-                                    <h3 class="products__images-title h4">Автокосметика</h3>
-                                    <button class="button products__images-button button-medium">Заказать онлайн</button>
-                                </div> 
-                            </a>
-                        </li>
-                        <li class="products__images-item">
-                            <a href="#" class="products__images-link">
-                                <img src="../../template/main-page/img/products/4.jpg" alt="Products for auto" class="products__images-image" width="250" height="290" loading="lazy">
-                                 <div class="products__images-hover">
-                                    <h3 class="products__images-title h4">Автоаксессуары</h3>
-                                    <button class="button products__images-button button-medium">Заказать онлайн</button>
-                                </div> 
-                            </a>
-                        </li>
-                        <li class="products__images-item">
-                            <a href="#" class="products__images-link">
-                                <img src="../../template/main-page/img/products/5.jpg" alt="Products for auto" class="products__images-image" width="250" height="290" loading="lazy">
-                                 <div class="products__images-hover">
-                                    <h3 class="products__images-title h4">Автохимия</h3>
-                                    <button class="button products__images-button button-medium">Заказать онлайн</button>
-                                </div> 
-                            </a>
-                        </li>
-                        <li class="products__images-item">
-                            <a href="#" class="products__images-link">
-                                <img src="../../template/main-page/img/products/6.jpg" alt="Products for auto" class="products__images-image" width="250" height="290" loading="lazy">
-                                <div class="products__images-hover">
-                                    <h3 class="products__images-title h4">Расходники</h3>
-                                    <button class="button products__images-button button-medium">Заказать онлайн</button>
-                                </div> 
-                            </a>
-                        </li>
-                      
+
+                      <?php  endforeach;  ?>
                     </ul>
                  </div>
             </div>
