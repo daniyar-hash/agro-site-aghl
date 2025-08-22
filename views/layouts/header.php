@@ -183,14 +183,24 @@
                     >
                     <span class="visually-hidden">Open header menu</span>
             </button>
-            <div class="header__icons-wrapper hidden-mobile">
-                <button type="submit" class="has-icon header__search-button">
-                    <span class="header__icon-search">
+            <div class="search hidden-mobile">
+                 <button type="submit" class="has-icon  search__button">
+                    <span class="search__icon">
                         <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M16 10C16 13.3137 13.3137 16 10 16C6.68629 16 4 13.3137 4 10C4 6.68629 6.68629 4 10 4C13.3137 4 16 6.68629 16 10ZM14.8941 18.7226C13.4474 19.536 11.7779 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 12.2954 19.2266 14.4101 17.9263 16.0979L25.4142 23.5858L22.5858 26.4142L14.8941 18.7226Z" fill="white"/>
                         </svg>
                     </span>
                 </button>
+
+                <div  class="search__wrapper-field hidden">
+                    <input type="text" id="searchInput" class="search__input" name="word" placeholder="Поиск..." required>
+                    <div class="search__results-wrapper">
+                        <ul class="search__results-list">
+                            <li class="search__results-item">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </header>

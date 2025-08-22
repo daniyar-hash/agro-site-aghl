@@ -7,7 +7,6 @@
   const thTableResultImpact = document.querySelector('.th-result_impact');
   const thTableWaitingPeriod = document.querySelector('.th-waiting_period');
 
-
   const tdTablePeriod = document.querySelectorAll('.td-treatment_period');
   const tdTableSolution = document.querySelectorAll('.td-consumption_solution');
   const tdTableFeatures = document.querySelectorAll('.td-application_features');
@@ -18,13 +17,15 @@
 
 
 
-const allEmpty1 = Array.from(tdTablePeriod).every(td => td.textContent.trim() === '');
-const allEmpty2 = Array.from(tdTableSolution).every(td => td.textContent.trim() === '');
-const allEmpty3 = Array.from(tdTableFeatures).every(td => td.textContent.trim() === '');
-const allEmpty4 = Array.from(tdTableHarmfull).every(td => td.textContent.trim() === '');
-const allEmpty5 = Array.from(tdTableLimit).every(td => td.textContent.trim() === '');
-const allEmpty6 = Array.from(tdTableResultImpact).every(td => td.textContent.trim() === '');
-const allEmpty7 = Array.from(tdTableWaitingPeriod).every(td => td.textContent.trim() === '');
+  const allEmpty1 = Array.from(tdTablePeriod).every(td => td.textContent.trim() === '');
+  const allEmpty2 = Array.from(tdTableSolution).every(td => td.textContent.trim() === '');
+  const allEmpty3 = Array.from(tdTableFeatures).every(td => td.textContent.trim() === '');
+  const allEmpty4 = Array.from(tdTableHarmfull).every(td => td.textContent.trim() === '');
+  const allEmpty5 = Array.from(tdTableLimit).every(td => td.textContent.trim() === '');
+  const allEmpty6 = Array.from(tdTableResultImpact).every(td => td.textContent.trim() === '');
+  const allEmpty7 = Array.from(tdTableWaitingPeriod).every(td => td.textContent.trim() === '');
+
+
 
 
 
@@ -201,9 +202,6 @@ if(allEmpty7) {
   }
 
 
-
-
-
    zoomer("product-image", 4);
 
 
@@ -216,6 +214,15 @@ if(allEmpty7) {
  
   // Проверка при скролле
   window.addEventListener('scroll', updateHeaderClass);
+
+
+
+
+
+
+
+
+
 
 
  

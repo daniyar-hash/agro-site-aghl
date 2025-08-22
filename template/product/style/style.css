@@ -534,6 +534,27 @@ h4, .h4 {
   background-color: var(--color-dark);
   text-transform: uppercase;
 }
+.description__download {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.description__download-link {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  border-bottom: 2px dashed var(--color-dark);
+  width: 50%;
+  padding-block: 5px;
+}
+.description__download-icon {
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  width: 20px;
+  aspect-ratio: 1;
+}
 
 .product__image-wrapper, .product__info {
   background-color: var(--color-light);
@@ -559,6 +580,7 @@ h4, .h4 {
   row-gap: 20px;
   padding-left: 20px;
   padding-top: 50px;
+  padding-bottom: 20px;
 }
 .product__info-price {
   font-size: 24px;

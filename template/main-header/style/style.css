@@ -669,7 +669,7 @@ h4, .h4 {
   height: 40px;
   border: 2px solid var(--color-green-alt);
   outline: none;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 .search__results-wrapper {
   background-color: var(--color-light);
@@ -679,13 +679,15 @@ h4, .h4 {
 .search__results-list {
   color: var(--color-dark);
 }
-.search__results-item {
+.search__results-link {
   display: flex;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  justify-content: space-between;
   align-items: center;
+  padding-inline: 20px;
+  border-bottom: 1px solid var(--color-gray);
+  height: 40px;
 }
-.search__results-item span {
+.search__results-link span {
   font-size: 14px;
   background-color: var(--color-gray);
 }/*# sourceMappingURL=style.css.map */

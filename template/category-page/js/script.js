@@ -7,6 +7,8 @@
   const categoryAsideLink     = document.querySelectorAll('.categories-aside__link');
   const categoryPageTitle = document.querySelector('.category-page__title');
   const categoryAsideSubLink = document.querySelectorAll('.categories-aside__sublink');
+  const headerSearchBtn = document.querySelector('.search__button');
+  const headerSearchWrapper = document.querySelector('.search__wrapper-field');
 
 
   categoryAsideSubLink.forEach((element) =>{
@@ -170,5 +172,30 @@ function deleteWrapInnerElement(wrapperClass) {
   window.addEventListener('scroll', updateHeaderClass);
 
 
- 
 
+    headerSearchBtn.addEventListener('click', (e)=>{
+
+
+    headerSearchWrapper.classList.toggle('hidden');
+
+  })
+
+ 
+document.getElementById("searchInput").addEventListener("keyup", function () {
+    let query = this.value;
+
+    console.log(query)
+
+
+
+    fetch("/views/site/search.php?word=" + encodeURIComponent(query))
+        .then(response => response.text())
+        .then(data => {
+
+          console.log(data)
+            document.querySelector(".search__results-list").innerHTML = data;
+        });
+
+
+        
+});

@@ -132,6 +132,8 @@ document.getElementById("searchInput").addEventListener("keyup", function () {
 
     console.log(query)
 
+
+
     fetch("/views/site/search.php?word=" + encodeURIComponent(query))
         .then(response => response.text())
         .then(data => {
@@ -139,4 +141,7 @@ document.getElementById("searchInput").addEventListener("keyup", function () {
           console.log(data)
             document.querySelector(".search__results-list").innerHTML = data;
         });
+
+
+        
 });

@@ -46,4 +46,27 @@
             text-transform: uppercase;
         }
     }
+
+    &__download{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        &-link{
+            display: flex;
+            justify-content: space-between;
+            column-gap: 10px;
+            border-bottom: 2px dashed var(--color-dark);
+            width: 50%;
+            padding-block: 5px;
+        }
+
+        &-icon{
+            @include flex-center(true);
+            @include square(20px);
+        }
+
+        
+
+    }
 }

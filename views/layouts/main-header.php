@@ -200,7 +200,6 @@
                             <div class="search__results-wrapper">
                                 <ul class="search__results-list">
                                     <li class="search__results-item">
-                                        <a href="" class="search__results-link"></a>
                                     </li>
                                 </ul>
                             </div>
