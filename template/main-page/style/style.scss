@@ -1,4 +1,4 @@
-@import "normalize", "media", "mixins", "variables", "fonts", "globals";
+@import "normalize", "media", "mixins", "variables",  "globals";
 
 @import"blocks/burger";
 @import"blocks/cross-button";
@@ -13,6 +13,7 @@
 @import"blocks/reviews";
 @import"blocks/category";
 
+@import"../../styles/fonts/fonts";
 
 
 

@@ -239,20 +239,6 @@ svg * {
   --transition-duration: 0.2s;
 }
 
-@font-face {
-  font-family: "Geometria", sans-serif;
-  src: url("../fonts/Geometria-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geometria", sans-serif;
-  src: url("../fonts/Geometria-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 body {
   font-size: clamp(12px, 1.4634146341vw, 24px);
   font-family: var(--font-family-base);

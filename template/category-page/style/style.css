@@ -163,27 +163,13 @@ svg * {
   --container-padding-x:20px;
   --section-base-padding-y:88px;
   --section-large-padding-y:98px;
-  --font-family-base:"Geometria",sans-serif;
+  --font-family-base:"Gilroy",sans-serif;
   --button-height: 52px;
   --button-large-height:56px;
   --button-small-height: 40px;
   --transition-duration: 0.2s;
 }
 
-@font-face {
-  font-family: "Geometria", sans-serif;
-  src: url("../fonts/Geometria-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geometria", sans-serif;
-  src: url("../fonts/Geometria-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 body {
   font-size: clamp(12px, 1.6666666667vw, 24px);
   font-family: var(--font-family-base);
@@ -915,4 +901,47 @@ h4, .h4 {
     color: var(--color-light);
     scale: 1.1;
   }
+}
+
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  src: url("fonts/Gilroy-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  src: url("fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  src: url("fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  src: url("fonts/Gilroy-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  src: url("fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy", sans-serif;
+  src: url("fonts/Gilroy-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }/*# sourceMappingURL=style.css.map */

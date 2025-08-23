@@ -1,4 +1,4 @@
-@import "normalize", "media", "mixins", "variables", "fonts", "globals";
+@import "normalize", "media", "mixins", "variables",  "globals";
 
 @import"blocks/pagination";
 @import"blocks/section";
@@ -10,6 +10,9 @@
 @import"blocks/category-page";
 @import"blocks/category-products";
 @import"blocks/sort-products";
+
+@import"../../styles/fonts/fonts";
+
 
 
 
