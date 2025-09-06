@@ -158,4 +158,3 @@
 
 
 
-<?php echo "category page";?>

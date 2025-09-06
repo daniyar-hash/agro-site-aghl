@@ -42,6 +42,15 @@ class Pagination
      */
     public $limit;
 
+
+    private $amount;
+
+    /**
+     * 
+     * @var количество страниц
+     * 
+     */
+
     /**
      * Запуск необходимых данных для навигации
      * @param type $total <p>Общее количество записей</p>

@@ -1,9 +1,6 @@
+
 .banner{
    
-    // background: url("../img/banner-2.jpeg") center center/100% 100% no-repeat ;
-
-    // --section-base-padding-y:100px;
-    // --section-large-padding-y:58px;
 
           --section-base-padding-y:0;
          --section-large-padding-y:0;
@@ -12,7 +9,7 @@
 
 
     &__body{
-      position: relative;
+        position: relative;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -58,7 +55,7 @@
 
         &__list{
             position: relative;
-            height: 400px;
+            height: 100vh;
         }
 
        &__list-item{
@@ -66,16 +63,17 @@
         top: 0;
         left: 0;
         inset: 0;
-        width: 100%;
-        height: 400px;
+        width: 100vw;
+        margin-left: calc(50% - #{50vw});
+        height: 100%;
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;
         display: block;
         padding-top: 150px;
-        text-transform: uppercase;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
+
 
         &.active{
             opacity: 1;
@@ -93,8 +91,8 @@
 
 
         &.banner--1{
-            background: url('../img/banner-5.jpg') center/cover no-repeat;
-            background-position: 100% 30%;
+            background: url('../img/banner-7.png') center/cover no-repeat;
+            background-position: 100% 100%;
 
          
         }
@@ -159,6 +157,18 @@
     }
 
     &__button{
+
+           
+        position: absolute;
+        left: 50%;
+        bottom: 40%;
+        transform:translateX(-50%);
+        border-radius: 13px;
+        font-size: 18px;
+        font-weight: 500;
+        padding-inline:10px;
+
+
 
         @include tablet{
             display: inline-block;

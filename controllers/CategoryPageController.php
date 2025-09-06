@@ -45,17 +45,14 @@ class CategoryPageController
  public function actionSubCategory($slug,  $page=1)
     {
 
-   
-        
+          
         $subCategoryBySlug = Category::getSubCategoryBySlug($slug);//action title
-
-        // echo '<pre>';
-        // echo print_r();
-        // echo '</pre>';
 
         $categoryFromSubCategory = Category::getCategoryFromSubCategory($slug);  //get category and subcategory for breadcrumbs;
         $categoryWithSubCategories = Category::getCategoryWithSubCategories();  //for left menu
-        $subcategiesByCategory = Category::getSubCategoriesByCategory($slug);//for left menu
+        
+        
+
 
         $subCategoryId = $subCategoryBySlug['id'];
         $categoryProducts = Product::getProductsListBySubCategory($subCategoryId, $page);
@@ -68,14 +65,8 @@ class CategoryPageController
        // Общее количетсво товаров (необходимо для постраничной навигации)
         $total = Product::getTotalProductsInSubCategory($subCategoryId);
 
-    
-
         $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page=');
-
-        
-
-
-    
+  
 
         // Подключаем вид
         require_once(ROOT . '/views/category-page/subcategory.php');

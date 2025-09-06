@@ -158,5 +158,3 @@
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>
 
-
-<?php echo "subcategory-page";?>

@@ -1,0 +1,40 @@
+.features{
+
+    max-width: 594px;
+    position: absolute;
+
+    left: 50%;
+    transform:translateX(-50%);
+    bottom: 20%;
+
+
+    &__list{
+        display: flex;
+        column-gap: 40px;
+        font-size: 25px;
+
+
+        span{
+            font-size: 50px;
+            font-weight: 700;
+        }
+ 
+
+    }
+
+
+    &__item{
+            
+        display: flex;
+        max-width: 177px;
+        column-gap: 12px;
+        line-height: 1;
+        align-items: end;
+}
+
+
+ 
+
+
+    
+}

@@ -6,6 +6,11 @@
     position: relative;
     font-size: 18px;
 
+    @include hover{
+    background-color: var(--color-accent);
+    opacity: 1;
+}
+
 
 
 

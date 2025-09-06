@@ -19,7 +19,6 @@
     max-width: calc(var(--container-width) + var(--container-padding-x)*2);
     margin-inline: auto;
     padding-inline: var(--container-padding-x);
-    // border: 2px solid green;
   
 
 }
@@ -47,13 +46,12 @@
 }
 
 .button{
-        display: inline-block;
-        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: var(--border);
-        font-weight: 700;
-        font-size: clamp(12px, 0.85vw,14px);
-        padding-block: 14px;
-        padding-inline: 20px;
+        font-weight: 400;
+        padding: 14px;
         text-align: center;
         cursor: pointer;
         
@@ -65,8 +63,9 @@
 
 
 .button-medium{
-    width: 216px;
-    height: 52px;
+    width: 185px;
+    height: 35px;
+    
 }
 .button-large{
     width: 236px;

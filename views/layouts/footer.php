@@ -135,22 +135,12 @@
                             </li>
                             <li class="footer-contacts__item">
                                 <span class="visually-hidden">Instagramm</span>
-                                <a href="https://instagram.com/d.omorkulov/" class="footer-contacts__link instagramm">
-
-                                    <svg class="preserve-fill" xmlns="http://www.w3.org/2000/svg"  viewBox="12 0 35 48" width="30" height="30"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/>
-                                    <stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/>
-                                    <stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/>
-                                    <stop offset=".841" stop-color="#c837ab"/></radialGradient>
-                                    <path  fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/>
-                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/>
-                                        <stop offset=".999" stop-color="#4168c9" stop-opacity="0"/>
-                                    </radialGradient>
-                                        <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/>
-                                        <path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/>
-                                        <path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/>
+                                <a href="https://instagram.com/aghl_kz/" class="footer-contacts__link instagramm" target="_blank">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0113 2.75662C10.546 2.75662 10.1676 3.13534 10.1676 3.60099C10.1676 4.06664 10.546 4.44536 11.0113 4.44536C11.4765 4.44536 11.855 4.06664 11.855 3.60099C11.855 3.13534 11.4765 2.75662 11.0113 2.75662Z" fill="white"/>
+                                    <path d="M7.25809 3.84002C5.30397 3.84002 3.71277 5.43253 3.71277 7.38824C3.71277 9.34395 5.30397 10.9365 7.25809 10.9365C9.2122 10.9365 10.8034 9.34395 10.8034 7.38824C10.8034 5.43253 9.2122 3.84002 7.25809 3.84002ZM7.25809 9.66059C6.00497 9.66059 4.98759 8.64238 4.98759 7.38824C4.98759 6.1341 6.00807 5.11589 7.25809 5.11589C8.5081 5.11589 9.52858 6.13721 9.52858 7.38824C9.52858 8.63928 8.5112 9.66059 7.25809 9.66059Z" fill="white"/>
+                                    <path d="M10.0745 14.4102H4.32386C1.9386 14.4102 0 12.4669 0 10.0828V4.3274C0 1.94019 1.9417 0 4.32386 0H10.0714C12.4567 0 14.3953 1.94019 14.3953 4.3274V10.0797C14.3953 12.4669 12.4536 14.4071 10.0714 14.4071L10.0745 14.4102ZM4.32386 1.35348C2.68613 1.35348 1.35237 2.68833 1.35237 4.3274V10.0797C1.35237 11.7188 2.68613 13.0536 4.32386 13.0536H10.0714C11.7092 13.0536 13.0429 11.7188 13.0429 10.0797V4.3274C13.0429 2.68833 11.7092 1.35348 10.0714 1.35348H4.32386Z" fill="white"/>
                                     </svg>
-                                    adress._aghl.insta
                                 </a>
                             </li>
                              <li class="footer-contacts__item">

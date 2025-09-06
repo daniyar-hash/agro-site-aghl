@@ -149,7 +149,7 @@
             <a href="tel:+77055774243" class="header__call-link button hidden-mobile ">
             Заказать звонок
             </a>
-            <a href="https://instagram.com/d.omorkulov/" class="header__social-link instagram">
+            <a href="https://instagram.com/aghl_kz/" class="header__social-link instagram" target="_blank">
                 <svg class="preserve-fill" xmlns="http://www.w3.org/2000/svg"  viewBox="12 0 35 48" width="50" height="50"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/>
                 <stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/>

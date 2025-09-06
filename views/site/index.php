@@ -6,7 +6,7 @@
         <section class="banner section">
             <div class="banner__inner ">
                 <h1 class="visually-hidden">Агрохимикаты</h1>
-                <div class="banner__body">
+                <div class="banner__body container">
                     <input type="radio" id="btn1" name="pagination__input"  value="number-1" checked>
                     <input type="radio" id="btn2" name="pagination__input"  value="number-2">
                     <input type="radio" id="btn3" name="pagination__input"  value="number-3">
@@ -15,31 +15,34 @@
 
                     <ul class="banner__list slider">
                         <li class="banner__list-item banner--1 slider active">
-                            <div class="container">
+                       
                                 <h2 class="slider__title visually-hidden">First banner</h2>
-                                <a class="slider__button button button-medium" href="/agro-site-catalog-page" >ПЕРЕЙТИ В КАТАЛОГ</a>
-                            </div>
+                      
                         </li>
                         <li class="banner__list-item banner--2 slider">
-                            <div class="container">
+                            
                                 <h2 class="slider__title visually-hidden">Second banner</h2>
-                                <a class="slider__button button button-medium" href="/agro-site-catalog-page" >ПЕРЕЙТИ В КАТАЛОГ</a>
-                            </div>
+                            
                         </li>
                         <li class="banner__list-item banner--3 slider">
-                            <div class="container">
-                                <h2 class="slider__title visually-hidden">Third banner</h2>
-                                <a class="slider__button button button-medium" href="/agro-site-catalog-page" >ПЕРЕЙТИ В КАТАЛОГ</a>
-                            </div>
+                             <h2 class="slider__title visually-hidden">Third banner</h2>
                         </li>
-                         <li class="banner__list-item banner--4 slider">
-                            <div class="container">
-                                <h2 class="slider__title visually-hidden">Foufth banner</h2>
-                                <a class="slider__button button button-medium" href="/agro-site-catalog-page" >ПЕРЕЙТИ В КАТАЛОГ</a>
-                            </div>
+                        <li class="banner__list-item banner--4 slider">
+                            <h2 class="slider__title visually-hidden">Foufth banner</h2>
                         </li>
                     </ul>
 
+                     <a class="banner__button button button-medium" href="/agro-site-catalog-page" >Перейти в каталог</a>
+
+
+                     <div class="features">
+                        <ul class="features__list">
+                            <li class="features__item"><span>14</span>лет <br>на рынке</li>
+                            <li class="features__item"><span>7</span>городов</li>
+                            <li class="features__item"><span>50</span>и более <br>позиций</li>
+
+                        </ul>
+                     </div>
                     <div class="banner__pagination pagination">
                         <ul class="pagination__list">
                             <li class="pagination__item ">

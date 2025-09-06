@@ -135,7 +135,7 @@
                             </li>
                             <li class="footer-contacts__item">
                                 <span class="visually-hidden">Instagramm</span>
-                                <a href="https://instagram.com/d.omorkulov/" class="footer-contacts__link instagramm">
+                                <a href="https://instagram.com/aghl_kz/" class="footer-contacts__link instagramm" target="_blank">
 
                                     <svg class="preserve-fill" xmlns="http://www.w3.org/2000/svg"  viewBox="12 0 35 48" width="30" height="30"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
                                     <stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/>

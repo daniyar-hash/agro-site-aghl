@@ -19,16 +19,16 @@
 
 
 
-  const bannerList = document.querySelector(".banner__list");
-  const bannerSlides = document.querySelectorAll(".banner__list-item");
+  // const bannerList = document.querySelector(".banner__list");
+  // const bannerSlides = document.querySelectorAll(".banner__list-item");
   
 
-  function showSlide(index){
-      bannerSlides.forEach((item, i)=>{
-        item.classList.toggle("active", i === index);
+  // function showSlide(index){
+  //     bannerSlides.forEach((item, i)=>{
+  //       item.classList.toggle("active", i === index);
 
-      });
-  }
+  //     });
+  // }
 
 
 
@@ -44,7 +44,7 @@
   currentSlide = index; // 1
 
   
-  showSlide(currentSlide);
+  //showSlide(currentSlide);
   document.getElementById(`btn${index + 1}`).checked = true; // 1
 }
 
@@ -57,7 +57,7 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
     console.log(i)
     index = i;
     currentSlide = i;
-    showSlide(currentSlide);
+  //  showSlide(currentSlide);
     document.getElementById(`btn${i + 1}`).checked = true;
     interval = setInterval(changeSlide, 3000);
   });
@@ -89,10 +89,13 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
 
   })
 
+
+    const hiddenWordsLogo = document.querySelectorAll('.header__logo svg path');
+
   function updateHeaderClass() {
 
 
-    if (window.scrollY > 100) {
+    if (window.scrollY > 50) {
 
       header.classList.remove('transparent');
       header.classList.add('solid');
@@ -100,6 +103,16 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
       header__container.classList.remove('container');
       header__inner.classList.add('container');
       header__logo.classList.remove('logo-main');
+    
+
+        for( let i=3; i < hiddenWordsLogo.length; i++ ){
+          
+          hiddenWordsLogo[i].classList.add('hide');
+
+
+        }
+
+
     } else {
       header.classList.remove('solid');
       header.classList.add('transparent');
@@ -108,12 +121,26 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
       header__container.classList.add('container');
       header__logo.classList.add('logo-main');
 
+      for( let i=3; i < hiddenWordsLogo.length; i++ ){
+        
+      hiddenWordsLogo[i].classList.remove('hide');
+
+      }
+
+
       
     }
   }
 
 
 
+// // Выполнить после загрузки DOM
+// document.addEventListener('DOMContentLoaded', function() {
+//     const hiddenElements = document.querySelectorAll('svg .hide');
+//     hiddenElements.forEach(element => {
+//         element.classList.remove('hide');
+//     });
+// });
 
 
 
@@ -125,7 +152,7 @@ document.querySelectorAll('.pagination__label').forEach((label, i) => {
   window.addEventListener('scroll', updateHeaderClass);
 
 
-
+const baseUrl = window.location.origin;
 
 document.getElementById("searchInput").addEventListener("keyup", function () {
     let query = this.value;
@@ -134,7 +161,7 @@ document.getElementById("searchInput").addEventListener("keyup", function () {
 
 
 
-    fetch("/views/site/search.php?word=" + encodeURIComponent(query))
+    fetch(`${baseUrl}/views/site/search.php?word=${encodeURIComponent(query)}`)
         .then(response => response.text())
         .then(data => {
 

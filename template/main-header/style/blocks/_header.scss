@@ -1,6 +1,6 @@
 .header{
 
-    background-color:var(--color-dark);
+  
     position: fixed;
     top: 0;
     left: 50%;
@@ -16,28 +16,33 @@
 
 
     &.transparent{
-            opacity: 70%;
+            background-color: transparent;
     }
 
     &.solid{
        background-color: #212f25;
+     
+
+
+       .header__social-link{
+        padding-block: 15px;
+       }
     }
 
     &__inner{
      
-      //  padding-top: 24px;
-       // min-height: 100px;
-        text-transform: uppercase;
+
+     
         display: flex;
 
         &.flex-column{
             flex-direction: column;
             align-items: center;
-            padding-top: 0;
+            row-gap:83px;
 
 
              .header__navigation-wrapper{
-                background-color: var(--color-dark);
+      
                 width: 100%;
                 display: block;
              }
@@ -45,7 +50,8 @@
         
             .header__container{
                 display: flex;
-                height: 70px;
+                padding-top: 50px;
+                // height: 70px;
                // column-gap: 15px;
             }
 
@@ -97,28 +103,33 @@
 
 
     &__logo{
-        width: 132px;
-        height: 70px;
-        margin-right: auto;
+        width: 50px;
+        height: auto;
         display: flex;
+        margin-right: 40px;
         flex-shrink: 0;
 
+        .hide{
+            display: none;
+        }
+
         &.logo-main{
-            width: 200px;
-            height: 150px;
+
+            width: 196px;
+            height: 118px;
             margin-right: unset;
             order: 1;
 
 
-                svg *[fill]{
+                // svg *[fill]{
           
-                  fill: var(--color-green-light);
-                }
+                //   fill: var(--color-green-light);
+                // }
 
-                svg path.red-line{
-                    fill: var(--color-green-light);
+                // svg path.red-line{
+                //     fill: var(--color-green-light);
        
-                }
+                // }
 
 
 
@@ -144,7 +155,7 @@
 
         &-list{
                 display: flex;
-                column-gap: 50px;
+                column-gap: 40px;
                 justify-content: space-between;
                 height: 100%;
 
@@ -171,9 +182,7 @@
                 display: flex;
                 align-items: center;
                 padding-inline:8px;
-                // padding-top: 8px;
-                // padding-bottom: 26px;
-                line-height: 1.4;
+                 line-height: 1.4;
                 font-size: 16px;
             
 
@@ -293,14 +302,24 @@
 
     &__call-link{
      
-        font-size: 12px;
-        margin-right: 23px;
-        padding-block: 8px;
+
+        margin-right: 10px;
+        padding-block: 5px;
         align-self: center;
         margin-left: auto;
         flex-shrink: 0;
-        width: 168px;
-        height: 40px;
+        width: 135px;
+        padding-inline: 10px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 14px;
+
+
+        @include hover{
+            background-color: var(--color-accent);
+            color:var(--color-dark);
+            opacity: 1;
+        }
         
 
           @include tablet{
@@ -319,12 +338,15 @@
 
     &__social-link{
         @include flex-center(true);
-        margin-right: 10px;
+        width: 40px;
+        padding-inline: 10px;
+       // margin-right: 20px;
 
-
-        @include hover{
-            opacity: 0.8; 
+           @include hover{
+            background-color: var(--color-accent);
+            opacity: 1;
         }
+
 
    
         svg path{

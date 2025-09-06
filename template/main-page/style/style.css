@@ -159,8 +159,8 @@ svg * {
   --color-green:#5d8c56;
   --color-green-alt:#159446;
   --color-green-light:#00ff0c;
-  --border: 4px solid #159446;
-  --container-width:1128px;
+  --border: 1px solid var(--color-light);
+  --container-width:1088px;
   --container-padding-x:20px;
   --section-base-padding-y:15px;
   --section-large-padding-y:15px;
@@ -174,7 +174,7 @@ svg * {
 body {
   font-size: clamp(12px, 1.4634146341vw, 24px);
   font-family: var(--font-family-base);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-light);
   background-color: var(--color-gray);
 }
@@ -332,21 +332,21 @@ h4, .h4 {
 }
 .banner__list {
   position: relative;
-  height: 400px;
+  height: 100vh;
 }
 .banner__list-item {
   position: absolute;
   top: 0;
   left: 0;
   inset: 0;
-  width: 100%;
-  height: 400px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 100%;
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   display: block;
   padding-top: 150px;
-  text-transform: uppercase;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
@@ -359,8 +359,8 @@ h4, .h4 {
   inset: 0;
 }
 .banner__list-item.banner--1 {
-  background: url("../img/banner-5.jpg") center/cover no-repeat;
-  background-position: 100% 30%;
+  background: url("../img/banner-7.png") center/cover no-repeat;
+  background-position: 100% 100%;
 }
 .banner__list-item.banner--2 {
   background: url("../img/banner-6.jpg") center/cover no-repeat;
@@ -398,6 +398,16 @@ h4, .h4 {
     margin-bottom: 40px;
   }
 }
+.banner__button {
+  position: absolute;
+  left: 50%;
+  bottom: 40%;
+  transform: translateX(-50%);
+  border-radius: 13px;
+  font-size: 18px;
+  font-weight: 500;
+  padding-inline: 10px;
+}
 @media (max-width: 1023px) {
   .banner__button {
     display: inline-block;
@@ -408,11 +418,6 @@ h4, .h4 {
   .banner__button {
     align-self: center;
   }
-}
-
-.slider__button {
-  z-index: 2;
-  position: relative;
 }
 
 .pagination {
@@ -518,12 +523,6 @@ h4, .h4 {
   }
 }
 
-.logo svg *[fill] {
-  fill: var(--color-green-alt);
-}
-.logo svg path.red-line {
-  fill: var(--color-green-alt);
-}
 @media (hover: hover) {
   .logo:hover {
     opacity: 0.5;
@@ -919,6 +918,32 @@ h4, .h4 {
     color: var(--color-dark);
     background-color: var(--color-light);
   }
+}
+
+.features {
+  max-width: 594px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20%;
+}
+.features__list {
+  display: flex;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  font-size: 25px;
+}
+.features__list span {
+  font-size: 50px;
+  font-weight: 700;
+}
+.features__item {
+  display: flex;
+  max-width: 177px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  line-height: 1;
+  align-items: end;
 }
 
 @font-face {

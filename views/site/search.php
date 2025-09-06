@@ -1,9 +1,21 @@
     <?php
 
 
-    require_once 'C:\OSPanel\domains\agro-site-aghl\config\paths.php';
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-    require_once  'C:\OSPanel\domains\agro-site-aghl\components\Autoload.php';
+
+
+    require_once __DIR__ ."/../../config/paths.php";
+    require_once __DIR__ ."/../../components/Autoload.php";
+
+
+// echo __DIR__ . "/../../components/Autoload.php";  
+// echo realpath(__DIR__ . "/../../components/Autoload.php");
+
+
+
 
 
     $db = Db::getConnection();
