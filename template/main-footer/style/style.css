@@ -164,7 +164,7 @@ svg * {
   --container-padding-x:20px;
   --section-base-padding-y:15px;
   --section-large-padding-y:15px;
-  --font-family-base:"Geometria",sans-serif;
+  --font-family-base:"Gilroy",sans-serif;
   --button-height: 52px;
   --button-large-height:56px;
   --button-small-height: 40px;
@@ -227,6 +227,7 @@ h4, .h4 {
   margin: 0;
   border: none;
   padding: 35px 5px;
+  background-color: var(--color-green);
 }
 .mobile-overlay:modal {
   max-width: 100%;
@@ -235,6 +236,8 @@ h4, .h4 {
 .mobile-overlay__button-close-wrapper {
   display: flex;
   justify-content: end;
+  padding-top: 27px;
+  padding-right: 14px;
 }
 .mobile-overlay__list {
   display: flex;
@@ -243,7 +246,6 @@ h4, .h4 {
   flex-direction: column;
   row-gap: 30px;
   min-height: 80vh;
-  background-color: aqua;
   font-size: 24px;
 }
 

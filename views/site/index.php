@@ -21,7 +21,7 @@
                         </li>
                         <li class="banner__list-item banner--2 slider">
                             
-                                <h2 class="slider__title visually-hidden">Second banner</h2>
+                            <h2 class="slider__title visually-hidden">Second banner</h2>
                             
                         </li>
                         <li class="banner__list-item banner--3 slider">
@@ -32,14 +32,13 @@
                         </li>
                     </ul>
 
-                     <a class="banner__button button button-medium" href="/agro-site-catalog-page" >Перейти в каталог</a>
 
 
                      <div class="features">
                         <ul class="features__list">
-                            <li class="features__item"><span>14</span>лет <br>на рынке</li>
-                            <li class="features__item"><span>7</span>городов</li>
-                            <li class="features__item"><span>50</span>и более <br>позиций</li>
+                            <li class="features__item"><span class="features__number">14</span><span class="features__title">лет <br>на рынке</span></li>
+                            <li class="features__item"><span  class="features__number">9</span><span class="features__title"><br>городов</span></li>
+                            <li class="features__item"><span  class="features__number">50</span><span class="features__title">и более <br>позиций</span></li>
 
                         </ul>
                      </div>
@@ -78,48 +77,38 @@
         <section class=" section products-season">
             <div class="section__inner container">
                  <header class="section__header">
-                    <h2 class="section__title products-season__title">
+                    <h2 class="section__title products-season__title h1">
                         Сезонные товары
                     </h2>
-                 
                  </header>
-                 <div class="section__body">
-                  
+                 <div class="section__body background--green ">
                     <ul class="products-season__list grid grid--6">
-
                       <?php foreach($seasonProducts as $product) :  ?>
                         <li class="products-season__item" tabindex="0">
                             <a href="/<?= $product['category_slug'] ?>/<?= $product['sub_category_slug'] ?>/<?= $product['slug'] ?>"class="products-season__link" tabindex="0">
-                              
-                            <img src="/template/category-page/img/category-products/1.jpg" alt="Product-season" class="products-season__image" width="250" height="200" loading="lazy">
-                          
+                            <img src="/template/category-page/img/category-products/1.jpg" alt="Product-season" class="products-season__image" width="172" height="165" loading="lazy">
                             </a>
                             <div class="products-season__info">
-                                <strong class="products-season__subcategory"><?= $product['sub_category_slug']  ?></strong>
-                                <h3 class="products-season__name"><?=  $product['name']  ?></h3>
-                                <small class="products-season__desc">description</small>
+                                <strong class="products-season__subcategory <?=  $product['sub_category_slug']; ?>"><?=  $product['sub_category_name'];  ?></strong>
+                                <h3 class="products-season__name"><?=  $product['name'];  ?></h3>
+                                <small class="products-season__desc">Для борьбы с широким спектром злаковых и двудольных сорняков.</small>
                                 <div class="products-season__wrapp-card">
                                     <span class="products-season__weight">1 кг.</span>
-                                    <a href="#" class="products-season__send"><span></span></a>
+                                    <a href="https://wa.me/+77055774243?text=Здравствуйте%2C+у+меня+есть+вопрос"  class="products-season__send">
+                                        <svg width="15" height="15" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.19938 1.0102L0.642456 6.56116L1.3098 7.22779L6.86673 1.67683L6.19938 1.0102Z" fill="#606060"/>
+                                        <path d="M6.99146 5.71067L6.15622 5.68121L6.30663 1.57077L2.19179 1.72102L2.16229 0.886682L7.17373 0.7052L6.99146 5.71067Z" fill="#606060"/>
+                                        </svg>
+                                    </a>
                                 </div>
-                           
                             </div>
-
-
-                                <!-- <div class="products__images-hover">
-                                    <h3 class="products__images-title h4"></h3>
-                                    <button class="products__images-button button button-medium">Заказать онлайн</button>
-                                    <button class="products__images-button button button-medium open-modal-video">Отзыв о товаре</button>
-                                </div>     -->
-                   
                         </li>
-
                       <?php  endforeach;  ?>
                     </ul>
                  </div>
             </div>
         </section>
-        <section class=" section">
+        <section class="section">
             <div class="section__inner container">
                  <header class="section__header">
                     <h2 class="section__title products__title">

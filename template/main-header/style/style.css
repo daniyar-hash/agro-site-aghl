@@ -223,7 +223,7 @@ svg * {
   --color-gray:#EDEDED;
   --color-dark-gray:#1D1D1D;
   --color-red-alt:#C53720;
-  --color-green:#5d8c56;
+  --color-green:#23391f;
   --color-green-alt:#159446;
   --color-green-light:#00ff0c;
   --color-accent:#BDD84A;
@@ -292,8 +292,6 @@ h4, .h4 {
 .header {
   position: fixed;
   top: 0;
-  left: 50%;
-  translate: -50%;
   width: 100%;
   z-index: 1;
 }
@@ -302,9 +300,21 @@ h4, .h4 {
 }
 .header.transparent {
   background-color: transparent;
+  padding-top: 67px;
+}
+@media (max-width: 1023px) {
+  .header.transparent {
+    padding-top: 30px;
+  }
 }
 .header.solid {
   background-color: #212f25;
+  padding-top: 20px;
+}
+@media (max-width: 767px) {
+  .header.solid {
+    padding-top: 40px;
+  }
 }
 .header.solid .header__social-link {
   padding-block: 15px;
@@ -323,7 +333,11 @@ h4, .h4 {
 }
 .header__inner.flex-column .header__container {
   display: flex;
-  padding-top: 50px;
+}
+@media (max-width: 767px) {
+  .header__inner.flex-column .header__container {
+    justify-content: end;
+  }
 }
 .header__inner.flex-column .header__menu {
   align-self: unset;
@@ -348,6 +362,11 @@ h4, .h4 {
     min-height: 80px;
     padding-top: 10px;
     justify-content: space-between;
+  }
+}
+@media (max-width: 767px) {
+  .header__inner {
+    justify-content: end;
   }
 }
 @media (max-width: 767px) {
@@ -404,7 +423,7 @@ h4, .h4 {
   align-items: center;
   padding-inline: 8px;
   line-height: 1.4;
-  font-size: 16px;
+  font-size: clamp(14px, 0.9756097561vw, 16px);
 }
 .header__menu-link:focus::after, .header__menu-link.is-current::after {
   width: 100%;
@@ -433,7 +452,6 @@ h4, .h4 {
 @media (max-width: 1023px) {
   .header__menu-link {
     padding-inline: 4px;
-    font-size: clamp(12px, 0.8536585366vw, 14px);
   }
 }
 .header__catalog-aside, .header__catalog-dropdown {
@@ -517,7 +535,6 @@ h4, .h4 {
   .header__call-link {
     margin-right: 10px;
     padding-inline: 6px;
-    font-size: clamp(10px, 0.7317073171vw, 12px);
     width: unset;
     max-width: 168px;
     height: auto;
@@ -584,12 +601,12 @@ h4, .h4 {
 }
 @media (hover: hover) {
   .burger-button:hover {
-    background-color: var(--color-green-alt);
+    background-color: yellow;
   }
 }
 @media (hover: none) {
   .burger-button:active {
-    background-color: var(--color-green-alt);
+    background-color: yellow;
   }
 }
 .burger-button::after {

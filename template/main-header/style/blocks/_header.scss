@@ -3,10 +3,9 @@
   
     position: fixed;
     top: 0;
-    left: 50%;
-    translate: -50%;
     width: 100%;
     z-index: 1;
+
   
 
 
@@ -17,10 +16,20 @@
 
     &.transparent{
             background-color: transparent;
+                padding-top: 67px;
+
+                @include tablet{
+                    padding-top:30px;
+                }
     }
 
     &.solid{
        background-color: #212f25;
+       padding-top: 20px;
+
+       @include mobile{
+        padding-top: 40px;
+       }
      
 
 
@@ -31,8 +40,7 @@
 
     &__inner{
      
-
-     
+    
         display: flex;
 
         &.flex-column{
@@ -50,9 +58,19 @@
         
             .header__container{
                 display: flex;
-                padding-top: 50px;
-                // height: 70px;
-               // column-gap: 15px;
+          
+              
+
+                @include tablet{
+
+                      
+
+                }
+
+                @include mobile{
+                    justify-content: end;
+                }
+          
             }
 
             .header__menu{
@@ -90,6 +108,10 @@
                  padding-top: 10px;
                  justify-content: space-between;
                 
+        }
+
+        @include mobile{
+            justify-content: end;
         }
 
     }
@@ -183,7 +205,7 @@
                 align-items: center;
                 padding-inline:8px;
                  line-height: 1.4;
-                font-size: 16px;
+                 @include fluid-text(16,14);
             
 
                 &:focus, &.is-current{
@@ -216,7 +238,7 @@
 
                 @include tablet{
                     padding-inline: 4px;
-                    @include fluid-text(14,12);
+                    
                 }
             
         }
@@ -277,9 +299,7 @@
         &-item{
             position: relative;
 
-            // &:hover{
-            //     background-color: #212f25;
-            // }
+          
 
 
             &:hover .header__catalog-dropdown{
@@ -325,7 +345,6 @@
           @include tablet{
                margin-right: 10px;
                padding-inline: 6px;
-               @include fluid-text(12,10);
                width: unset;
                max-width: 168px;
                height: auto;
