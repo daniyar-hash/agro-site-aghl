@@ -27,6 +27,10 @@
               column-gap: 25px;
          }
 
+         @include mobile-s{
+             column-gap: 10px;
+         }
+
      
 
 
@@ -43,13 +47,16 @@
         line-height: 1;
         align-items: center;
 
+        @include mobile-s{
+            column-gap: 5px;
+        }
+
         
         span.features__number{
             @include fluid-text(50, 40);
             font-weight: 700;
         }
-        span.features__title{
-        }
+    
     }
 
     

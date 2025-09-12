@@ -2,8 +2,9 @@
 
     position: relative;
     z-index: 0;
-    padding-block: 10px;
-    font-size: 12px;
+    padding-block: 70px;
+    font-size: 16px;
+
 
     @include tablet{
         padding-block: 20px;
@@ -14,8 +15,8 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: url("../img/footer-bg.png") center/cover no-repeat;
-        opacity: 0.3;
+        background: var(--color-green);
+
         z-index: -1;
     }
 
@@ -31,11 +32,9 @@
     }    
 
     &__body{
-      //  gap: 30px;
 
-        @include tablet{
-            gap: 10px;
-        }
+            display:flex;
+            column-gap: 160px;
 
         @include mobile{
             --gridColumns:2;
@@ -47,14 +46,22 @@
     }
 
     &__logo{
-        width: 168px;
-        height: 74px;
+        width: 138px;
+        height: 83px;
         display: inline-block;
         flex-shrink: 0;
 
 
+        &-and-coopyright{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 200px;
+        }
+
+
         &:not(:last-child){
-            margin-bottom: 48px;
+
 
             @include tablet{
                 margin-bottom: 20px;
@@ -64,81 +71,59 @@
     }
     
     &-coopyright{
-        opacity: 0.5;
-
   
-            .uppercase{
                 text-transform: uppercase;
-             }
-
 
     
     }
 
     &__column{
 
-            text-transform: uppercase;
-
-            &:first-child{
                 display: flex;
                 flex-direction: column;
-                margin-right: 66px;
+                row-gap:24px;
+ 
+
+            &-title{
 
 
-                @include tablet{
-                    margin-right:0;
-                }
+            font-weight: inherit;
+            text-transform: uppercase;
+            font-size: 16px;
             }
-
-            &:last-child{
-                margin-left: 40px;
-
-                
-                @include tablet{
-                        margin-left: 0;
-                }
-            }
-
-        &-title{
-
-        font-size: 16px;
-        font-weight: inherit;
-
-        @include tablet{
-            font-size: 12px;
-        }
-
-            &:not(:last-child){
-                margin-bottom: 20px;
-            }
-        }
 
             &-list{
                 display: flex;
                 flex-direction: column;
                 row-gap: 16px;
                 opacity: 0.5;
-                font-size: 12px;
+
 
                 @include tablet{
                     row-gap: 8px;
                 }
             }
-                 
-    }
 
 
+            &-link{
+                @include hover{
+                    opacity: 0.5;
+                }
+            }
+
+
+
+    
+    
+        }
+
+
+   
     &-contacts__item{
 
         margin-bottom: 10px;
-        text-transform:lowercase;
-        // &:first-child{
-        //     margin-bottom: 12px;
-        // }
+   
 
-        // &:nth-child(2){
-        //     margin-bottom: 20px;
-        // }
     }
     &-contacts__link{
         display: flex;
@@ -146,20 +131,20 @@
         align-items: center;
         column-gap: 8px;
 
+        &.location{
+            align-items: start;
+        }
+
         .phone-icon *[fill],
         .email-icon *[fill]{
             fill:var( --color-green-alt);
         }
 
-   
-        &.instagramm{
-            column-gap: 0;
-        }
     }
 
     &__call-link{
         padding-block: 10px;
-        font-size: 12px;
+
         line-height: 1;
         width: 176px;
         height: 40px;
@@ -180,15 +165,6 @@
                 height: 40px;
         }
     }
-
-
-
-
-
-
-
-
-
 
 
 

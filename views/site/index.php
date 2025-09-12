@@ -205,43 +205,36 @@
     
         <section class="section">
             <div class="section__inner container">
-                <header class="section__header">
-                    <h2 class="section__title">О компании</h2>
+                <header class="section__header section--about-us">
+                    <h2 class="section__title visually-hidden">Преимущества</h2>
                 </header>
-                <div class="section__body">
-                    <div class="about-us">
-                        <div class="about-us__image-wrapper">
-                                <svg class="mask preserve-fill width="200" height="200" viewBox="0 0 360 347"
-                                fill="none" xmlns="http://www.w3.org/2000/svg"
-                                >
-                                <!-- ClipPath внутри <defs> -->
-                                <defs>
-                                <clipPath id="about-us">
-                                    <path d="M358 2V254.317L267.256 345H2V92.6816L92.7441 2H358Z" />
-                                </clipPath>
-                                </defs>
-                                <image
-                                    href="../../template/main-page/img/about-us/about-us.png" 
-                                    width="360" 
-                                    height="347"
-                                    clip-path="url(#about-us)" 
-                                    preserveAspectRatio="xMidYMid slice"
-                                    
-                                />
-                                <!-- Контур (красная рамка) -->
-                                <path d="M358 2V254.317L267.256 345H2V92.6816L92.7441 2H358Z"
-                                    stroke="#C53720"
-                                    stroke-width="4"
-                                    fill="none" />
-                            </svg>
-                         </div>
-                        <div class="about-us__info">
-                            <p class="about-us__paragraph">Машина плохо заводится? Аккумулятор вас подводит? Не проблема! Вам в 
-                            «PRO Auto»! Мы подберём хороший, надёжный, а главное недорогой аккумулятор именно для вашего авто! С 1997 года сеть магазинов «PRO Auto» занимается продажей автомобильных аккумуляторов, масел, расходных материалов, химией 
-                            и аксессуаров.</p>
-                            <a href="/" class="button about-us__button button-medium">Узнать больше</a>
+                <div class="section__body about-us">
+                        <div class="about-us__column">
+                            <h3 class="about-us__column-title">Компания Агро-Хим-Лидер <br>
+                                основана в 2011 г. Занимается <br>
+                                продажами средств защиты <br>
+                                растений и удобрений. 
+                             </h3>
+                            <div class="about-us__column-desc">
+                                “Мы помогаем фермерам повышать
+                                урожайность и продуктивность
+                                сельскохозяйственных культур.” 
+                            </div>
                         </div>
-                    </div>
+                        <div class="about-us__column">
+                            <h3 class="about-us__column-title">
+                                Приоритеты <br>
+                                при работе с клиентом:
+                             </h3>
+                            <div class="about-us__column-desc">
+                                <ul class="about-us__column-list">
+                                    <li>Предоставление качественной продукции.</li>
+                                    <li>Экспертность при выборе решения. </li>
+                                    <li>И финансовая доступность.</li>
+                                </ul>
+                               
+                            </div>
+                        </div>
                 </div>
             </div>
         </section>
@@ -254,61 +247,96 @@
                     <div class="reviews">
                         <ul class="reviews__list">
                             <li class="reviews__item">
-                                <div class="reviews__avatar">
-                                    <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="150" height="150">
+                                <div class="reviews__item-header">
+                                    <div class="reviews__avatar">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                    </div>
+                                    <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
                                 <div class="reviews__body">
-                                    <h3 class="reviews__person">Имя Фамилия</h3>
+                           
                                     <div class="reviews__description">
-                                        <p>"Работаем с ТОО «АгроХим Лидер» уже второй год, и
-                                             результаты поражают! Их средства защиты растений действительно эффективны. 
-                                             Урожайность выросла, а расходы снизились благодаря качественным и доступным продуктам."</p>
+                                        <p>"Работаем с ТОО «АгроХим Лидер» 
+                                        уже второй год, и результаты поражают! Их средства защиты растений действительно эффективны. Урожайность выросла, а расходы снизились благодаря качественным 
+                                        и доступным продуктам."
+                                        </p>
                                     </div>
                                     <time datetime="2020-02-12">12 февраля 2025 года</time>
                                 </div>
                             </li>
                             <li class="reviews__item">
-                                <div class="reviews__avatar">
-                                    <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="150" height="150">
+                                <div class="reviews__item-header">
+                                    <div class="reviews__avatar">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                    </div>
+                                    <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
                                 <div class="reviews__body">
-                                    <h3 class="reviews__person">Имя Фамилия</h3>
+                           
                                     <div class="reviews__description">
-                                        <p>"Работаем с ТОО «АгроХим Лидер» уже второй год, и
-                                             результаты поражают! Их средства защиты растений действительно эффективны. 
-                                             Урожайность выросла, а расходы снизились благодаря качественным и доступным продуктам."</p>
+                                        <p>"Работаем с ТОО «АгроХим Лидер» 
+                                        уже второй год, и результаты поражают! Их средства защиты растений действительно эффективны. Урожайность выросла, а расходы снизились благодаря качественным 
+                                        и доступным продуктам."
+                                        </p>
                                     </div>
                                     <time datetime="2020-02-12">12 февраля 2025 года</time>
                                 </div>
                             </li>
                             <li class="reviews__item">
-                                <div class="reviews__avatar">
-                                    <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="150" height="150">
+                                <div class="reviews__item-header">
+                                    <div class="reviews__avatar">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                    </div>
+                                    <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
                                 <div class="reviews__body">
-                                    <h3 class="reviews__person">Имя Фамилия</h3>
+                           
                                     <div class="reviews__description">
-                                        <p>"Работаем с ТОО «АгроХим Лидер» уже второй год, и
-                                             результаты поражают! Их средства защиты растений действительно эффективны. 
-                                             Урожайность выросла, а расходы снизились благодаря качественным и доступным продуктам."</p>
+                                        <p>"Работаем с ТОО «АгроХим Лидер» 
+                                        уже второй год, и результаты поражают! Их средства защиты растений действительно эффективны. Урожайность выросла, а расходы снизились благодаря качественным 
+                                        и доступным продуктам."
+                                        </p>
                                     </div>
                                     <time datetime="2020-02-12">12 февраля 2025 года</time>
                                 </div>
                             </li>
                             <li class="reviews__item">
-                                <div class="reviews__avatar">
-                                    <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="150" height="150">
+                                <div class="reviews__item-header">
+                                    <div class="reviews__avatar">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                    </div>
+                                    <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
                                 <div class="reviews__body">
-                                    <h3 class="reviews__person">Имя Фамилия</h3>
+                           
                                     <div class="reviews__description">
-                                        <p>"Работаем с ТОО «АгроХим Лидер» уже второй год, и
-                                             результаты поражают! Их средства защиты растений действительно эффективны. 
-                                             Урожайность выросла, а расходы снизились благодаря качественным и доступным продуктам."</p>
+                                        <p>"Работаем с ТОО «АгроХим Лидер» 
+                                        уже второй год, и результаты поражают! Их средства защиты растений действительно эффективны. Урожайность выросла, а расходы снизились благодаря качественным 
+                                        и доступным продуктам."
+                                        </p>
                                     </div>
                                     <time datetime="2020-02-12">12 февраля 2025 года</time>
                                 </div>
                             </li>
+                            <li class="reviews__item">
+                                <div class="reviews__item-header">
+                                    <div class="reviews__avatar">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                    </div>
+                                    <h3 class="reviews__person">Имя Фамилия</h3>
+                                </div>
+                                <div class="reviews__body">
+                           
+                                    <div class="reviews__description">
+                                        <p>"Работаем с ТОО «АгроХим Лидер» 
+                                        уже второй год, и результаты поражают! Их средства защиты растений действительно эффективны. Урожайность выросла, а расходы снизились благодаря качественным 
+                                        и доступным продуктам."
+                                        </p>
+                                    </div>
+                                    <time datetime="2020-02-12">12 февраля 2025 года</time>
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

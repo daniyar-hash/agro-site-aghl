@@ -1,90 +1,74 @@
 .about-us{
 
+    color: var(--color-green);
 
     display: flex;
-    justify-content: center;
-    align-items: start;
-    column-gap: 24px;
+    column-gap: 80px;
+
+    @include tablet{
+        column-gap: 40px;
+    }
+
 
     @include mobile{
+
         flex-direction: column;
-        row-gap: 24px;
+        align-items: center;
+        row-gap: 40px;
     }
 
 
 
+    &__column{
 
-    &__image-wrapper{
-        position: relative;
-        width: 250px;
-        height: 230px;
-        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 13px;
 
-        @include mobile{
-            align-self: center;
+
+        &:first-child{
+            max-width: 476px;
+            row-gap: 32px;
+
+            @include mobile{
+                row-gap: 13px;
+                text-align: center;
+            }
+
+
+            .about-us__column-desc{
+                font-style: italic;
+                max-width: 417px;
+            }
+
         }
+
+
+
+   
+
+
+        &-title{
+            @include fluid-text(28, 18);
+            font-weight: 600;
+            font-family: 'Gilroy-SemiBold',sans-serif;
+
+            
+        }
+
+        &-list{
+            padding-left: 20px;
+            li{
+                list-style-type: disc;
+            }
+        }
+
+
     }
-
-    &__image{
-        clip-path: url(#about-us);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-
-    }
-
-    &__button{
-        @include mobile-s{
-            align-self: center;
-        }
-    }
-
-
-        &__info{
-        max-width: 550px;
-        border: var(--border);
-        font-size: 16px;
-        min-height: 255px;
-        align-self: start;
-        padding: 32px;
-        padding-bottom: 43px;
-
-        @include tablet{
-            padding: 15px;
-            padding-bottom: 30px;
-        }
-
-        @include mobile-s{
-            display: flex;
-            flex-direction: column;
-        }
 
         
+
+
+
     }
-
-        &__paragraph{
-            margin-bottom: 28px;
-        }
-     
-
-}
-
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  pointer-events: none;
-
-    & *[stroke]{
-        stroke:var( --color-green-alt);
-    }
-
-    & *[fill] {
-        fill:unset;
-    }
-
-}
-
 

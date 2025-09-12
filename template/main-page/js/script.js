@@ -9,6 +9,22 @@
   const headerSearchBtn = document.querySelector('.search__button');
   const headerSearchWrapper = document.querySelector('.search__wrapper-field');
 
+  const burgerBtn = document.querySelector('.burger-button');
+  const clodeBtnModal = document.querySelector('.mobile-overlay__close-button');
+  
+
+  burgerBtn.addEventListener('click', (e)=>{
+
+    document.documentElement.classList.add('is-lock');
+
+  })
+
+    clodeBtnModal.addEventListener('click', (e)=>{
+
+    document.documentElement.classList.remove('is-lock');
+
+  })
+
 
   headerSearchBtn.addEventListener('click', (e)=>{
 

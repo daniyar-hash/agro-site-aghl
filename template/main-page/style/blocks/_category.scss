@@ -27,8 +27,17 @@
         border-radius: 12px;
         transition-duration: var(--transition-duration);
 
+        
+            @include mobile-s{
+               width: 100%;
+            }
+
         &:first-child{
             width: 453px;
+
+            @include mobile{
+                max-width: 453px;
+            }
         }
 
         @include hover{
@@ -37,19 +46,25 @@
 
 
         &:first-child{
-            background: url("../img/category/1.png") 0 0/contain no-repeat;
+            background: url("../img/category/1.png") 0 0/cover no-repeat;
+
+            @include mobile-s{
+                background-size: cover;
+                background-position-x:80%;
+
+            }
           
         }
 
         &:nth-child(2){
-                        background: url("../img/category/2.png")  0 0/contain no-repeat;
+                        background: url("../img/category/2.png")  0 0/cover no-repeat;
          
                   
                   
                       
         }
              &:nth-child(3){
-                        background: url("../img/category/3.png") 0 0/contain no-repeat;
+                        background: url("../img/category/3.png") 0 0/cover no-repeat;
                  
         }
        

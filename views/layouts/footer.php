@@ -73,7 +73,7 @@
                      </svg>
                     </a>
                     <div class="footer-coopyright">
-                    &copy; <time datetime="2019">2019 <span class="uppercase">Pro </span>Auto.</time> <br>
+                    &copy; <time datetime="2025">2025</time>Agro-Him-lider <br>
                         Все права защищены.
                     </div>
 

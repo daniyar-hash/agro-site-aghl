@@ -2,133 +2,48 @@
 //      outline: 2px solid red;
 // }
 
+
+html{
+
+&.is-lock{
+  overflow:hidden;
+}
+}
 .section{
 
    --rowGapBlocks:50px;
    padding-block:var(--section-base-padding-y);
 
 
+   @include mobile{
+       --rowGapBlocks:20px;
+   }
+
+
    outline: 2px solid red;
 
-
-
-
-   &:has(.category),
-     &:has(.reviews)
-   {
-       color: var(--color-dark);
-   }
-
-   &:has(.about-us){
-        background: linear-gradient(rgba(14,14,14,0.6), rgba(14,14,14,0.6)),
-                url("../img/about-us/bg.png") 0 0 / cover no-repeat;
-        min-height: 250px;
+   &__title{
+    color: var(--color-green);
    }
 
 
 
-   &:has(.news){
 
-        min-height: 600px;
-        background-color: var(--color-gray);
-        color:var(--color-dark);
 
-   }
+      &__header{
+        text-align: center;
+        margin-bottom: 50px;
 
-   &__body.background--green{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 33px;
 
-    &::after{
-      content: "";
-      position: absolute;
-      bottom: 0;
-
-      width: 100%;
-      height: 76%;
-      background-color: var(--color-green);
-      z-index: -1;
-      border-radius: 12px;
-
-      @include mobile{
-     
-        height: 90%;
-        
+        @include mobile{
+          margin-bottom: 20px;
+        }
       }
 
-    }
 
-   }
+      &--about-us{
+        margin-bottom: 0;
+      }
 
-    &__inner{
-
-        display: flex;
-        flex-direction: column;
-        row-gap: var(--rowGapBlocks);
- 
-    }
-
-  &__header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    row-gap: 5px;
-
-
-     }
-    &__title{
-
-        max-width: 856px;
-       line-height: 1.2;
-       font-weight: inherit;
-       color:var(--color-green);
-    
-
-        
-
-            @include mobile {
-              padding-inline: 20px;
-              padding-bottom: 0;
-       }
-
-    }
-
- 
-
-  &__description{
-    max-width: 892px;
-    line-height: 1.25;
-    letter-spacing: 0.05em;
-    
-
-    @include tablet{
-      font-size: 18px;
-    }
-
-    @include mobile{
-      padding-top: 20px;
-    }
 
   }
-}
-
-.logo{
-      // svg *[fill]{
-      //     fill:var(--color-green-alt);
-        
-      //   }
-
-      //   svg path.red-line{
-        
-      //      fill:var( --color-green-alt);
-      //   }
-
-
-        @include hover{
-          opacity: 0.5;
-        }
-}

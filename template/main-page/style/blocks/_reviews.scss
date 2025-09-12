@@ -2,6 +2,7 @@
 
     align-items: center;
     justify-content: center;
+    color:var( --color-dark-green);
 
 
     @include mobile{
@@ -32,39 +33,45 @@
 
 
     &__item{
+
+        min-width: 343px;
+        min-height: 311px;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        column-gap: 20px;
-        height: 100%;
-        padding-left: 20px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        padding-bottom: 26px;
+        row-gap:20px;
+        border-radius: 12px;
+        background-color: var(--color-light);
 
         scroll-snap-align: start;
-        min-width: 400px;
+
+
+
+
+        &-header{
+            display: flex;
+            column-gap:37px;
+
+        }
+        
 
     }
 
 
        &__body{
 
-         padding: 12px 20px 16px;
-         display: flex;
-         flex-direction: column;
-         justify-content: space-between;
-         flex-grow: 1;
-  
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+
+       
 
          @include mobile{
             padding: 6px 10px;
          }
         
-
-
-         time{
-            font-size: 12px;
-            font-style: italic;
-
-         }
        
 
        &-title{
@@ -79,8 +86,8 @@
     }
 
     &__avatar{
-        width: 150px;
-        height: 150px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         overflow: hidden;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -94,10 +101,22 @@
         }
     }
 
-    &__description{
-        font-size: 12px;
-        max-width: 200px;
+    &__person{
+        align-self: center;
     }
+
+    &__description{
+        font-size: 16px;
+
+
+    }
+
+     time{
+            color:var(--color-gray-alt);
+            font-style: italic;
+            font-size: 14px;
+            align-self: end;
+        }
 
 }
 

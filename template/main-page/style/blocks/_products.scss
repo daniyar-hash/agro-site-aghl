@@ -47,12 +47,14 @@ section{
         }
 
         @include mobile{
-             grid-template-columns:repeat(2, 187px);
+             grid-template-columns:repeat(3, 187px);
+             justify-content: center;
+
        
         }
 
         @include mobile-s{
-             grid-template-columns:repeat(1, 100%);
+             grid-template-columns:repeat(2, 187px);
        
         }
         
