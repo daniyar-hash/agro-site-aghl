@@ -108,29 +108,36 @@
                  </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section section--category">
             <div class="section__inner container">
                  <header class="section__header">
-                    <h2 class="section__title products__title">
+                    <h2 class="section__title products__title h1">
                       Категории товаров
                     </h2>
                  </header>
-                 <div class="section__body categories">
-                    <ul class="categories__list">
-                        <li class="categories__item">
-                            <div href="/" class="category">
-                                <h3 class="category__title"><a href="/agro-site-category-page/" class="category__title-link">Пестициды</a></h3>
-                                <ul class="category__list">
-                                    <li class="category__item">
-                                        <a href="/" class="category__link">Фунгициды</a>
+                 <div class="section__body category">
+                    <ul class="category__list">
+                        <li class="category__item">
+                            <div href="/" class="category__info">
+                                <h3 class="category__info-title">
+                                    <a href="/agro-site-category-page/" class="category__info-title-link">Пестициды</a>
+                                    <a href="" class="category__info-icon">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 0C6.26827 0 0 6.26827 0 14C0 21.7317 6.26827 28 14 28C21.7317 28 28 21.7317 28 14C28 6.26827 21.7317 0 14 0ZM15.0285 18.9501L14.2026 18.0639L17.8398 14.6836H7.64781V13.3154H17.8377L14.2026 9.93611L15.0285 9.04985L20.3522 14L15.0285 18.9491V18.9501Z" fill="white"/>
+                                        </svg>
+                                    </a>
+                                </h3>
+                                <ul class="category__info-list">
+                                    <li class="category__info-item">
+                                        <a href="/" class="category__info-link">Фунгициды</a>
                                     
                                     </li>
-                                     <li class="category__item">
-                                        <a href="/" class="category__link">Инсектициды</a>
+                                     <li class="category__info-item">
+                                        <a href="/" class="category__info-link">Инсектициды</a>
                                     
                                     </li>
-                                     <li class="category__item">
-                                        <a href="/" class="category__link">Акарициды</a>
+                                     <li class="category__info-item">
+                                        <a href="/" class="category__info-link">Акарициды</a>
                                     
                                     </li>
 
@@ -138,18 +145,23 @@
 
                             </div>
                         </li>
-                        <li class="categories__item">
-                            <div href="/" class="category">
-                                <h3 class="category__title">
-                                    <a href="/" class="category__title-link">Удобрения</a>
+                        <li class="category__item">
+                            <div href="/" class="category__info">
+                                <h3 class="category__info-title">
+                                    <a href="/" class="category__info-title-link">Удобрения</a>
+                                    <a href="" class="category__info-icon">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 0C6.26827 0 0 6.26827 0 14C0 21.7317 6.26827 28 14 28C21.7317 28 28 21.7317 28 14C28 6.26827 21.7317 0 14 0ZM15.0285 18.9501L14.2026 18.0639L17.8398 14.6836H7.64781V13.3154H17.8377L14.2026 9.93611L15.0285 9.04985L20.3522 14L15.0285 18.9491V18.9501Z" fill="white"/>
+                                        </svg>
+                                    </a>
                                 </h3>
-                                <ul class="category__list">
-                                    <li class="category__item">
-                                        <a href="/" class="category__link">Регуляторы роста</a>
+                                <ul class="category__info-list">
+                                    <li class="category__info-item">
+                                        <a href="/" class="category__info-link">Регуляторы роста</a>
                                     
                                     </li>
-                                     <li class="category__item">
-                                        <a href="/" class="category__link">Стимуляторы роста</a>
+                                     <li class="category__info-item">
+                                        <a href="/" class="category__info-link">Стимуляторы роста</a>
                                     
                                     </li>
                        
@@ -158,20 +170,27 @@
                             </div>
                             
                         </li>
-                        <li class="categories__item">
-                            <div href="/" class="category">
-                                <h3 class="category__title"><a href="/" class="category__title-link" >Семена</a></h3>
-                                <ul class="category__list">
-                                    <li class="category__item">
-                                        <a href="/" class="category__link">текст</a>
+                        <li class="category__item">
+                            <div href="/" class="category__info">
+                                <h3 class="category__info-title">
+                                    <a href="/" class="category__info-title-link" >Семена</a>
+                                    <a href="" class="category__info-icon">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 0C6.26827 0 0 6.26827 0 14C0 21.7317 6.26827 28 14 28C21.7317 28 28 21.7317 28 14C28 6.26827 21.7317 0 14 0ZM15.0285 18.9501L14.2026 18.0639L17.8398 14.6836H7.64781V13.3154H17.8377L14.2026 9.93611L15.0285 9.04985L20.3522 14L15.0285 18.9491V18.9501Z" fill="white"/>
+                                        </svg>
+                                    </a>
+                                </h3>
+                                <ul class="category__info-list">
+                                    <li class="category__info-item">
+                                        <a href="/" class="category__info-link">текст</a>
                                     
                                     </li>
-                                     <li class="category__item">
-                                        <a href="/" class="category__link">текст</a>
+                                     <li class="category__info-item">
+                                        <a href="/" class="category__info-link">текст</a>
                                     
                                     </li>
-                                     <li class="category__item">
-                                        <a href="/" class="category__link">текст</a>
+                                     <li class="category__info-item">
+                                        <a href="/" class="category__info-link">текст</a>
                                     
                                     </li>
 

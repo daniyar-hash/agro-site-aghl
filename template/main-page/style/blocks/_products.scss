@@ -7,7 +7,7 @@ section{
     padding-top: 90px;
 
     @include tablet{
-        padding-block: 50px;
+      padding-top: 50px;
     }
 
     @include mobile{
@@ -17,10 +17,7 @@ section{
 
 
     &__title{
-       max-width:856px;
-       line-height: 1.2;
-       font-weight: inherit;
-       color:var(--color-green);
+
 
     
 

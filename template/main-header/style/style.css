@@ -311,11 +311,6 @@ h4, .h4 {
   background-color: #212f25;
   padding-top: 20px;
 }
-@media (max-width: 767px) {
-  .header.solid {
-    padding-top: 40px;
-  }
-}
 .header.solid .header__social-link {
   padding-block: 15px;
 }

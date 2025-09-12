@@ -5,24 +5,12 @@
 .section{
 
    --rowGapBlocks:50px;
-   padding-top:var(--section-base-padding-y);
-   padding-bottom: 0;
+   padding-block:var(--section-base-padding-y);
+
 
    outline: 2px solid red;
 
 
-
-   @include mobile{
-      --section-base-padding-y:0px;
-      --section-large-padding-y:50px;
-         --rowGapBlocks:40px;
-   }
-
-
-  // &:has(.banner){
-  //        --section-base-padding-y:0;
-  //        --section-large-padding-y:0;
-  //  }
 
 
    &:has(.category),
@@ -94,8 +82,10 @@
      }
     &__title{
 
-        line-height: 1;
         max-width: 856px;
+       line-height: 1.2;
+       font-weight: inherit;
+       color:var(--color-green);
     
 
         
