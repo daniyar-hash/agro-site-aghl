@@ -98,10 +98,13 @@
 
     &-link{
 
+     
+
         
          @include hover{
             color: var(--color-dark);
             background-color: var(--color-light);
+            border-radius: 5px;
         }
 
     }
@@ -129,6 +132,8 @@
     row-gap: 10px;
     font-size: 16px;
     list-style-type:disc;
+    padding-left: 20px;
+
 }
 
 &-link{

@@ -15,6 +15,34 @@
   const tdTableResultImpact = document.querySelectorAll('.td-result_impact');
   const tdTableWaitingPeriod = document.querySelectorAll('.td-waiting_period');
 
+ 
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".accordion").forEach(accordion => {
+    const title = accordion.querySelector(".accordion__title");
+    const titleDesc = accordion.querySelector(".accordion__title.desc");
+
+    function updateTitle() {
+      if (title) {
+        title.textContent = accordion.open ? "Скрыть таблицу" : "Показать таблицу";
+      }
+      if (titleDesc) {
+        titleDesc.textContent = accordion.open ? "Скрыть описание товара" : "Показать описание товара";
+      }
+    }
+
+    // сразу при загрузке
+    updateTitle();
+
+    // при каждом открытии/закрытии
+    accordion.addEventListener("toggle", updateTitle);
+  });
+});
+
+
+
 
 
   const allEmpty1 = Array.from(tdTablePeriod).every(td => td.textContent.trim() === '');
@@ -24,6 +52,8 @@
   const allEmpty5 = Array.from(tdTableLimit).every(td => td.textContent.trim() === '');
   const allEmpty6 = Array.from(tdTableResultImpact).every(td => td.textContent.trim() === '');
   const allEmpty7 = Array.from(tdTableWaitingPeriod).every(td => td.textContent.trim() === '');
+
+
 
 
 

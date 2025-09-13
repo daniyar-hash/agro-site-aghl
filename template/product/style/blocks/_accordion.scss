@@ -1,0 +1,76 @@
+.accordion{
+
+--indicatorPosition:90deg;
+
+transition-duration: var(--transition-duration);
+
+
+
+
+    &[open]{
+        
+    --indicatorPosition:0deg;
+
+
+
+
+    }
+
+
+
+    &--description{
+
+
+        .accordion__header{
+                column-gap: 0;
+                justify-content: space-between;
+        }
+    }
+    &__header{
+        &::marker{
+            content: "";
+        }
+
+        display: flex;
+        justify-content: end;
+        column-gap: 375px;
+
+
+
+        @include hover{
+                opacity: 0.5;
+            }
+    }
+
+
+
+
+    &__icon{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid var(--color-dark);
+        position: relative;
+
+
+
+        &::before,
+        &::after{
+
+            @include abs-center;
+            content: "";
+            width: 50%;
+            height: 2px;
+            background-color: var(--color-dark);
+
+
+
+        }
+
+        &::before{
+            rotate: var(--indicatorPosition);
+            transition-duration: var(--transition-duration);
+
+        }
+    }
+}

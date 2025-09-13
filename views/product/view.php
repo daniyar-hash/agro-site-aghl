@@ -67,9 +67,24 @@
                         </div>
                         <h2 class="descrition__title h3 visually-hidden">Описание</h2>
 
-                         <div class="description__detail" style="white-space: pre-line;">
-                        <p><?= $product['description']?></p>
-                        </div>
+                           <details class="accordion accordion--description">
+                                <summary class="accordion__header">
+                                    <h3 class="accordion__title desc">Показать описание</h3>
+                                    <span class="accordion__icon"></span>
+                                </summary>
+                                
+                                <div class="description__detail" style="white-space: pre-line;">
+                                <p><?= $product['description']?></p>
+                                </div>
+
+                            </details>
+
+
+
+
+
+
+
                         <div class="description__download">
                            
                         <a href="/upload/documents/Agro_Catalog_Ru_Prev_1802.pdf" class="description__download-link catalog" target="_blank">Скачать Каталог 
@@ -98,146 +113,161 @@
                     </div>
 
                 </div>
-                <div class="product-page__decription description">
-              
-                    <div class="description__table-wrapper">
-                   
-                        <table  cellpadding="5" cellspacing="0">
-                            <caption>Регламенты применения:</caption>
-                            <thead>
-                                <tr>
-                                    <th>Культура, обрабатываемый объект</th>
-                                    <th class="th-result_impact">Результат воздействия</th>
-                                    <th>Норма расхода на 1га <br>л/га,  г/кг, кг/га</th>
-                                    <th class="th-consumption_solution">Расход рабочего раствора</th>
-                                    <th class="th-application_features">Способо, время обработки, особенности применения</th>
-                                    <th class="th-harmful_object">Вредный объект</th>
-                                    <th class="th-limitations">Способ, время обработки, ограничения</th>
-                                    <th class="th-waiting_period">Сроки ожидание</th>
-                                    <th class="th-treatment_period">Срок последней обработки, в днях до сбора урожая (максимальная кратность обработки)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
 
-                                <?php foreach ($productTable as $group): ?>
-                                    <?php
-                                    $db = Db::getConnection();
-                                    $itemsStmt = $db->prepare("SELECT * FROM product_table_items WHERE group_id = ?");
-                                    $itemsStmt->execute([$group['id']]);
-                                    $items = $itemsStmt->fetchAll(PDO::FETCH_ASSOC);
-                             
-                                       
+   
+                
+                    <div class="product-page__decription description accordion__desc">
 
-                                    $rowspan = count($items);
-                                
 
-                                   
-                                    ?>
+                    <details class="accordion">
+                    <summary class="accordion__header">
+                        <h3 class="accordion__title">Показать таблицу</h3>
+                        <span class="accordion__icon"></span>
+                    </summary>
+    
+                
+                        <div class="description__table-wrapper">
+                    
+                            <table  cellpadding="5" cellspacing="0">
+                                <caption>Регламенты применения:</caption>
+                                <thead>
                                     <tr>
-                                      
-                                         
-                                         <td rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['agricultural_crop']) ?></td>
-                                        
-                                        <?php if(!empty($items[0]['result_impact'])): ?>
-                                            <td class="td-result_impact" ><?= htmlspecialchars($items[0]['result_impact']) ?></td>
-                                            <?php  else :  ?>
-                                            <td class="td-result_impact" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['result_impact']) ?></td>
-
-                                        <?php endif; ?>
-
-
-                                                                               
-                                        <?php if(!empty($items[0]['сonsumption_rate'])): ?>
-                                            <td><?= htmlspecialchars($items[0]['сonsumption_rate']) ?></td>
-                                            <?php  else :  ?>
-                                            <td rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['сonsumption_rate']) ?></td>
-
-                                        <?php endif; ?>
-
-                                           
-                                        <?php if(!empty($items[0]['consumption_solution'])): ?>
-                                            <td class="td-consumption_solution"><?= htmlspecialchars($items[0]['consumption_solution']) ?></td>
-                                            <?php  else :  ?>
-                                            <td class="td-consumption_solution" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['consumption_solution']) ?></td>
-
-                                        <?php endif; ?>
-
-                                        <?php if(!empty($items[0]['application_features'])): ?>
-                                            <td class="td-application_features"><?= htmlspecialchars($items[0]['application_features']) ?></td>
-                                            <?php  else :  ?>
-                                            <td class="td-application_features" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['application_features']) ?></td>
-
-                                        <?php endif; ?>
-
-                                        
-                                        <?php if(!empty($items[0]['harmful_object'])): ?>
-                                            <td class="td-harmful_object" ><?= htmlspecialchars($items[0]['harmful_object']) ?></td>
-                                            <?php  else :  ?>
-                                            <td class="td-harmful_object" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['harmful_object']) ?></td>
-
-                                        <?php endif; ?>
-
-
-                                        <?php if(!empty($items[0]['limitations'])): ?>
-                                            <td class="td-limitations"><?= htmlspecialchars($items[0]['limitations']) ?></td>
-                                            <?php  else :  ?>
-                                       
-                                           <td style="white-space: pre-line; min-width:215px;" class="td-limitations" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['limitations']) ?></td>
-
-                                        <?php endif; ?>
-
-
-
-                                              <?php if(!empty($items[0]['waiting_period'])): ?>
-                                            <td class="td-waiting_period"><?= htmlspecialchars($items[0]['waiting_period']) ?></td>
-                                            <?php  else :  ?>
-                                       
-                                           <td style="white-space: pre-line;" class="td-waiting_period" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['waiting_period']) ?></td>
-
-                                        <?php endif; ?>
-
-
-
-                                        <td class="td-treatment_period" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['treatment_period']) ?></td>
-
+                                        <th>Культура, обрабатываемый объект</th>
+                                        <th class="th-result_impact">Результат воздействия</th>
+                                        <th>Норма расхода на 1га <br>л/га,  г/кг, кг/га</th>
+                                        <th class="th-consumption_solution">Расход рабочего раствора</th>
+                                        <th class="th-application_features">Способо, время обработки, особенности применения</th>
+                                        <th class="th-harmful_object">Вредный объект</th>
+                                        <th class="th-limitations">Способ, время обработки, ограничения</th>
+                                        <th class="th-waiting_period">Сроки ожидание</th>
+                                        <th class="th-treatment_period">Срок последней обработки, в днях до сбора урожая (максимальная кратность обработки)</th>
                                     </tr>
+                                </thead>
+                                <tbody>
 
-                                    <?php if($rowspan):  ?>
-                                    <?php for ($i = 1; $i < $rowspan; $i++): ?>
+                                    <?php foreach ($productTable as $group): ?>
+                                        <?php
+                                        $db = Db::getConnection();
+                                        $itemsStmt = $db->prepare("SELECT * FROM product_table_items WHERE group_id = ?");
+                                        $itemsStmt->execute([$group['id']]);
+                                        $items = $itemsStmt->fetchAll(PDO::FETCH_ASSOC);
+                                
+                                        
+
+                                        $rowspan = count($items);
+                                    
+
+                                    
+                                        ?>
                                         <tr>
-
-                                            <?php if (!empty($items[$i]['сonsumption_rate'])): ?>
-                                                <td><?= htmlspecialchars($items[$i]['сonsumption_rate']) ?></td>
-                                            <?php endif; ?>
-
-                                             <?php if (!empty($items[$i]['consumption_solution'])): ?>
-                                                <td><?= htmlspecialchars($items[$i]['consumption_solution']) ?></td>
-                                            <?php endif; ?>
-
-
-                                             <?php if (!empty($items[$i]['application_features'])): ?>
-                                                <td><?= htmlspecialchars($items[$i]['application_features']) ?></td>
-                                            <?php endif; ?>
+                                        
                                             
+                                            <td rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['agricultural_crop']) ?></td>
                                             
-                                            <?php if (!empty($items[$i]['harmful_object'])): ?>
-                                                <td><?= htmlspecialchars($items[$i]['harmful_object']) ?></td>
+                                            <?php if(!empty($items[0]['result_impact'])): ?>
+                                                <td class="td-result_impact" ><?= htmlspecialchars($items[0]['result_impact']) ?></td>
+                                                <?php  else :  ?>
+                                                <td class="td-result_impact" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['result_impact']) ?></td>
+
                                             <?php endif; ?>
 
 
-                                            <?php if (!empty($items[$i]['limitations'])): ?>
-                                                <td><?= htmlspecialchars($items[$i]['limitations']) ?></td>
+                                                                                
+                                            <?php if(!empty($items[0]['сonsumption_rate'])): ?>
+                                                <td><?= htmlspecialchars($items[0]['сonsumption_rate']) ?></td>
+                                                <?php  else :  ?>
+                                                <td rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['сonsumption_rate']) ?></td>
+
                                             <?php endif; ?>
-                                           
+
+                                            
+                                            <?php if(!empty($items[0]['consumption_solution'])): ?>
+                                                <td class="td-consumption_solution"><?= htmlspecialchars($items[0]['consumption_solution']) ?></td>
+                                                <?php  else :  ?>
+                                                <td class="td-consumption_solution" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['consumption_solution']) ?></td>
+
+                                            <?php endif; ?>
+
+                                            <?php if(!empty($items[0]['application_features'])): ?>
+                                                <td class="td-application_features"><?= htmlspecialchars($items[0]['application_features']) ?></td>
+                                                <?php  else :  ?>
+                                                <td class="td-application_features" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['application_features']) ?></td>
+
+                                            <?php endif; ?>
+
+                                            
+                                            <?php if(!empty($items[0]['harmful_object'])): ?>
+                                                <td class="td-harmful_object" ><?= htmlspecialchars($items[0]['harmful_object']) ?></td>
+                                                <?php  else :  ?>
+                                                <td class="td-harmful_object" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['harmful_object']) ?></td>
+
+                                            <?php endif; ?>
+
+
+                                            <?php if(!empty($items[0]['limitations'])): ?>
+                                                <td class="td-limitations"><?= htmlspecialchars($items[0]['limitations']) ?></td>
+                                                <?php  else :  ?>
+                                        
+                                            <td style="white-space: pre-line; min-width:215px;" class="td-limitations" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['limitations']) ?></td>
+
+                                            <?php endif; ?>
+
+
+
+                                                <?php if(!empty($items[0]['waiting_period'])): ?>
+                                                <td class="td-waiting_period"><?= htmlspecialchars($items[0]['waiting_period']) ?></td>
+                                                <?php  else :  ?>
+                                        
+                                            <td style="white-space: pre-line;" class="td-waiting_period" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['waiting_period']) ?></td>
+
+                                            <?php endif; ?>
+
+
+
+                                            <td class="td-treatment_period" rowspan= "<?= $rowspan ? $rowspan : '' ?>" ><?= htmlspecialchars($group['treatment_period']) ?></td>
+
                                         </tr>
-                                    <?php endfor; ?>
 
-                                    <?php  endif;  ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                        <?php if($rowspan):  ?>
+                                        <?php for ($i = 1; $i < $rowspan; $i++): ?>
+                                            <tr>
+
+                                                <?php if (!empty($items[$i]['сonsumption_rate'])): ?>
+                                                    <td><?= htmlspecialchars($items[$i]['сonsumption_rate']) ?></td>
+                                                <?php endif; ?>
+
+                                                <?php if (!empty($items[$i]['consumption_solution'])): ?>
+                                                    <td><?= htmlspecialchars($items[$i]['consumption_solution']) ?></td>
+                                                <?php endif; ?>
+
+
+                                                <?php if (!empty($items[$i]['application_features'])): ?>
+                                                    <td><?= htmlspecialchars($items[$i]['application_features']) ?></td>
+                                                <?php endif; ?>
+                                                
+                                                
+                                                <?php if (!empty($items[$i]['harmful_object'])): ?>
+                                                    <td><?= htmlspecialchars($items[$i]['harmful_object']) ?></td>
+                                                <?php endif; ?>
+
+
+                                                <?php if (!empty($items[$i]['limitations'])): ?>
+                                                    <td><?= htmlspecialchars($items[$i]['limitations']) ?></td>
+                                                <?php endif; ?>
+                                            
+                                            </tr>
+                                        <?php endfor; ?>
+
+                                        <?php  endif;  ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                
+            </details>
+
+
             </div>
         </section>
     </main>

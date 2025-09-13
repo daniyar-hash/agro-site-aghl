@@ -3,7 +3,7 @@
     position: relative;
     z-index: 0;
     padding-block: 70px;
-    font-size: 16px;
+    @include fluid-text(16,14);
 
 
     @include tablet{
@@ -34,15 +34,17 @@
     &__body{
 
             display:flex;
-            column-gap: 160px;
+            justify-content: space-between;
 
-        @include mobile{
-            --gridColumns:2;
-        }
+            @include mobile{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 30px;
 
-        @include mobile-s{
-             --gridColumns:1;
-        }
+
+            }
+
+     
     }
 
     &__logo{
@@ -77,6 +79,22 @@
     
     }
 
+
+    &__menu{
+        display: flex;
+        column-gap: 125px;
+
+
+        @include tablet{
+        column-gap: 80px;
+    }
+
+        @include mobile{
+        display:contents;
+
+    }
+   }
+
     &__column{
 
                 display: flex;
@@ -96,7 +114,7 @@
                 display: flex;
                 flex-direction: column;
                 row-gap: 16px;
-                opacity: 0.5;
+       
 
 
                 @include tablet{
@@ -117,19 +135,36 @@
     
         }
 
+    &-contacts{
+
+        &__list{
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+        }
+
+
+
 
    
-    &-contacts__item{
+    &__item{
 
-        margin-bottom: 10px;
+      &:last-child{
+        padding-left: 20px;
+      }
    
 
     }
-    &-contacts__link{
+    &__link{
         display: flex;
         justify-content: start;
         align-items: center;
         column-gap: 8px;
+
+
+        @include hover{
+            opacity: 0.5;
+        }
 
         &.location{
             align-items: start;
@@ -142,29 +177,9 @@
 
     }
 
-    &__call-link{
-        padding-block: 10px;
 
-        line-height: 1;
-        width: 176px;
-        height: 40px;
 
-        @include desktop{
-            width: 100%;
-            padding-block: 0;
-            padding-inline: 0;
-        }
-
-        @include tablet{
-            width: 100%;
-            padding-inline: 0;
-        }
-
-        @include mobile{
-                width: 176px;
-                height: 40px;
-        }
-    }
+}
 
 
 

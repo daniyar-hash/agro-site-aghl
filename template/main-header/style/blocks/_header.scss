@@ -139,22 +139,7 @@
             margin-right: unset;
             order: 1;
 
-
-                // svg *[fill]{
-          
-                //   fill: var(--color-green-light);
-                // }
-
-                // svg path.red-line{
-                //     fill: var(--color-green-light);
-       
-                // }
-
-
-
-
-
-       
+    
         }
      
     
@@ -321,7 +306,7 @@
      
 
         margin-right: 10px;
-        padding-block: 5px;
+
         align-self: center;
         margin-left: auto;
         flex-shrink: 0;
@@ -332,21 +317,15 @@
         font-size: 14px;
 
 
-        @include hover{
-            background-color: var(--color-accent);
-            color:var(--color-dark);
-            opacity: 1;
-        }
+
         
 
           @include tablet{
                margin-right: 10px;
-               padding-inline: 6px;
-               width: unset;
                max-width: 168px;
                height: auto;
                margin-left: auto;
-               flex:1;
+
 
           }
 

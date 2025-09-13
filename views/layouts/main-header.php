@@ -148,7 +148,7 @@
                         </li>
                     </ul>
                     </nav>
-                    <a href="tel:+77055774243" class="header__call-link button hidden-mobile ">
+                    <a href="tel:8(7282)41-36-35" class="header__call-link button hidden-mobile ">
                     Заказать звонок
                     </a>
                     <a href="https://instagram.com/aghl_kz/" class="header__social-link instagram hidden-mobile" target="_blank">

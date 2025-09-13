@@ -302,7 +302,7 @@ h4, .h4 {
   position: relative;
   z-index: 0;
   padding-block: 70px;
-  font-size: 16px;
+  font-size: clamp(14px, 0.9756097561vw, 16px);
 }
 @media (max-width: 1023px) {
   .footer {
@@ -326,17 +326,13 @@ h4, .h4 {
 }
 .footer__body {
   display: flex;
-  -moz-column-gap: 160px;
-       column-gap: 160px;
+  justify-content: space-between;
 }
 @media (max-width: 767px) {
   .footer__body {
-    --gridColumns:2;
-  }
-}
-@media (max-width: 480px) {
-  .footer__body {
-    --gridColumns:1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
   }
 }
 .footer__logo {
@@ -359,6 +355,22 @@ h4, .h4 {
 .footer-coopyright {
   text-transform: uppercase;
 }
+.footer__menu {
+  display: flex;
+  -moz-column-gap: 125px;
+       column-gap: 125px;
+}
+@media (max-width: 1023px) {
+  .footer__menu {
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .footer__menu {
+    display: contents;
+  }
+}
 .footer__column {
   display: flex;
   flex-direction: column;
@@ -373,7 +385,6 @@ h4, .h4 {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-  opacity: 0.5;
 }
 @media (max-width: 1023px) {
   .footer__column-list {
@@ -390,8 +401,13 @@ h4, .h4 {
     opacity: 0.5;
   }
 }
-.footer-contacts__item {
-  margin-bottom: 10px;
+.footer-contacts__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.footer-contacts__item:last-child {
+  padding-left: 20px;
 }
 .footer-contacts__link {
   display: flex;
@@ -400,35 +416,20 @@ h4, .h4 {
   -moz-column-gap: 8px;
        column-gap: 8px;
 }
+@media (hover: hover) {
+  .footer-contacts__link:hover {
+    opacity: 0.5;
+  }
+}
+@media (hover: none) {
+  .footer-contacts__link:active {
+    opacity: 0.5;
+  }
+}
 .footer-contacts__link.location {
   align-items: start;
 }
 .footer-contacts__link .phone-icon *[fill],
 .footer-contacts__link .email-icon *[fill] {
   fill: var(--color-green-alt);
-}
-.footer__call-link {
-  padding-block: 10px;
-  line-height: 1;
-  width: 176px;
-  height: 40px;
-}
-@media (max-width: 1280px) {
-  .footer__call-link {
-    width: 100%;
-    padding-block: 0;
-    padding-inline: 0;
-  }
-}
-@media (max-width: 1023px) {
-  .footer__call-link {
-    width: 100%;
-    padding-inline: 0;
-  }
-}
-@media (max-width: 767px) {
-  .footer__call-link {
-    width: 176px;
-    height: 40px;
-  }
 }/*# sourceMappingURL=style.css.map */

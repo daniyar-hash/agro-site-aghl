@@ -50,12 +50,15 @@
         display: inline-block;
         text-transform: uppercase;
         border: var(--border);
-        font-weight: 700;
-        font-size: clamp(12px, 0.85vw,14px);
-        padding-block: 14px;
-        padding-inline: 20px;
         text-align: center;
         cursor: pointer;
+        padding-block: 5px;
+        flex-shrink: 0;
+        width: 135px;
+        padding-inline: 10px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 14px;
         
         @include hover{
             opacity: .5;
@@ -63,13 +66,4 @@
 }
 
 
-
-.button-medium{
-    width: 216px;
-    height: 52px;
-}
-.button-large{
-    width: 236px;
-    height: 56px;
-}
 

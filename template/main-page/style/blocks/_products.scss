@@ -1,6 +1,4 @@
-section{
-    outline: 2px solid red;
-}
+
 .products-season{
     line-height: 1;
     color: var(--color-dark);
@@ -47,7 +45,7 @@ section{
         }
 
         @include mobile{
-             grid-template-columns:repeat(3, 187px);
+             grid-template-columns:repeat(3, 1fr);
              justify-content: center;
 
        

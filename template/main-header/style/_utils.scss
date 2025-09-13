@@ -46,29 +46,32 @@
 }
 
 .button{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: inline-flex;
         border: var(--border);
-        font-weight: 400;
-        padding: 14px;
         text-align: center;
         cursor: pointer;
+        padding-block: 4px;
+        flex-shrink: 0;
+        width: 135px;
+        padding-inline: 10px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 14px;
         
         @include hover{
-            opacity: .5;
+            background-color: var(--color-accent);
+            color:var(--color-dark);
+            opacity: 1;
         }
 }
 
 
 
-.button-medium{
-    width: 185px;
-    height: 35px;
-    
-}
-.button-large{
-    width: 236px;
-    height: 56px;
+
+
+.logo{
+    @include hover{
+        opacity: 0.5;
+    }
 }
 

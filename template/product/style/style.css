@@ -156,6 +156,7 @@ svg * {
   --color-gray:#EDEDED;
   --color-gray-alt:#bcb1b1;
   --color-dark-gray:#1D1D1D;
+  --color-accent:#00ff0c;
   --color-green:#5d8c56;
   --color-green-alt:#159446;
   --border: 4px solid #159446;
@@ -564,7 +565,7 @@ h4, .h4 {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  padding-left: 20px;
+  padding-inline: 20px;
   padding-top: 50px;
   padding-bottom: 20px;
 }
@@ -576,6 +577,59 @@ h4, .h4 {
   align-self: start;
   width: 180px;
   padding-block: 10px;
+}
+
+.accordion {
+  --indicatorPosition:90deg;
+  transition-duration: var(--transition-duration);
+}
+.accordion[open] {
+  --indicatorPosition:0deg;
+}
+.accordion--description .accordion__header {
+  -moz-column-gap: 0;
+       column-gap: 0;
+  justify-content: space-between;
+}
+.accordion__header {
+  display: flex;
+  justify-content: end;
+  -moz-column-gap: 375px;
+       column-gap: 375px;
+}
+.accordion__header::marker {
+  content: "";
+}
+@media (hover: hover) {
+  .accordion__header:hover {
+    opacity: 0.5;
+  }
+}
+@media (hover: none) {
+  .accordion__header:active {
+    opacity: 0.5;
+  }
+}
+.accordion__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--color-dark);
+  position: relative;
+}
+.accordion__icon::before, .accordion__icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: var(--color-dark);
+}
+.accordion__icon::before {
+  rotate: var(--indicatorPosition);
+  transition-duration: var(--transition-duration);
 }
 
 @font-face {

@@ -465,7 +465,6 @@ html.is-lock {
 .section {
   --rowGapBlocks:50px;
   padding-block: var(--section-base-padding-y);
-  outline: 2px solid red;
 }
 @media (max-width: 767px) {
   .section {
@@ -532,10 +531,6 @@ html.is-lock {
   }
 }
 
-section {
-  outline: 2px solid red;
-}
-
 .products-season {
   line-height: 1;
   color: var(--color-dark);
@@ -574,7 +569,7 @@ section {
 }
 @media (max-width: 767px) {
   .products-season__list {
-    grid-template-columns: repeat(3, 187px);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
   }
 }
@@ -779,7 +774,6 @@ section {
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .reviews__avatar-image {
   width: 100%;
@@ -879,12 +873,14 @@ section {
   .category__info-title-link:hover {
     color: var(--color-dark);
     background-color: var(--color-light);
+    border-radius: 5px;
   }
 }
 @media (hover: none) {
   .category__info-title-link:active {
     color: var(--color-dark);
     background-color: var(--color-light);
+    border-radius: 5px;
   }
 }
 .category__info-icon {
@@ -907,6 +903,7 @@ section {
   row-gap: 10px;
   font-size: 16px;
   list-style-type: disc;
+  padding-left: 20px;
 }
 .category__info-link {
   padding: 5px;
