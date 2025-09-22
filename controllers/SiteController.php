@@ -24,7 +24,7 @@ class SiteController
         $seasonProducts = Product::getSeasonProducts();
 
         // echo '<pre>';
-        // print_r($categoryWithSubCategories);
+        // print_r($seasonProducts);
         // echo '</pre>';
 
         // Подключаем вид

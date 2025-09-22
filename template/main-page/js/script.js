@@ -32,11 +32,8 @@
     headerSearchWrapper.classList.toggle('hidden');
 
   })
-
-
-
   // const bannerList = document.querySelector(".banner__list");
-  // const bannerSlides = document.querySelectorAll(".banner__list-item");
+  // const bannerSlides = document.querySelectorAll(".banner__item");
   
 
   // function showSlide(index){
@@ -46,38 +43,33 @@
   //     });
   // }
 
-
-
   //--------------------///
 
    let index = 0;
    let total = 4;
    let currentSlide = 0;
 
-
-  function changeSlide() {
-  index = (index + 1) % total;  // 1
-  currentSlide = index; // 1
-
+  // function changeSlide() {
+  // index = (index + 1) % total;  // 1
+  // currentSlide = index; // 1
   
-  //showSlide(currentSlide);
-  document.getElementById(`btn${index + 1}`).checked = true; // 1
-}
+//   //showSlide(currentSlide);
+//   document.getElementById(`btn${index + 1}`).checked = true; // 2
+// }
 
+// let interval = setInterval(changeSlide, 3000);
 
-
-let interval = setInterval(changeSlide, 3000);
-document.querySelectorAll('.pagination__label').forEach((label, i) => {
-  label.addEventListener('click', () => {
-    clearInterval(interval);
-    console.log(i)
-    index = i;
-    currentSlide = i;
-  //  showSlide(currentSlide);
-    document.getElementById(`btn${i + 1}`).checked = true;
-    interval = setInterval(changeSlide, 3000);
-  });
-});
+// document.querySelectorAll('.pagination__label').forEach((label, i) => {
+//   label.addEventListener('click', () => {
+//     clearInterval(interval);
+//     console.log(i)
+//     index = i;
+//     currentSlide = i; //3
+//   //  showSlide(currentSlide);
+//     document.getElementById(`btn${i + 1}`).checked = true;
+//     interval = setInterval(changeSlide, 3000);
+//   });
+// });
 
 
 

@@ -12,34 +12,25 @@
                     <input type="radio" id="btn3" name="pagination__input"  value="number-3">
                     <input type="radio" id="btn4" name="pagination__input"  value="number-4">
 
-
                     <ul class="banner__list slider">
-                        <li class="banner__list-item banner--1 slider active">
-                       
-                                <h2 class="slider__title visually-hidden">First banner</h2>
-                      
+                        <li class="banner__item banner--1 slider active">
+                            <h2 class="slider__title visually-hidden">First banner</h2>
                         </li>
-                        <li class="banner__list-item banner--2 slider">
-                            
+                        <li class="banner__item banner--2 slider">
                             <h2 class="slider__title visually-hidden">Second banner</h2>
-                            
                         </li>
-                        <li class="banner__list-item banner--3 slider">
+                        <li class="banner__item banner--3 slider">
                              <h2 class="slider__title visually-hidden">Third banner</h2>
                         </li>
-                        <li class="banner__list-item banner--4 slider">
+                        <li class="banner__item banner--4 slider">
                             <h2 class="slider__title visually-hidden">Foufth banner</h2>
                         </li>
                     </ul>
-
-
-
                      <div class="features">
                         <ul class="features__list">
                             <li class="features__item"><span class="features__number">14</span><span class="features__title">лет <br>на рынке</span></li>
                             <li class="features__item"><span  class="features__number">9</span><span class="features__title"><br>городов</span></li>
                             <li class="features__item"><span  class="features__number">50</span><span class="features__title">и более <br>позиций</span></li>
-
                         </ul>
                      </div>
                     <div class="banner__pagination pagination">
@@ -86,7 +77,7 @@
                       <?php foreach($seasonProducts as $product) :  ?>
                         <li class="products-season__item" tabindex="0">
                             <a href="/<?= $product['category_slug'] ?>/<?= $product['sub_category_slug'] ?>/<?= $product['slug'] ?>"class="products-season__link" tabindex="0">
-                            <img src="/template/category-page/img/category-products/1.jpg" alt="Product-season" class="products-season__image" width="172" height="165" loading="lazy">
+                            <img src="<?php echo Product::getImage($product['id']); ?>" alt="Product-season" class="products-season__image" width="172" height="227" loading="lazy">
                             </a>
                             <div class="products-season__info">
                                 <strong class="products-season__subcategory <?=  $product['sub_category_slug']; ?>"><?=  $product['sub_category_name'];  ?></strong>

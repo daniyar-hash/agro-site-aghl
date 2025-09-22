@@ -40,7 +40,7 @@
                   <div class="product-page__body product">
                     
                     <div class="product__image-wrapper">
-                        <img class="product__image" id="product-image" src="<?php echo Product::getImage($product['id']) ?>" alt="product photo" loading="lazy" width="400" height="400">
+                        <img class="product__image" id="product-image" src="<?php echo Product::getImage($product['id']); ?>" alt="product photo" loading="lazy" width="400" height="532">
                     </div>
 
                     <div class="product__info">

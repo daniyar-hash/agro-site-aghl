@@ -355,7 +355,7 @@ class Product
         // Получение и возврат результатов
         $result = $db->query('SELECT p.id, p.name , p.slug, p.price, category.slug as category_slug , sub_category.name as sub_category_name, sub_category.slug as sub_category_slug FROM product p 
         INNER JOIN category ON p.category_id = category.id 
-         INNER JOIN sub_category ON p.subcategory_id = sub_category.id WHERE p.is_season =1 ORDER BY p.id DESC ');
+         INNER JOIN sub_category ON p.subcategory_id = sub_category.id WHERE p.is_season =1 ORDER BY p.id DESC LIMIT 5 ');
 
          $result->setFetchMode(PDO::FETCH_ASSOC);
          $productsList = $result->fetchAll();
@@ -540,10 +540,10 @@ class Product
         $noImage = 'no-image.jpg';
 
         // Путь к папке с товарами
-        $path = '/template/category-page/img/category-products/';
+        $path = '/template/product/img/';
 
         // Путь к изображению товара
-        $pathToProductImage = $path . $id . '.jpg';
+        $pathToProductImage = $path . $id . '.webp';
 
         if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
             // Если изображение для товара существует

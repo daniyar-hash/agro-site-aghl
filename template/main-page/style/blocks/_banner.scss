@@ -55,7 +55,7 @@
             height: 100vh;
         }
 
-       &__list-item{
+       &__item{
         position: absolute;
         top: 0;
         left: 0;
@@ -84,13 +84,9 @@
           //  background-color: rgba($color: #000000, $alpha: 0.3);
         }
 
-
-
-
         &.banner--1{
             background: url('../img/banner-7.png') center/cover no-repeat;
             background-position: 100% 50%;
-
          
         }
 

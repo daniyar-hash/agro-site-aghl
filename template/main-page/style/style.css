@@ -335,7 +335,7 @@ h4, .h4 {
   position: relative;
   height: 100vh;
 }
-.banner__list-item {
+.banner__item {
   position: absolute;
   top: 0;
   left: 0;
@@ -351,27 +351,27 @@ h4, .h4 {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.banner__list-item.active {
+.banner__item.active {
   opacity: 1;
 }
-.banner__list-item::after {
+.banner__item::after {
   content: "";
   position: absolute;
   inset: 0;
 }
-.banner__list-item.banner--1 {
+.banner__item.banner--1 {
   background: url("../img/banner-7.png") center/cover no-repeat;
   background-position: 100% 50%;
 }
-.banner__list-item.banner--2 {
+.banner__item.banner--2 {
   background: url("../img/banner-6.jpg") center/cover no-repeat;
   background-position: 50% 35%;
 }
-.banner__list-item.banner--3 {
+.banner__item.banner--3 {
   background-image: url("../img/banner-3.jpg");
   background-position: 0 50%;
 }
-.banner__list-item.banner--4 {
+.banner__item.banner--4 {
   background-image: url("../img/banner-4.png");
   background-position: center;
   background-position: 0 60%;
@@ -575,13 +575,13 @@ html.is-lock {
 }
 @media (max-width: 480px) {
   .products-season__list {
-    grid-template-columns: repeat(2, 187px);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .products-season__item {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 14px;
   padding: 8px;
   border-radius: 15px;
   background-color: var(--color-light);
@@ -595,6 +595,11 @@ html.is-lock {
   display: block;
   border-radius: 15px;
 }
+@media (max-width: 480px) {
+  .products-season__image {
+    height: auto;
+  }
+}
 .products-season__info {
   display: flex;
   flex-direction: column;
@@ -602,6 +607,11 @@ html.is-lock {
   justify-content: space-between;
   row-gap: 15px;
   color: var(--color-gray-alt);
+}
+@media (max-width: 480px) {
+  .products-season__info {
+    row-gap: 5px;
+  }
 }
 .products-season__subcategory {
   font-size: 14px;
@@ -754,6 +764,7 @@ html.is-lock {
   display: flex;
   -moz-column-gap: 37px;
        column-gap: 37px;
+  width: 100%;
 }
 .reviews__body {
   display: flex;
