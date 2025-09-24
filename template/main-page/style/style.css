@@ -472,6 +472,7 @@ html.is-lock {
   }
 }
 .section__title {
+  font-weight: 400;
   color: var(--color-green);
 }
 .section__header {
@@ -556,6 +557,22 @@ html.is-lock {
     padding-inline: 0;
   }
 }
+.products-season__bg-green {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.products-season__bg-green::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 275px;
+  left: 0;
+  bottom: -33px;
+  background-color: var(--color-green);
+  z-index: -1;
+  border-radius: 12px;
+}
 .products-season__list {
   gap: 25px;
   grid-template-columns: repeat(5, minmax(150px, 187px));
@@ -593,7 +610,7 @@ html.is-lock {
 }
 .products-season__image {
   display: block;
-  border-radius: 15px;
+  border-radius: 9px;
 }
 @media (max-width: 480px) {
   .products-season__image {
@@ -605,7 +622,7 @@ html.is-lock {
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
-  row-gap: 15px;
+  row-gap: 12px;
   color: var(--color-gray-alt);
 }
 @media (max-width: 480px) {
@@ -623,6 +640,7 @@ html.is-lock {
   font-weight: inherit;
   text-transform: lowercase;
   line-height: 1.2;
+  padding: 3px 10px;
 }
 .products-season__subcategory.fungicidy {
   background-color: var(--color-fung);
@@ -640,18 +658,18 @@ html.is-lock {
   background-color: var(--color-stemul);
 }
 .products-season__name {
-  font-family: "GilroyExtraBold", sans-serif;
   font-size: clamp(16px, 1.6463414634vw, 27px);
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
   color: #4a4a49;
 }
 .products-season__desc {
   font-size: 10px;
+  font-weight: 300;
 }
 .products-season__send {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;
@@ -663,8 +681,8 @@ html.is-lock {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Gilroy Bold", sans-serif;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .about-us {
@@ -708,7 +726,6 @@ html.is-lock {
 .about-us__column-title {
   font-size: clamp(18px, 1.7073170732vw, 28px);
   font-weight: 600;
-  font-family: "Gilroy-SemiBold", sans-serif;
 }
 .about-us__column-list {
   padding-left: 20px;
@@ -797,11 +814,12 @@ html.is-lock {
 }
 .reviews__description {
   font-size: 16px;
+  font-weight: 300;
 }
 .reviews time {
   color: var(--color-gray-alt);
   font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
   align-self: end;
 }
 
@@ -911,7 +929,6 @@ html.is-lock {
 .category__info-list {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
   font-size: 16px;
   list-style-type: disc;
   padding-left: 20px;
@@ -987,44 +1004,50 @@ html.is-lock {
 }
 
 @font-face {
-  font-family: "Gilroy", sans-serif;
-  src: url("fonts/Gilroy-Light.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: local("Gilroy-Light"), url("/template/styles/fonts/fonts/Gilroy-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gilroy", sans-serif;
-  src: url("fonts/Gilroy-Regular.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gilroy", sans-serif;
-  src: url("fonts/Gilroy-Medium.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gilroy", sans-serif;
-  src: url("fonts/Gilroy-SemiBold.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gilroy", sans-serif;
-  src: url("fonts/Gilroy-Bold.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gilroy", sans-serif;
-  src: url("fonts/Gilroy-ExtraBold.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Extrabold.woff2") format("woff2");
   font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Heavy.woff2") format("woff2");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }/*# sourceMappingURL=style.css.map */
