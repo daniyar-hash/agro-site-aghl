@@ -1,39 +1,63 @@
 .accordion{
 
---indicatorPosition:90deg;
 
-transition-duration: var(--transition-duration);
-
-
+   border-bottom: 1px solid var(--color-gray-alt);
+   padding-bottom: 10px;
 
 
     &[open]{
+
+
+    
+
+        .accordion__title{
+            font-size: 0;
+        }
+
+            .accordion__icon::before,
+             .accordion__icon::after{
+                width: 65%;   
+             }
+
         
-    --indicatorPosition:0deg;
+        
+            .accordion__icon::before{
+               rotate:-45deg;
 
+            }
 
+            .accordion__icon::after{
+               rotate:45deg;
 
+            }
 
+    }
+
+    &__title{
+        font-size: 14px;
     }
 
 
 
     &--description{
 
+        margin-bottom: 20px;
 
-        .accordion__header{
-                column-gap: 0;
-                justify-content: space-between;
-        }
     }
+
+
+
+    
     &__header{
+
+        display: flex;
+        justify-content: space-between;   
+
         &::marker{
             content: "";
         }
 
-        display: flex;
-        justify-content: end;
-        column-gap: 375px;
+      
 
 
 
@@ -46,31 +70,46 @@ transition-duration: var(--transition-duration);
 
 
     &__icon{
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border: 2px solid var(--color-dark);
+        width: 10px;  
+        height: 10px;      
+   
         position: relative;
 
 
 
         &::before,
         &::after{
-
-            @include abs-center;
+            
             content: "";
-            width: 50%;
+            position:absolute;            
+            width: 80%;
             height: 2px;
             background-color: var(--color-dark);
+            translate: 0 -50%;
+            transition-duration: var(--transition-duration);
 
 
 
         }
 
         &::before{
-            rotate: var(--indicatorPosition);
-            transition-duration: var(--transition-duration);
+            rotate:45deg;
+            left: 0;
+            top: 50%;
+            transform-origin: 0 0;
+  
 
+        }
+
+        &::after{
+            rotate: -45deg;
+            right: 0;
+            top: 50%;
+            transform-origin: 100% 0;
+
+            
+
+          
         }
     }
 }

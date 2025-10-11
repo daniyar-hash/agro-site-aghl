@@ -19,27 +19,27 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".accordion").forEach(accordion => {
-    const title = accordion.querySelector(".accordion__title");
-    const titleDesc = accordion.querySelector(".accordion__title.desc");
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.querySelectorAll(".accordion").forEach(accordion => {
+//     const title = accordion.querySelector(".accordion__title");
+//     const titleDesc = accordion.querySelector(".accordion__title.desc");
 
-    function updateTitle() {
-      if (title) {
-        title.textContent = accordion.open ? "Скрыть таблицу" : "Показать таблицу";
-      }
-      if (titleDesc) {
-        titleDesc.textContent = accordion.open ? "Скрыть описание товара" : "Показать описание товара";
-      }
-    }
+//     function updateTitle() {
+//       if (title) {
+//         title.textContent = accordion.open ? "Скрыть таблицу" : "Показать таблицу";
+//       }
+//       if (titleDesc) {
+//         titleDesc.textContent = accordion.open ? "Скрыть описание товара" : "Показать описание товара";
+//       }
+//     }
 
-    // сразу при загрузке
-    updateTitle();
+//     // сразу при загрузке
+//     updateTitle();
 
-    // при каждом открытии/закрытии
-    accordion.addEventListener("toggle", updateTitle);
-  });
-});
+//     // при каждом открытии/закрытии
+//     accordion.addEventListener("toggle", updateTitle);
+//   });
+// });
 
 
 
@@ -125,15 +125,7 @@ if(allEmpty7) {
       })
     }
 
-  function updateHeaderClass() {
-    if (window.scrollY > 80) {
-      header.classList.remove('transparent');
-      header.classList.add('solid');
-    } else {
-      header.classList.remove('solid');
-      header.classList.add('transparent');
-    }
-  }
+
 
   function zoomer(imgId, scaleImage){
     let img, glass, w, h, bw;
@@ -235,15 +227,28 @@ if(allEmpty7) {
    zoomer("product-image", 4);
 
 
+function updateHeaderClass() {
 
 
+    if (window.scrollY > 50) {
 
+      header.classList.add('solid');
+
+
+    } else {
+      header.classList.remove('solid');
+    
+      }
+      
+    }
+  
 
   // Проверка при загрузке страницы
-  window.addEventListener('load', updateHeaderClass);
- 
+   window.addEventListener('load', updateHeaderClass);
+
   // Проверка при скролле
   window.addEventListener('scroll', updateHeaderClass);
+
 
 
 

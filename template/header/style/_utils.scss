@@ -46,19 +46,24 @@
     }
 }
 
+
 .button{
-        display: inline-block;
-        text-transform: uppercase;
+        display: inline-flex;
         border: var(--border);
-        font-weight: 700;
-        font-size: clamp(12px, 0.85vw,14px);
-        padding-block: 14px;
-        padding-inline: 20px;
         text-align: center;
         cursor: pointer;
+        padding-block: 4px;
+        flex-shrink: 0;
+        width: 135px;
+        padding-inline: 10px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 14px;
         
         @include hover{
-            opacity: .5;
+            background-color: var(--color-accent);
+            color:var(--color-dark);
+            opacity: 1;
         }
 }
 

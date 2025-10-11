@@ -83,22 +83,22 @@
   //     popup.querySelector('#video').play();
   // })
 
-    btnModalClose.addEventListener("click", (e)=>{
+  //   btnModalClose.addEventListener("click", (e)=>{
 
 
-     e.preventDefault();
-     popup.classList.remove('modal-show');
-     popup.style.display = "none";
+  //    e.preventDefault();
+  //    popup.classList.remove('modal-show');
+  //    popup.style.display = "none";
 
 
-      video.pause();
-      video.currentTime = 0;
+  //     video.pause();
+  //     video.currentTime = 0;
 
 
-  })
+  // })
 
 
-    const hiddenWordsLogo = document.querySelectorAll('.header__logo svg path');
+  const hiddenWordsLogo = document.querySelectorAll('.header__logo svg path');
 
   function updateHeaderClass() {
 

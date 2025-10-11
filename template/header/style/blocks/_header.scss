@@ -1,154 +1,81 @@
 .header{
 
-    background-color:var(--color-dark);
+    --paddingBottom:20px;
     position: fixed;
     top: 0;
-    left: 50%;
-    translate: -50%;
     width: 100%;
     z-index: 1;
-  
+    padding-top: 60px;
+    padding-bottom:var(--paddingBottom);
+    background-color: var(--color-green);
+    font-weight: 400;
 
-
-    &:has(.flex-column){
-        background-color: unset;
-    }
-
-
-    &.transparent{
-            opacity: 70%;
-    }
 
     &.solid{
-       background-color: #212f25;
+        padding-top: 20px;   
     }
 
-    &__inner{
+ 
+    &__inner{  
      
-      //  padding-top: 24px;
-       // min-height: 100px;
-        text-transform: uppercase;
+    
         display: flex;
 
-        &.flex-column{
-            flex-direction: column;
-            align-items: center;
-            padding-top: 0;
+          
+        }
 
+    &__menu{
+        align-self:unset;
+        display: flex;
 
-             .header__navigation-wrapper{
-                background-color: var(--color-dark);
-                width: 100%;
-                display: block;
-             }
-
-        
-            .header__container{
-                display: flex;
-                height: 70px;
-               // column-gap: 15px;
-            }
-
-            .header__menu{
-                align-self:unset;
-                display: flex;
-                align-items: center;
-
-                &-list{
-                    align-items: center;
-                    height: 100%;
-                }
-
-                &-item{
-              
-                    height: 100%;
-                }
-
-                &-link{
-                    padding-block: 20px;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-
-
-                }
-
-            }
    
 
+     
+        &-link{
+            display: flex;
+            align-items: center;
 
-        }
 
-        @include tablet{
-                 min-height: 80px;
-                 padding-top: 10px;
-                 justify-content: space-between;
-                
         }
 
     }
 
-        @include mobile{
-                &.container{
-                 padding-inline: 5px;
-        }
-      }
-
-
-
     &__logo{
-        width: 132px;
-        height: 70px;
-        margin-right: auto;
+        width: 50px;
+        height: auto;
         display: flex;
+        margin-right: 40px;
         flex-shrink: 0;
 
+        .hide{
+            display: none;
+        }
+
         &.logo-main{
-            width: 200px;
-            height: 150px;
+
+            width: 228px;
+            height: 148px;
             margin-right: unset;
             order: 1;
 
-
-                svg *[fill]{
-          
-                  fill: var(--color-green-light);
-                }
-
-                svg path.red-line{
-                    fill: var(--color-green-light);
-       
-                }
-
-
-
-
-
-       
+    
         }
      
     
 
     }
 
-    &__navigation-wrapper{
-        display: contents;
-    }
 
-    &__container{
-        display: contents;
-    }
 
     &__menu{
      
 
         &-list{
                 display: flex;
-                column-gap: 50px;
+                column-gap: 40px;
                 justify-content: space-between;
-                height: 100%;
 
-                @include tablet{
+                @include tablet{   
                     column-gap: 5px;
                 }
 
@@ -156,7 +83,6 @@
 
         &-item{
 
-            height: 100%;
             display: flex;
             position: relative;
             &:hover .header__catalog-aside{
@@ -167,14 +93,14 @@
 
             
         &-link{
+
+            --heightLineLink:4px;
                 position: relative;
                 display: flex;
                 align-items: center;
                 padding-inline:8px;
-                // padding-top: 8px;
-                // padding-bottom: 26px;
                 line-height: 1.4;
-                font-size: 16px;
+                 @include fluid-text(16,14);
             
 
                 &:focus, &.is-current{
@@ -185,7 +111,6 @@
                 }
 
                 @include hover{
-                    // opacity: 0.7;
 
                     &::after{
                         width: 100%;
@@ -196,8 +121,8 @@
                     content: "";
                     position: absolute;
                     width: 0;
-                    height: 4px;
-                    bottom: 0;
+                    height:var( --heightLineLink);
+                    top:calc(100% + var(--paddingBottom) - var( --heightLineLink));
                     left: 50%;
                     background-color: var(--color-green-alt);
                     transition-duration: inherit;
@@ -207,7 +132,7 @@
 
                 @include tablet{
                     padding-inline: 4px;
-                    @include fluid-text(14,12);
+                    
                 }
             
         }
@@ -225,7 +150,6 @@
           background-color: rgba($color: #000000, $alpha: 0.8);
           font-size: 12px;
           position: absolute;
-        //  border-radius: 10px;
           top: 100%;
           width: 228px;
       
@@ -251,6 +175,11 @@
                @include flex-center;
             
             }
+
+            &-text{
+                line-height: 1.7;
+                // height: 20px;
+            }
   
             
             @include hover{
@@ -261,11 +190,9 @@
         }
 
         &-item{
-            position: relative;
+            position: relative;   
 
-            // &:hover{
-            //     background-color: #212f25;
-            // }
+          
 
 
             &:hover .header__catalog-dropdown{
@@ -288,25 +215,28 @@
 
     &__call-link{
      
-        font-size: 12px;
-        margin-right: 23px;
-        padding-block: 8px;
+
+        margin-right: 10px;
+
         align-self: center;
         margin-left: auto;
         flex-shrink: 0;
-        width: 168px;
-        height: 40px;
+        width: 135px;
+        padding-inline: 10px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 14px;
+
+
+
         
 
           @include tablet{
                margin-right: 10px;
-               padding-inline: 6px;
-               @include fluid-text(12,10);
-               width: unset;
                max-width: 168px;
                height: auto;
                margin-left: auto;
-               flex:1;
+
 
           }
 
@@ -314,12 +244,33 @@
 
     &__social-link{
         @include flex-center(true);
-        margin-right: 10px;
+        width: 40px;
+        padding-inline: 10px;
+        position: relative;
 
 
+        
         @include hover{
-            opacity: 0.8; 
+            &::after{
+            background-color: var(--color-accent);
+            opacity: 1;
+            z-index: -1;
+
+            }
+     
         }
+
+        &::after{
+            content: '';
+            @include abs-center;   
+            width: 40px;
+            height: 60px;
+
+
+
+        }
+
+    
 
    
         svg path{
@@ -342,11 +293,14 @@
         display: flex;
         align-items: center;
         justify-content: start;
+        position: relative;
 
     }
 
+ 
+
     &__search-button{
-        margin-right: 12px;
+      
 
         @include tablet{
             margin-right: 0;
@@ -354,8 +308,7 @@
     }
 
     &__icon-search{
-            display: inline-flex;
-            padding: 8px 7px 6px;
+     
 
             @include tablet{
                 padding: 4px;
@@ -371,7 +324,5 @@
     }
 
 }
-
-
 
 

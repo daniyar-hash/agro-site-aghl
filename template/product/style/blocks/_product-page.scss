@@ -3,14 +3,52 @@
     background-color: var(--color-gray);
     color: var(--color-dark);
     font-size: 14px;
+    --section-base-padding-y:0;
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__images-wrapper{
+
+    }
+
 
 
     &__body{
         display:flex;
-        column-gap: 5px;
+        flex-direction: column;
         width: 100%;
-        padding-bottom: 10px;
+        max-width: 790px;
     }
+
+
+    &__image{
+        border-radius: 9px;
+        
+    }
+
+    &__images-small-wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__bg{
+        padding: 20px;
+        position: relative;
+        max-width: 280px;
+        width: 100%;   
+        height: 432px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;   
+        row-gap: 20px;
+        background-color: var(--color-light);
+
+    }
+
+
 
  
 }

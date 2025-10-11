@@ -9,6 +9,8 @@ class Product
     // Количество отображаемых товаров по умолчанию
     const SHOW_BY_DEFAULT = 6;
 
+    const COUNT_SMALL_IMG = 2;
+
     /**
      * Возвращает массив последних товаров
      * @param type $count [optional] <p>Количество</p>
@@ -544,6 +546,59 @@ class Product
 
         // Путь к изображению товара
         $pathToProductImage = $path . $id . '.webp';
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductImage;
+        }
+
+        // Возвращаем путь изображения-пустышки
+        return $path . $noImage;
+    }
+
+    public static function getImageSmall($id, $elementImg)
+    
+    {
+        // Название изображения-пустышки
+        $noImage = 'no-image.jpg';
+        $countImg = self::COUNT_SMALL_IMG;
+   
+    
+
+        // Путь к папке с товарами
+        $path = '/template/product/img/'; 
+
+
+
+        // Путь к изображению товараs
+        $pathToProductImage = $path . $id . $elementImg . '.webp'; 
+
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductImage;
+        }
+
+        // Возвращаем путь изображения-пустышки
+        return $path . $noImage;
+    }
+
+       public static function getImageСulture($id, $elementImg)
+    
+    {
+        // Название изображения-пустышки
+        $noImage = 'no-image.jpg';
+   
+        // Путь к папке с товарами
+        $path = '/template/product/img/culture/'; 
+
+        // Путь к изображению товараs
+        $pathToProductImage = $path . $id . $elementImg . '.webp'; 
+
+
+
 
         if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
             // Если изображение для товара существует

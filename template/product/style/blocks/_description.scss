@@ -1,12 +1,10 @@
 .description{
 
-    background-color: var(--color-light);
-    padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-
+    margin-bottom: 30px;
 
     &__property-item{
         display: flex;
@@ -15,11 +13,17 @@
     }
 
     &__detail{
-        max-width: 600px;
+        max-width: 400px;
     }
 
     &__table-wrapper{
         max-width: 900px;
+
+
+        th, td{
+            word-wrap: break-word; /* перенос слов */
+            white-space: normal; /* разрешить перенос */
+        }
 
         table,caption,td, th{
             border: 1px solid var(--color-gray-alt);
@@ -30,9 +34,12 @@
         }
 
         table{
-            width: 100%;
-            border-collapse: collapse;
-            color: var(--color-dark);
+            width: 100%;  
+            max-width: 333px;
+            border-collapse: collapse;   
+            color: var(--color-dark);     
+            font-size: 8px;
+            table-layout: fixed; /* фиксированный алгоритм */
         }
 
         th, caption{
@@ -57,8 +64,8 @@
             justify-content: space-between;
             column-gap: 10px;
             border-bottom: 2px dashed var(--color-dark);
-            width: 50%;
-            padding-block: 5px;
+            padding-block: 5px; 
+            font-size: 12px;
         }
 
         &-icon{

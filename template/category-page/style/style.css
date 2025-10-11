@@ -664,9 +664,11 @@ h4, .h4 {
 
 .breadcrumbs {
   color: var(--color-gray-alt);
-  font-size: 12px;
   padding-top: 90px;
   padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
 }
 .breadcrumbs__list {
   display: flex;

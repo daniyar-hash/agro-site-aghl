@@ -5,20 +5,36 @@
     justify-content: start;
     position: relative;
     font-size: 18px;
+    margin-left: 10px;
+
+
+    @include hover{
+
+        &::after{
+            background-color: var(--color-accent);
+            opacity: 1;
+        }
+     
+        }
+
+    &::after{
+        content: "";
+        @include abs-center;
+        width: 40px;
+        height: 60px;
+        z-index: -1;
+    }
+
+ 
 
 
 
 
     &__button{
-          margin-right: 12px;
-          height: 100%;
+          display:flex;
     }
 
-    &__icon{
-    
-        display: inline-flex;
-        padding: 8px 7px 6px;
-    }
+
 
     &__wrapper-field{
         position: absolute;

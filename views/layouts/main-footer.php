@@ -172,21 +172,21 @@
         </div>
     </footer>
 
-
+<!-- 
     <section class="modal modal-video">
         <div class="modal__inner">
             
             <video id="video" width="500" height="500"controls="controls" poster="video/test.jpg">
-            <!-- <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
+            <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'>
             <source src="../../template/main-footer/video/test.mp4" type='video/mp4'>
-            <!-- <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'> -->
+            <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'>
             </video>
 
             <button class="modal__button modal-close" type="button">
             <span class="visually-hidden">Закрыть модальное окно</span>
             </button>
         </div>
-    </section>
+    </section> -->
    
 <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
 <form class="mobile-overlay__button-close-wrapper" method="dialog">
