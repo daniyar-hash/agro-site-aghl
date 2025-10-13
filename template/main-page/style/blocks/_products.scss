@@ -132,43 +132,7 @@
 
 
 
-    &__subcategory{
-        font-size: 14px;
-        background-color: green;
-        align-self: start;border-radius: 10px;
-        padding-inline: 10px;
-        color: var(--color-light);
-        font-weight: inherit;
-        text-transform: lowercase;
-        line-height: 1.2;
-        padding:3px 10px;
 
-
-        &.fungicidy{
-            background-color: var(--color-fung);
-        }
-        &.gerbicidy{
-            background-color: var(--color-gerb);
-
-        }
-        &.insekticidy,
-        &.akaritsidy{
-            background-color: var(--color-insekt);
-
-        }
- 
-        &.regulyatory-rosta{
-            background-color: var(--color-regul);  
-
-        }
-
-        &.stimulyatory-rosta{
-           background-color: var(--color-stemul);
-        }
-
-
-        
-    }
 
     &__name{
 

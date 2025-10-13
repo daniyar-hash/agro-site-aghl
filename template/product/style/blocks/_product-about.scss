@@ -1,0 +1,22 @@
+.product-about{
+
+
+        max-width: 275px;
+        width: 100%;
+        font-size: 12px;
+        margin-bottom: 20px;
+        color: var(--color-gray-alt);   
+
+
+    &-item{
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        line-height: 1.2;
+
+        }
+
+    
+
+}

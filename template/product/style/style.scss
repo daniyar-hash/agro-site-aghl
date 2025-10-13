@@ -1,4 +1,4 @@
-@import "normalize", "media", "mixins", "variables", "globals";
+@import "normalize", "media", "mixins", "globals";
 
 @import"blocks/burger";
 @import"blocks/cross-button";
@@ -10,9 +10,13 @@
 @import"blocks/description";
 @import"blocks/product";
 @import"blocks/accordion";
+@import"blocks/product-about";
+@import"blocks/volume";
 
 
 @import"../../styles/fonts/fonts";
+@import"../../styles/blocks/products";
+@import"../../styles/blocks/variables";
 
 
 

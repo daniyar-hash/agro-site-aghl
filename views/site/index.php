@@ -80,7 +80,7 @@
                             <img src="<?php echo Product::getImage($product['id']); ?>" alt="Product-season" class="products-season__image" width="172" height="165" loading="lazy">
                             </a>
                             <div class="products-season__info">
-                                <strong class="products-season__subcategory <?=  $product['sub_category_slug']; ?>"><?=  $product['sub_category_name'];  ?></strong>
+                                <strong class="products-category <?=  $product['sub_category_slug']; ?>"><?=  $product['sub_category_name'];  ?></strong>
                                 <h3 class="products-season__name"><?=  $product['name'];  ?></h3>  
                                 <small class="products-season__desc">Для борьбы с широким спектром злаковых и двудольных сорняков.</small>
                                 <div class="products-season__wrapp-card">

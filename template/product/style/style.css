@@ -150,27 +150,6 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
-:root {
-  --color-light:#FFFFFF;
-  --color-dark:#0E0E0E;
-  --color-gray:#EDEDED;
-  --color-gray-alt:#606060;
-  --color-dark-gray:#1D1D1D;
-  --color-accent:#00ff0c;
-  --color-green:#23391f;
-  --color-green-alt:#159446;
-  --border: 1px solid var(--color-light);
-  --container-width:1088px;
-  --container-padding-x:20px;
-  --section-base-padding-y:88px;
-  --section-large-padding-y:98px;
-  --font-family-base:"Gilroy",sans-serif;
-  --button-height: 52px;
-  --button-large-height:56px;
-  --button-small-height: 40px;
-  --transition-duration: 0.2s;
-}
-
 body {
   font-size: clamp(12px, 1.6666666667vw, 24px);
   font-family: var(--font-family-base);
@@ -227,7 +206,7 @@ h4, .h4 {
   background-color: transparent;
   color: currentColor;
   width: 48px;
-  aspect-ratio: 1;
+  height: 48px;
   position: relative;
   align-self: center;
 }
@@ -260,7 +239,7 @@ h4, .h4 {
   background-color: transparent;
   color: currentColor;
   width: 48px;
-  aspect-ratio: 1;
+  height: 48px;
   position: relative;
 }
 @media (hover: hover) {
@@ -480,6 +459,10 @@ h4, .h4 {
   flex-direction: column;
   width: 100%;
   max-width: 790px;
+  row-gap: 58px;
+  color: var(--color-gray-alt);
+  font-weight: 400;
+  font-size: 12px;
 }
 .product-page__image {
   border-radius: 9px;
@@ -507,11 +490,7 @@ h4, .h4 {
   flex-direction: column;
   row-gap: 10px;
   margin-bottom: 30px;
-}
-.description__property-item {
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+  font-size: 12px;
 }
 .description__detail {
   max-width: 400px;
@@ -555,7 +534,6 @@ h4, .h4 {
   justify-content: space-between;
   -moz-column-gap: 10px;
        column-gap: 10px;
-  border-bottom: 2px dashed var(--color-dark);
   padding-block: 5px;
   font-size: 12px;
 }
@@ -563,8 +541,10 @@ h4, .h4 {
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  width: 20px;
-  aspect-ratio: 1;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px dashed #616160;
 }
 
 .product {
@@ -581,22 +561,41 @@ h4, .h4 {
   border: 3px solid var(--color-gray-alt);
   opacity: 0;
 }
-.product__info {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  padding-inline: 20px;
-  padding-top: 50px;
-  padding-bottom: 20px;
+.product__property-title {
+  font-size: clamp(16px, 1.6463414634vw, 27px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #4a4a49;
+  margin-bottom: 20px;
 }
-.product__info-price {
+.product__property-price {
+  display: none;
+}
+.product__property-price {
   font-size: 24px;
   font-weight: 700;
+  display: none;
 }
-.product__info-button {
-  align-self: start;
-  width: 180px;
-  padding-block: 10px;
+.product__property-button {
+  padding: 4px 35px;
+  background-color: var(--color-green);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-light);
+  display: inline-block;
+  border-radius: 10px;
+}
+@media (hover: hover) {
+  .product__property-button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
+}
+@media (hover: none) {
+  .product__property-button:active {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
 }
 .product__description {
   display: flex;
@@ -676,7 +675,7 @@ h4, .h4 {
   position: absolute;
   width: 80%;
   height: 2px;
-  background-color: var(--color-dark);
+  background-color: var(--color-gray-alt);
   translate: 0 -50%;
   transition-duration: var(--transition-duration);
 }
@@ -691,6 +690,37 @@ h4, .h4 {
   right: 0;
   top: 50%;
   transform-origin: 100% 0;
+}
+
+.product-about {
+  max-width: 275px;
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: var(--color-gray-alt);
+}
+.product-about-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  line-height: 1.2;
+}
+
+.volume {
+  font-weight: 700;
+  color: var(--color-green);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.volume__list {
+  display: flex;
+  -moz-column-gap: 14px;
+       column-gap: 14px;
+}
+.volume__item {
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-alt);
+  padding-inline: 10px;
 }
 
 @font-face {
@@ -740,4 +770,62 @@ h4, .h4 {
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+}
+.products-category {
+  font-size: 12px;
+  background-color: green;
+  align-self: start;
+  border-radius: 10px;
+  padding-inline: 10px;
+  color: var(--color-light);
+  font-weight: inherit;
+  text-transform: lowercase;
+  line-height: 1.2;
+  padding: 3px 10px;
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.products-category.fungicidy {
+  background-color: var(--color-fung);
+}
+.products-category.gerbicidy {
+  background-color: var(--color-gerb);
+}
+.products-category.insekticidy, .products-category.akaritsidy {
+  background-color: var(--color-insekt);
+}
+.products-category.regulyatory-rosta {
+  background-color: var(--color-regul);
+}
+.products-category.stimulyatory-rosta {
+  background-color: var(--color-stemul);
+}
+
+:root {
+  --color-light:#FFFFFF;
+  --color-dark:#0E0E0E;
+  --color-gray:#EDEDED;
+  --color-gray-alt:#606060;
+  --color-dark-gray:#1D1D1D;
+  --color-red-alt:#C53720;
+  --color-green:#23391f;
+  --color-green-alt:#159446;
+  --color-accent:#00ff0c;
+  --color-dark-green:#231b1b;
+  --color-fung:#368bcb;
+  --color-gerb:#3fa435;
+  --color-insekt: #d92e57;
+  --color-stemul:#614236;
+  --color-regul:#7a717d;
+  --border: 1px solid var(--color-light);
+  --container-width:1088px;
+  --container-padding-x:20px;
+  --section-base-padding-y:50px;
+  --section-large-padding-y:15px;
+  --font-family-base:"Gilroy",sans-serif;
+  --button-height: 52px;
+  --button-large-height:56px;
+  --button-small-height: 40px;
+  --transition-duration: 0.2s;
 }/*# sourceMappingURL=style.css.map */

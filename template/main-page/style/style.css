@@ -150,34 +150,6 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
-:root {
-  --color-light:#FFFFFF;
-  --color-dark:#0E0E0E;
-  --color-gray:#EDEDED;
-  --color-gray-alt:#606060;
-  --color-dark-gray:#1D1D1D;
-  --color-red-alt:#C53720;
-  --color-green:#23391f;
-  --color-green-alt:#159446;
-  --color-accent:#00ff0c;
-  --color-dark-green:#231b1b;
-  --color-fung:#368bcb;
-  --color-gerb:#3fa435;
-  --color-insekt: #d92e57;
-  --color-stemul:#614236;
-  --color-regul:#7a717d;
-  --border: 1px solid var(--color-light);
-  --container-width:1088px;
-  --container-padding-x:20px;
-  --section-base-padding-y:50px;
-  --section-large-padding-y:15px;
-  --font-family-base:"Gilroy",sans-serif;
-  --button-height: 52px;
-  --button-large-height:56px;
-  --button-small-height: 40px;
-  --transition-duration: 0.2s;
-}
-
 body {
   font-size: clamp(12px, 1.4634146341vw, 24px);
   font-family: var(--font-family-base);
@@ -630,33 +602,6 @@ html.is-lock {
     row-gap: 5px;
   }
 }
-.products-season__subcategory {
-  font-size: 14px;
-  background-color: green;
-  align-self: start;
-  border-radius: 10px;
-  padding-inline: 10px;
-  color: var(--color-light);
-  font-weight: inherit;
-  text-transform: lowercase;
-  line-height: 1.2;
-  padding: 3px 10px;
-}
-.products-season__subcategory.fungicidy {
-  background-color: var(--color-fung);
-}
-.products-season__subcategory.gerbicidy {
-  background-color: var(--color-gerb);
-}
-.products-season__subcategory.insekticidy, .products-season__subcategory.akaritsidy {
-  background-color: var(--color-insekt);
-}
-.products-season__subcategory.regulyatory-rosta {
-  background-color: var(--color-regul);
-}
-.products-season__subcategory.stimulyatory-rosta {
-  background-color: var(--color-stemul);
-}
 .products-season__name {
   font-size: clamp(16px, 1.6463414634vw, 27px);
   font-weight: 900;
@@ -1050,4 +995,62 @@ html.is-lock {
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+}
+.products-category {
+  font-size: 12px;
+  background-color: green;
+  align-self: start;
+  border-radius: 10px;
+  padding-inline: 10px;
+  color: var(--color-light);
+  font-weight: inherit;
+  text-transform: lowercase;
+  line-height: 1.2;
+  padding: 3px 10px;
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.products-category.fungicidy {
+  background-color: var(--color-fung);
+}
+.products-category.gerbicidy {
+  background-color: var(--color-gerb);
+}
+.products-category.insekticidy, .products-category.akaritsidy {
+  background-color: var(--color-insekt);
+}
+.products-category.regulyatory-rosta {
+  background-color: var(--color-regul);
+}
+.products-category.stimulyatory-rosta {
+  background-color: var(--color-stemul);
+}
+
+:root {
+  --color-light:#FFFFFF;
+  --color-dark:#0E0E0E;
+  --color-gray:#EDEDED;
+  --color-gray-alt:#606060;
+  --color-dark-gray:#1D1D1D;
+  --color-red-alt:#C53720;
+  --color-green:#23391f;
+  --color-green-alt:#159446;
+  --color-accent:#00ff0c;
+  --color-dark-green:#231b1b;
+  --color-fung:#368bcb;
+  --color-gerb:#3fa435;
+  --color-insekt: #d92e57;
+  --color-stemul:#614236;
+  --color-regul:#7a717d;
+  --border: 1px solid var(--color-light);
+  --container-width:1088px;
+  --container-padding-x:20px;
+  --section-base-padding-y:50px;
+  --section-large-padding-y:15px;
+  --font-family-base:"Gilroy",sans-serif;
+  --button-height: 52px;
+  --button-large-height:56px;
+  --button-small-height: 40px;
+  --transition-duration: 0.2s;
 }/*# sourceMappingURL=style.css.map */

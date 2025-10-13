@@ -25,59 +25,76 @@
             </div>
         </div>
         <section class="section product-page">
+            <h2 class="product__property-subtitle h3 visually-hidden">Описание товара</h2>
             <div class="product-page__inner container">
-                <h1 class="product-page__title visually-hidden">Бенагро</h1>
-                 <div class="product-page__images-wrapper">
-                    <div class="product-page__bg">
-                        <img class="product-page__image"  id="product-image" 
-                        src="<?php echo Product::getImage($product['id']); ?>"
-                         alt="product photo" loading="lazy" width="240" height="257">
-                        <div class="product-page__images-small-wrapper">
-                            <?php  $arrImg = ['-1', '-2'];
-                                                   
-                                $firstEl = array_shift($arrImg);
-                                $secondEl = array_shift($arrImg);
-                            
-                            ?>
+            <div class="product-page__images-wrapper">
+                <div class="product-page__bg">
+                    <img class="product-page__image"  id="product-image" 
+                    src="<?php echo Product::getImage($product['id']); ?>"
+                        alt="product photo" loading="lazy" width="240" height="257">
+                    <div class="product-page__images-small-wrapper">
+                        <?php  $arrImg = ['-1', '-2'];
+                                                
+                            $firstEl = array_shift($arrImg);
+                            $secondEl = array_shift($arrImg);
+                        
+                        ?>
+                        <img class="product-page__image" id="product-image"
+                            src="<?php echo Product::getImageSmall($product['id'], $firstEl); ?>"
+                            alt="product photo"  width="115" height="115"  loading="lazy">
+
                             <img class="product-page__image" id="product-image"
-                             src="<?php echo Product::getImageSmall($product['id'], $firstEl); ?>"
-                             alt="product photo"  width="115" height="115"  loading="lazy">
-
-                             <img class="product-page__image" id="product-image"
-                             src="<?php echo Product::getImageSmall($product['id'], $secondEl); ?>"
-                             alt="product photo"  width="115" height="115"  loading="lazy">
+                            src="<?php echo Product::getImageSmall($product['id'], $secondEl); ?>"
+                            alt="product photo"  width="115" height="115"  loading="lazy">
 
 
-                           
-                        </div>
+                        
                     </div>
                 </div>
-                <div class="product-page__body product">
-                    <div class="product__info">
-                        <h2 class="product__info-title h3"><?= $product['name'] ?></h2>
-                        <p class="product__info-price"><?= $product['price'] ?> тнг.</p>
-                        <div class="decription__property">
-                            <ul class="description__property-list">
-                                <li class="description__property-item">
+            </div>
+            <div class="product-page__body product">
+                    <div class="product__property">
+                        <strong class="products-category <?=  $subCategoryProduct['slug']; ?>"><?=  $subCategoryProduct['name'];  ?></strong>
+                        <h2 class="product__property-title h3"><?= $product['name'] ?></h2>
+                        <p class="product__property-price"><?= $product['price'] ?> тнг.</p>
+                        <div class="product-about">
+                            <ul class=" product-about__list">
+                                <li class=" product-about__item">
 
                                     <?php  if(!empty($product['concentration'])): ?>
-                                        <span class="decription__property-text"><strong>Действующее вещество, концентрация (г/л):</strong></span>
-                                        <span class="decription__property-text"><?= $product['concentration'] ?></span>
+                                        <span class="product-about__text"><strong>Действующее вещество, концентрация (г/л):</strong></span>
+                                        <span class="product-about__text"><?= $product['concentration'] ?></span>
 
                                     <?php endif; ?>
                                 </li>
-                                <li class="description__property-item">
+                                <li class=" product-about__item">
                                     <?php  if(!empty($product['concentration'])): ?>
-                                        <span class="decription__property-text"><strong> Препаративная форма:</strong></span>
-                                        <span class="decription__property-text"><?= $product['dosage_form'] ?></span>
+                                        <span class="product-about__text"><strong> Препаративная форма:<br></strong></span>
+                                        <span class="product-about__text"><?= $product['dosage_form'] ?></span>
                                     <?php endif; ?>
                         
                                 </li>
                             </ul>
                         </div>
-                        <h2 class="descrition__title h3 visually-hidden">Описание</h2>
+                        <div class="product__property-volume volume">
+                            <ul class="volume__list">
+
+                          
+                 
+                            <?php  if(!empty($product_volume[0]['volume_ml'])):  ?>
+                                <li class="volume__item">100 мл.</li>
+                            <?php endif; ?>
+                             <?php  if(!empty($product_volume[0]['volume_litre'])):  ?>
+                                <li class="volume__item">1 л.</li>
+                            <?php endif; ?>
+                             <?php  if(!empty($product_volume[0]['volume_5litre'])):  ?>
+                                <li class="volume__item">5 л.</li>
+                            <?php endif; ?>
+                 
+                            </ul>
+                        </div>
                       
-                        <a href="#" class="product__info-button button">Заказать</a>
+                        <a href="#" class="product__property-button">Заказать</a>
                     </div>
                     <div class="product__description">
                         <div class="product__left-side">
@@ -252,22 +269,19 @@
                             <div class="description__download">
                                 <a href="/upload/documents/Agro_Catalog_Ru_Prev_1802.pdf" class="description__download-link catalog" target="_blank">Скачать Каталог 
                                     <span class="description__download-icon">
-                                        <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12.5535 16.5061C12.4114 16.6615 12.2106 16.75 12 16.75C11.7894 16.75 11.5886 16.6615 11.4465 16.5061L7.44648 12.1311C7.16698 11.8254 7.18822 11.351 7.49392 11.0715C7.79963 10.792 8.27402 10.8132 8.55352 11.1189L11.25 14.0682V3C11.25 2.58579 11.5858 2.25 12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V14.0682L15.4465 11.1189C15.726 10.8132 16.2004 10.792 16.5061 11.0715C16.8118 11.351 16.833 11.8254 16.5535 12.1311L12.5535 16.5061Z" fill="#1C274C"/>
-                                        <path d="M3.75 15C3.75 14.5858 3.41422 14.25 3 14.25C2.58579 14.25 2.25 14.5858 2.25 15V15.0549C2.24998 16.4225 2.24996 17.5248 2.36652 18.3918C2.48754 19.2919 2.74643 20.0497 3.34835 20.6516C3.95027 21.2536 4.70814 21.5125 5.60825 21.6335C6.47522 21.75 7.57754 21.75 8.94513 21.75H15.0549C16.4225 21.75 17.5248 21.75 18.3918 21.6335C19.2919 21.5125 20.0497 21.2536 20.6517 20.6516C21.2536 20.0497 21.5125 19.2919 21.6335 18.3918C21.75 17.5248 21.75 16.4225 21.75 15.0549V15C21.75 14.5858 21.4142 14.25 21 14.25C20.5858 14.25 20.25 14.5858 20.25 15C20.25 16.4354 20.2484 17.4365 20.1469 18.1919C20.0482 18.9257 19.8678 19.3142 19.591 19.591C19.3142 19.8678 18.9257 20.0482 18.1919 20.1469C17.4365 20.2484 16.4354 20.25 15 20.25H9C7.56459 20.25 6.56347 20.2484 5.80812 20.1469C5.07435 20.0482 4.68577 19.8678 4.40901 19.591C4.13225 19.3142 3.9518 18.9257 3.85315 18.1919C3.75159 17.4365 3.75 16.4354 3.75 15Z" fill="#1C274C"/>
+                                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.38729 7.83239L4.39087 1.1604L3.58961 1.16083L3.58603 7.83282L4.38729 7.83239Z" fill="#606060"/>
+                                        <path d="M1.08816 5.48474L1.60754 5.00075L3.98614 7.56004L6.36749 4.99819L6.88635 5.48163L3.98523 8.60077L1.08816 5.48474Z" fill="#606060"/>
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="/upload/documents/Agro_Catalog_Ru_Prev_1802.pdf" class="description__download-link document" target="_blank">Скачать Регистрационное Удостоверение
+                                <a href="/upload/documents/Agro_Catalog_Ru_Prev_1802.pdf" class="description__download-link document" target="_blank">Скачать регистрационное удостоверение
                                     <span class="description__download-icon">
-                                        <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12.5535 16.5061C12.4114 16.6615 12.2106 16.75 12 16.75C11.7894 16.75 11.5886 16.6615 11.4465 16.5061L7.44648 12.1311C7.16698 11.8254 7.18822 11.351 7.49392 11.0715C7.79963 10.792 8.27402 10.8132 8.55352 11.1189L11.25 14.0682V3C11.25 2.58579 11.5858 2.25 12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V14.0682L15.4465 11.1189C15.726 10.8132 16.2004 10.792 16.5061 11.0715C16.8118 11.351 16.833 11.8254 16.5535 12.1311L12.5535 16.5061Z" fill="#1C274C"/>
-                                        <path d="M3.75 15C3.75 14.5858 3.41422 14.25 3 14.25C2.58579 14.25 2.25 14.5858 2.25 15V15.0549C2.24998 16.4225 2.24996 17.5248 2.36652 18.3918C2.48754 19.2919 2.74643 20.0497 3.34835 20.6516C3.95027 21.2536 4.70814 21.5125 5.60825 21.6335C6.47522 21.75 7.57754 21.75 8.94513 21.75H15.0549C16.4225 21.75 17.5248 21.75 18.3918 21.6335C19.2919 21.5125 20.0497 21.2536 20.6517 20.6516C21.2536 20.0497 21.5125 19.2919 21.6335 18.3918C21.75 17.5248 21.75 16.4225 21.75 15.0549V15C21.75 14.5858 21.4142 14.25 21 14.25C20.5858 14.25 20.25 14.5858 20.25 15C20.25 16.4354 20.2484 17.4365 20.1469 18.1919C20.0482 18.9257 19.8678 19.3142 19.591 19.591C19.3142 19.8678 18.9257 20.0482 18.1919 20.1469C17.4365 20.2484 16.4354 20.25 15 20.25H9C7.56459 20.25 6.56347 20.2484 5.80812 20.1469C5.07435 20.0482 4.68577 19.8678 4.40901 19.591C4.13225 19.3142 3.9518 18.9257 3.85315 18.1919C3.75159 17.4365 3.75 16.4354 3.75 15Z" fill="#1C274C"/>
+                                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.38729 7.83239L4.39087 1.1604L3.58961 1.16083L3.58603 7.83282L4.38729 7.83239Z" fill="#606060"/>
+                                        <path d="M1.08816 5.48474L1.60754 5.00075L3.98614 7.56004L6.36749 4.99819L6.88635 5.48163L3.98523 8.60077L1.08816 5.48474Z" fill="#606060"/>
                                         </svg>
                                     </span>
-
-
-
                                 </a>
                             </div>
                         </div>

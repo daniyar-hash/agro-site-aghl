@@ -1,0 +1,22 @@
+.volume{
+
+    font-weight: 700;
+    color:var(--color-green);
+    font-size: 12px;
+    margin-bottom: 10px;
+    
+
+    &__list{
+        display:flex;
+        column-gap: 14px;
+
+    }
+
+    &__item{
+        border-radius:8px;
+        border: 1px solid var(--color-gray-alt);
+        padding-inline: 10px;
+
+    }
+
+}

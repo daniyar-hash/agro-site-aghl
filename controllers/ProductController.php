@@ -30,17 +30,17 @@ class ProductController
          $subCategoryProduct = Category::getSubCategoryById($subCategoryId);
 
      //   $categoryFromSubCategory = Category::getCategoryFromSubCategory($slug);  //get category and subcategory for breadcrumbs;
-        $categoryWithSubCategories = Category::getCategoryWithSubCategories();  //for left menu
+         $categoryWithSubCategories = Category::getCategoryWithSubCategories();  //for left menu
       //  $subcategiesByCategory = Category::getSubCategoriesByCategory($slug);//for left menu
 
-       $productTable = Product::getProductTableById($productId);
+         $productTable = Product::getProductTableById($productId);
+
+         $product_volume = Product::getProductVolume($productId);
 
 
         // echo'<pre>';
-        // echo print_r($productTable);
+        // var_dump($product_volume);
         // echo '</pre>';
-
-
 
 
         // Подключаем вид

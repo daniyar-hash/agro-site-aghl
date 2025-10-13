@@ -531,6 +531,33 @@ class Product
         }
     }
 
+
+    public static function getProductVolume($id){
+
+        $db = Db::getConnection();
+
+        $sql = 'SELECT p.name, v.volume_litre, v.volume_5litre, v.volume_ml
+                FROM product p
+                JOIN product_volume v ON v.product_id = p.id
+                WHERE p.id = :id';
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        
+        // Выполнение коменды
+        $stmt->execute();
+
+        $productsVol = $stmt->fetchAll();
+
+
+        return $productsVol;
+
+
+    }
+
     /**
      * Возвращает путь к изображению
      * @param integer $id

@@ -10,9 +10,7 @@
         justify-content: space-between;
     }
 
-    &__images-wrapper{
 
-    }
 
 
 
@@ -21,6 +19,10 @@
         flex-direction: column;
         width: 100%;
         max-width: 790px;
+        row-gap:58px;
+        color:var(--color-gray-alt);
+        font-weight: 400;
+        font-size: 12px;   
     }
 
 

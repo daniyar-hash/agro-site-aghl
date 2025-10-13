@@ -42,7 +42,7 @@
 
 @mixin square($size){
     width: $size;
-    aspect-ratio: 1;
+    height:$size;
 }
 
 
