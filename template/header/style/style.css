@@ -312,6 +312,11 @@ h4, .h4 {
 .header__inner {
   display: flex;
 }
+@media (max-width: 767px) {
+  .header__inner {
+    justify-content: end;
+  }
+}
 .header__menu {
   align-self: unset;
   display: flex;

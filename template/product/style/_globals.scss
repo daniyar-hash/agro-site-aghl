@@ -7,6 +7,7 @@ body{
     font-weight: 500;
     color: var(--color-light);
     background-color: var(--color-gray);
+       
 
 
 
@@ -46,3 +47,8 @@ h3, .h3{
 h4, .h4{
     @include fluid-text(16,12);
 }
+
+
+// *{
+//     outline: 1px solid red; 
+// }

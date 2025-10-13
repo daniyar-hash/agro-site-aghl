@@ -8,6 +8,16 @@
     &__inner{
         display: flex;
         justify-content: space-between;
+
+        @include desktop{
+               column-gap:10px;
+        }
+
+        @include mobile{
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+        }
     }
 
 
@@ -23,17 +33,33 @@
         color:var(--color-gray-alt);
         font-weight: 400;
         font-size: 12px;   
+
+   
+
+        @include tablet{
+            max-width: 690px;
+                     
+        }
+    
     }
 
 
     &__image{
         border-radius: 9px;
+
+        @include tablet{
+            height:auto;
+        }
         
     }
 
     &__images-small-wrapper{
         display: flex;
         justify-content: space-between;
+
+        @include mobile{
+            column-gap:10px;
+        }
     }
 
     &__bg{
@@ -48,6 +74,23 @@
         row-gap: 20px;
         background-color: var(--color-light);
 
+          @include mobile{
+            max-width: unset;
+            align-items: center;
+        }
+
+    }
+
+    &__images-wrapper{
+        max-width: 280px;
+        width: 100%;
+
+
+
+
+        @include mobile{
+            max-width: unset;
+        }
     }
 
 

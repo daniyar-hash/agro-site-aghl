@@ -68,7 +68,8 @@
             @include square(15px);
 
            border-radius: 50%;
-           border: 1px dashed #616160; 
+           border: 1px dashed #616160;
+           flex-shrink: 0; 
         }
 
         

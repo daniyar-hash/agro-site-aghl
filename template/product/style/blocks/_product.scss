@@ -4,6 +4,11 @@
     background-color: var(--color-light);   
     border-radius: 12px;
     padding:40px;
+
+
+       @include tablet{
+            padding: 20px;
+        }
  
     &__linza{
         position: absolute;
@@ -65,14 +70,27 @@
 
     &__description{
         display: flex; 
-        justify-content: space-between;   
+        justify-content: space-between; 
+        
+        @include tablet{
+            flex-direction: column;
+        }
 
+  
 
    
         
         &-wrapper{
             display: flex;
             column-gap: 10px;
+
+
+            @include mobile{
+                flex-direction: column;
+                align-items: center;
+                row-gap: 10px;
+            }
+
         }
 
     }
@@ -82,6 +100,11 @@
         max-width: 400px;
         width: 100%;
         position: relative;
+
+        @include tablet{
+            padding-right:15px;
+            max-width: 350px;
+        }
 
 
          &::after{
@@ -93,6 +116,12 @@
             height: 85%;
             background-color: var(--color-gray-alt);
 
+            @include tablet{
+                width: 0;
+                height: 0;
+                background-color: transparent;
+            }
+
         }
         
      
@@ -102,5 +131,10 @@
     &__right-side{
 
          padding-left: 30px;
+
+            @include tablet{
+                padding-left:15px; 
+                } 
+
     }
 }

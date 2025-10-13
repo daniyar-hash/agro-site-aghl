@@ -21,6 +21,10 @@
     
         display: flex;
 
+        @include mobile{
+            justify-content: end; 
+        }
+
           
         }
 
