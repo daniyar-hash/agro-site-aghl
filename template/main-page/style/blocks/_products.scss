@@ -36,16 +36,20 @@
         display: flex;
         justify-content: center;
 
+        @include mobile{
+            padding-inline: 10px;  
+        }
+
         &::after{
             content: '';
             position: absolute;
             width:100%;
-            height: 275px;
+            height: 100%;
             left: 0;
             bottom: -33px;
             background-color: var(--color-green);
             z-index: -1;
-            border-radius: 12px;
+            border-radius: 12px;  
 
         }
      
@@ -67,20 +71,16 @@
         }
 
         @include mobile{
-             grid-template-columns:repeat(3, 1fr);
+             grid-template-columns:repeat(2, 1fr);
              justify-content: center;
-
        
         }
 
         @include mobile-s{
-             grid-template-columns:repeat(2, 1fr);
+             grid-template-columns:repeat(1, 1fr);
        
         }
-        
-
-
-
+      
     }
 
     &__item{
@@ -90,18 +90,14 @@
         padding: 8px;
         border-radius: 15px;
         background-color: var(--color-light);
-        max-width: 187px;
+        width: 100%;
         height: auto;
-
-
-      
 
     }
 
-
-
     &__link{
-        display: inline-block;
+        display: inline-flex;
+        justify-content: center;
     }
 
     &__image{
@@ -111,7 +107,6 @@
         @include mobile-s{
             height:auto;
         }
-
     }
 
      &__info{
@@ -120,20 +115,21 @@
         flex-direction: column;
         height: 100%;
         justify-content: space-between;  
+        align-items: center;
         row-gap: 12px;
         color:var(--color-gray-alt);
 
+        .products-category{
+                @include mobile{
 
+                align-self: center;
+                }
+        }
 
         @include mobile-s{
             row-gap: 5px;  
         }
     }
-
-
-
-
-
     &__name{
 
          @include fluid-text(27, 16);
@@ -157,13 +153,6 @@
         border: 1px dashed var(--color-dark);
         position: relative;
 
-
-        &::after{
-            
-
-        }
-
-
     }
 
     &__wrapp-card{
@@ -172,8 +161,8 @@
         align-items: center;
         font-weight: 700;
         font-size: 16px;
+        width:100%;
+      
     }
-
-
 
 }

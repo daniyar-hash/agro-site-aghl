@@ -1,4 +1,5 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php require_once ROOT . '/views/layouts/header.php'; ?>
+<?php include_once ROOT . '/views/product/singular.php'; ?>
 
     <main class="content">
         <div class="breadcrumbs container">
@@ -54,7 +55,7 @@
             </div>
             <div class="product-page__body product">
                     <div class="product__property">
-                        <strong class="products-category <?=  $subCategoryProduct['slug']; ?>"><?=  $subCategoryProduct['name'];  ?></strong>
+                        <strong class="products-category <?=  $subCategoryProduct['slug']; ?>"><?=  $singulars[$subCategoryProduct['name']] ?? $subCategoryProduct['name'];  ?></strong>
                         <h2 class="product__property-title h3"><?= $product['name'] ?></h2>
                         <p class="product__property-price"><?= $product['price'] ?> тнг.</p>
                         <div class="product-about">
@@ -81,7 +82,7 @@
 
                           
                  
-                            <?php  if(!empty($product_volume[0]['volume_ml'])):  ?>
+                            <?php  if(!empty($product_volume[0]['volume_ml'])):  ?>  
                                 <li class="volume__item">100 мл.</li>
                             <?php endif; ?>
                              <?php  if(!empty($product_volume[0]['volume_litre'])):  ?>
@@ -94,14 +95,19 @@
                             </ul>
                         </div>
                       
-                        <a href="#" class="product__property-button">Заказать</a>
+                        <a  href="https://wa.me/+77055774243?text=Здравствуйте%2C+у+меня+есть+вопрос" class="product__property-button">Заказать</a>
                     </div>
                     <div class="product__description">
                         <div class="product__left-side">
                             <details class="accordion accordion--description">
                                 <summary class="accordion__header">
                                     <h3 class="accordion__title desc">Показать описание</h3>
-                                    <span class="accordion__icon"></span>
+                                    <span class="accordion__icon">
+                                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.88712 0.854682L9.0178 0.0446038L5.03665 4.32819L1.0509 0.0403268L0.18245 0.849471L5.03818 6.0701L9.88712 0.854682Z" fill="#606060"/>
+                                        </svg>
+
+                                    </span>
                                 </summary>
                                 <div class="description__detail" style="white-space: pre-line;">
                                 <p><b>Описание:</b><?= $product['description']?></p>
@@ -111,7 +117,12 @@
                                 <details class="accordion">
                                     <summary class="accordion__header">
                                         <h3 class="accordion__title">Регламенты применения в С/Х</h3>
-                                        <span class="accordion__icon"></span>
+                                        <span class="accordion__icon">
+                                            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.88712 0.854682L9.0178 0.0446038L5.03665 4.32819L1.0509 0.0403268L0.18245 0.849471L5.03818 6.0701L9.88712 0.854682Z" fill="#606060"/>
+                                            </svg>
+
+                                        </span>
                                     </summary>
                                         <div class="description__table-wrapper">
                                             <table  cellpadding="5" cellspacing="0">
@@ -261,13 +272,13 @@
 
 
                             ?>
-                                <img src="<?php echo Product::getImageСulture($product['id'], $firstEl); ?>"  width="150" height="100" alt="С/х Культура">
-                                <img src="<?php echo Product::getImageСulture($product['id'], $secondEl); ?>"  width="150" height="100" alt="С/х Культура">
+                                <img src="<?php echo Product::getImageСulture($product['id'], $firstEl); ?>"  width="200" height="150" alt="С/х Культура">
+                                <img src="<?php echo Product::getImageСulture($product['id'], $secondEl); ?>"  width="200" height="150" alt="С/х Культура">
                             </div>
                         </div>
                         <div class="product__right-side">
                             <div class="description__download">
-                                <a href="/upload/documents/Agro_Catalog_Ru_Prev_1802.pdf" class="description__download-link catalog" target="_blank">Скачать Каталог 
+                                <a href="/upload/documents/Agro_Catalog_Ru_Prev_1802.pdf" class="description__download-link catalog" target="_blank">Скачать каталог 
                                     <span class="description__download-icon">
                                         <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.38729 7.83239L4.39087 1.1604L3.58961 1.16083L3.58603 7.83282L4.38729 7.83239Z" fill="#606060"/>

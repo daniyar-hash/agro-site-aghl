@@ -1,71 +1,34 @@
   
   const header = document.querySelector('.header');
   const categoriesAsideItems  = document.querySelectorAll('.categories-aside__item');
-  const sorterVeiewButtons    = document.querySelectorAll(".category-products_sort-button");
   const categoryProductslist  = document.querySelector(".category-products__list");
   const categoryProductsItems = document.querySelectorAll(".category-products__item");
   const categoryAsideLink     = document.querySelectorAll('.categories-aside__link');
-  const categoryPageTitle = document.querySelector('.category-page__title');
+  const categoryProductsTitle = document.querySelector('.category-products__title');
   const categoryAsideSubLink = document.querySelectorAll('.categories-aside__sublink');
   const headerSearchBtn = document.querySelector('.search__button');
   const headerSearchWrapper = document.querySelector('.search__wrapper-field');
+  const searchInput  = document.getElementById("searchInput");
 
-
-  categoryAsideSubLink.forEach((element) =>{
-    if(categoryPageTitle.textContent === element.innerText){
-         element.closest('.categories-aside__item').classList.add('is-open')
-         element.style.color="#fff";
-
-    }
-  })
 
 
   categoryAsideLink.forEach((element)=>{
-    if(categoryPageTitle.textContent === element.innerText){
+    if(categoryProductsTitle.textContent === element.innerText){
 
       element.closest('.categories-aside__item').classList.add('is-open')
-
  }
     
    
   })
 
 
+  categoryAsideSubLink.forEach((element) =>{
+    if(categoryProductsTitle.textContent === element.innerText){
+         element.closest('.categories-aside__item').classList.add('is-open')
+         element.style.color="#D93058";
+         
 
-
-
-
-
-  sorterVeiewButtons.forEach(item =>{
-    item.addEventListener("click", (event)=>{
-
-
-      if(item.classList.contains("list")){
-          categoryProductslist.classList.add("flex-row");
-          categoryProductslist.classList.remove("grid", "grid--3");
-          addClassProductsItem(categoryProductsItems, "item-row");
-          wrapInnerElement({itemSelector:'.category-products__item',
-             targetSelector1:'.category-products__title',targetSelector2:'.category-products__price',
-              wrapperClass:'category-products__wrapper'});
-
-          wrapInnerElement({itemSelector:'.category-products__item', 
-            targetSelector1:'.category-products__button', wrapperClass:'category-products__button-wrapper'});
-
-
-
-      } else{
-          categoryProductslist.classList.remove("flex-row");
-          categoryProductslist.classList.add("grid", "grid--3");
-          removeClassProductsItem(categoryProductsItems, "item-row");
-          deleteWrapInnerElement('.category-products__wrapper');
-          deleteWrapInnerElement('.category-products__button-wrapper');
-
-
-      }
-
-
-
-    })
+    }
   })
 
 
@@ -160,11 +123,13 @@ function deleteWrapInnerElement(wrapperClass) {
 
 
     headerSearchWrapper.classList.toggle('hidden');
+    searchInput.focus(); 
+
 
   })
 
  
-document.getElementById("searchInput").addEventListener("keyup", function () {
+searchInput.addEventListener("keyup", function () {
     let query = this.value;
 
     console.log(query)

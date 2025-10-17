@@ -6,30 +6,16 @@
 
 
     &[open]{
-
-
-    
+   
 
         .accordion__title{
             font-size: 0;
         }
 
-            .accordion__icon::before,
-             .accordion__icon::after{
-                width: 65%;   
-             }
+        .accordion__icon {
+            rotate: 180deg;
+        }
 
-        
-        
-            .accordion__icon::before{
-               rotate:-45deg;
-
-            }
-
-            .accordion__icon::after{
-               rotate:45deg;
-
-            }
 
     }
 
@@ -44,8 +30,6 @@
         margin-bottom: 20px;
 
     }
-
-
 
     
     &__header{
@@ -66,50 +50,9 @@
             }
     }
 
+       &__icon{
+         transition-duration: var(--transition-duration);
+       }
 
-
-
-    &__icon{
-        width: 10px;  
-        height: 10px;      
-   
-        position: relative;
-
-
-
-        &::before,
-        &::after{
-            
-            content: "";
-            position:absolute;            
-            width: 80%;
-            height: 2px;
-            background-color: var(--color-gray-alt);
-            translate: 0 -50%;
-            transition-duration: var(--transition-duration);
-
-
-
-        }
-
-        &::before{
-            rotate:45deg;
-            left: 0;
-            top: 50%;
-            transform-origin: 0 0;
-  
-
-        }
-
-        &::after{
-            rotate: -45deg;
-            right: 0;
-            top: 50%;
-            transform-origin: 100% 0;
-
-            
-
-          
-        }
-    }
 }
+

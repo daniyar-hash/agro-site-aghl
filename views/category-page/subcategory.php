@@ -4,20 +4,12 @@
             <div class="breadcrumbs__inner">
                 <ul class="breadcrumbs__list">
                     <li class="breadcrumbs__item ">
-                        <a href="/agro-site-main-page" class="breadcrumbs__link">Главная
-                            <span class="visually-hidden">Стрелка навигации</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
-                            </svg>
-                        </a>
+                        <a href="/agro-site-main-page" class="breadcrumbs__link">Главная&nbsp/&nbsp</a>
                     </li>
                     <li class="breadcrumbs__item">
                         <a href="/<?= htmlspecialchars($categoryFromSubCategory['category_slug']) ?>" class="breadcrumbs__link">
                             <?= htmlspecialchars($categoryFromSubCategory['category_name']) ?>
-                        <span class="visually-hidden">Стрелка навигации</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
-                        </svg>
+                   &nbsp/&nbsp
                         </a>
                     </li>
                     <li class="breadcrumbs__item is-current">

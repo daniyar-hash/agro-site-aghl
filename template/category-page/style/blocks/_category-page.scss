@@ -9,15 +9,17 @@
       row-gap: 36px;
       position: relative;
 
-      &__title{
-        color: var(--color-dark);
-        font-weight: inherit;
-      }
 
 
       &__body{
         display: flex;
         column-gap: 24px;
+
+
+        .block-left{
+          width: 100%;
+          max-width: 280px;
+        }
   
       }
 

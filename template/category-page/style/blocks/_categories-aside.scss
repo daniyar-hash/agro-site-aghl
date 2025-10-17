@@ -1,27 +1,35 @@
 .categories-aside{
 
-    background-color: #c7c8b9d9;
+    background-color: var(--color-light);
     color: var(--color-dark);
-    border-radius: 10px;
-    width: 18.5vw;
-   
-
-
-
+    border-radius: 12px;
+    padding: 21px 19px 30px 21px;
+ 
     &__menu{
         display: flex;
         flex-direction: column;
+        line-height: 1;
 
     }
 
     &__item{
 
-        padding: 10px;
 
+
+        
+        &.is-open>.categories-aside__sublink
+        {
+            color: var(--color-active);
+        }
+
+
+        .categories-aside__icon{
+            transition-duration: var(--transition-duration);
+        }
 
         &.is-open>.categories-aside__link>svg.categories-aside__icon{
             rotate: 180deg;
-
+            
         }
 
 
@@ -35,28 +43,35 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding-inline: 10px;
-        padding-block: 5px;
-        background-color: var(--color-green-alt);
         transition-duration: var(--transition-duration);
-        border-radius: 10px;
 
-        
 
         @include hover{
-            color: var(--color-light);
+            color: var(--color-accent);
+        }
+  
+
+           
+         }
+
+        &__link{
+
+            font-size: 1rem;
+            font-weight: 700;
+            // line-height: 1.9;
+            color: var(--color-gray-dark);
+            padding-block: 10px;
+            border-bottom: 1px solid var(--color-gray-alt);
+
+
+        }
+        &__sublink{
+            font-weight: 400;
+            font-size: 11px;
+            color:var(--color-gray-alt);
         }
 
         
-    }
-
-     &__sublink{
-        background-color: inherit;
-        color: inherit;
-
-     }
-
-
 
     &__dropdown{
         display: none;
@@ -64,10 +79,16 @@
     }
     &__dropdown.to-show{
         display: block;
+        padding-block: 10px;
     }
 
     &__submenu{
         display: flex;
         flex-direction: column;
+        row-gap: 5px;
+    }
+
+    &__subItem{
+        display:inline-flex;  
     }
 }

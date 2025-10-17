@@ -13,8 +13,7 @@
     }
 
     &__table-wrapper{
-        max-width: 900px;
-
+        width: 100%;
 
         th, td{
             word-wrap: break-word; /* перенос слов */
@@ -31,11 +30,17 @@
 
         table{
             width: 100%;  
-            max-width: 333px;
+     
             border-collapse: collapse;   
             color: var(--color-dark);     
             font-size: 8px;
             table-layout: fixed; /* фиксированный алгоритм */
+
+            @include desktop-above{
+                font-size: 12px;  
+            }
+
+        
         }
 
         th, caption{
@@ -57,7 +62,7 @@
 
         &-link{
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
             column-gap: 10px;
             padding-block: 5px; 
             font-size: 12px;

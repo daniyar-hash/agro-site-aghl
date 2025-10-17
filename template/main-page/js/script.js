@@ -8,9 +8,11 @@
   const video = document.getElementById('video');
   const headerSearchBtn = document.querySelector('.search__button');
   const headerSearchWrapper = document.querySelector('.search__wrapper-field');
+  const searchInput  = document.getElementById("searchInput");
 
   const burgerBtn = document.querySelector('.burger-button');
   const clodeBtnModal = document.querySelector('.mobile-overlay__close-button');
+
   
 
   burgerBtn.addEventListener('click', (e)=>{
@@ -30,6 +32,8 @@
 
 
     headerSearchWrapper.classList.toggle('hidden');
+    searchInput.focus();
+
 
   })
   // const bannerList = document.querySelector(".banner__list");
@@ -162,11 +166,8 @@
 
 const baseUrl = window.location.origin;
 
-document.getElementById("searchInput").addEventListener("keyup", function () {
+searchInput.addEventListener("keyup", function () {
     let query = this.value;
-
-    console.log(query)
-
 
 
     fetch(`${baseUrl}/views/site/search.php?word=${encodeURIComponent(query)}`)

@@ -181,7 +181,7 @@
                             </span>
                         </button>
                         <div  class=" search__wrapper-field hidden">
-                            <input type="text" id="searchInput" class="search__input" name="word" placeholder="Поиск..." required>
+                            <input type="text" id="searchInput" class="search__input" name="word" placeholder="Поиск..." required focus>
                             <div class="search__results-wrapper">
                                 <ul class="search__results-list">
                                     <li class="search__results-item">
