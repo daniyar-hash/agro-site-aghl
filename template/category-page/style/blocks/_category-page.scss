@@ -1,19 +1,10 @@
 .category-page{
 
-    background-color: var(--color-gray);
-      --section-base-padding-y:10px;
-      --section-large-padding-y:10px;
-
-      display: flex;
-      flex-direction: column;
-      row-gap: 36px;
-      position: relative;
-
 
 
       &__body{
         display: flex;
-        column-gap: 24px;
+        column-gap: 60px;
 
 
         .block-left{

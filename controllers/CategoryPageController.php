@@ -19,12 +19,14 @@ class CategoryPageController
         $categoryId = $categoryBySlug['id'];
 
         $categoryWithSubCategories = Category::getCategoryWithSubCategories(); // Список категорий для левого меню
-        $subcategiesByCategory = Category::getSubCategoriesByCategory($slug);
+        $subcategiesByCategory = Category::getSubCategoriesByCategory($slug); // Список подкатегорий 
 
                // Список товаров в категории
         $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
 
-
+        // echo '<pre>';
+        // echo print_r($categoryProducts);
+        // echo '</pre>';
 
  
         // Общее количетсво товаров (необходимо для постраничной навигации)
