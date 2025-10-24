@@ -8,6 +8,14 @@
     max-width: 740px;
     width: 100%;     
 
+        @include tablet{
+                   max-width: 600px;
+            }
+
+            @include mobile{
+                align-items: center;  
+            }
+
 
     &__sort{
         display: flex;
@@ -18,13 +26,26 @@
             display: flex;
             column-gap: 20px;
 
+         
+
         }
 
     }
 
     &__list{
         gap: 20px;
-  
+   
+        &.grid--4{
+            @include tablet{
+                --gridColumns:3;
+            }
+
+              @include mobile-s{
+                --gridColumns:2;
+            }
+
+          
+        }
 
 
         &.flex-row{
@@ -42,8 +63,9 @@
         padding: 8px 8px 10px;
         row-gap: 10px;
         border-radius: 9px;
-        max-width: 170px;
-        width: 100%;
+        width: 170px;
+
+     
 
 
         strong{

@@ -5,11 +5,23 @@
       &__body{
         display: flex;
         column-gap: 60px;
-
+          
+        @include tablet{
+              column-gap: 30px; 
+          }  
+          
+          @include mobile{
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: center;
+          }
 
         .block-left{
           width: 100%;
           max-width: 280px;
+
+
+       
         }
   
       }

@@ -22,6 +22,11 @@
 	display: flex;
 	column-gap: 40px;
 
+	@include mobile{
+	   column-gap: 20px;
+
+	}
+
 }
 
 &__item{

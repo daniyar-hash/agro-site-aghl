@@ -81,7 +81,7 @@
                             </a>
                             <div class="products-season__info">
                                 <strong class="products-category <?=  $product['sub_category_slug']; ?>"><?=  $product['sub_category_name'];  ?></strong>
-                                <h3 class="products-season__name"><?=  $product['name'];  ?></h3>  
+                                <h3 class="products-season__name"><?= $product['name']; ?></h3>  
                                 <small class="products-season__desc">Для борьбы с широким спектром злаковых и двудольных сорняков.</small>
                                 <div class="products-season__wrapp-card">
                                     <span class="products-season__weight">1 кг.</span>
