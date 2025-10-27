@@ -126,7 +126,6 @@ if(allEmpty7) {
     }
 
 
-
   function zoomer(imgId, scaleImage){
     let img, glass, w, h, bw;
     img = document.getElementById(imgId);
@@ -139,12 +138,16 @@ if(allEmpty7) {
     glass.style.backgroundImage = "url('" +img.src + "')";
     glass.style.backgroundRepeat = "no-repeat";
     glass.style.backgroundSize = (img.width * scaleImage) + "px " + (img.height * scaleImage) + "px"; //1800  2000;
-  
 
+   glass.style.width = img.width + "px";
+   glass.style.height = img.height + "px";
+   
     bw = 3;
 
     w = glass.offsetWidth/2;  //190/2 = 95
     h = glass.offsetHeight/2; //95
+
+    // console.log(glass.offsetWidth);
 
     glass.addEventListener("mousemove", moveZoomer);
     img.addEventListener("mousemove", moveZoomer);
@@ -169,7 +172,6 @@ if(allEmpty7) {
 
     let pos, x, y;
     e.preventDefault();
-    console.log(e);  //target glass
     glass.style.opacity = "1";
     pos = getCursorPos(e);
 
@@ -194,23 +196,15 @@ if(allEmpty7) {
       y = h/scaleImage
     }
 
-    glass.style.left = (x-w) + "px";   //476 - 95 
-    glass.style.top = (y-h) + "px";
+    glass.style.left =  20 + 'px'; 
+    glass.style.top =20 + 'px'; 
 
     glass.style.backgroundPosition = "-" + ((x * scaleImage) -w + bw) + "px -" + ((y * scaleImage) -h + bw) + "px"; 
-    // 
-    console.log(glass.style.left)
-    console.log(glass.style.backgroundPosition)
-
-
 
   }
 
   function getCursorPos(e){
     let rect, x = 0, y = 0;
-
-    
-
 
   rect = img.getBoundingClientRect(); // координаты img относительно окна
 
@@ -219,12 +213,12 @@ if(allEmpty7) {
 
   return { x, y }; //координаты относительно img
 
-  }
+    }
 
   }
 
 
-   zoomer("product-image", 4);
+   zoomer("product-image", 3);
 
 
 function updateHeaderClass() {
