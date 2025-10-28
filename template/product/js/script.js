@@ -139,8 +139,8 @@ if(allEmpty7) {
     glass.style.backgroundRepeat = "no-repeat";
     glass.style.backgroundSize = (img.width * scaleImage) + "px " + (img.height * scaleImage) + "px"; //1800  2000;
 
-   glass.style.width = img.width + "px";
-   glass.style.height = img.height + "px";
+    glass.style.width = img.width + "px";
+    glass.style.height = img.height + "px";
    
     bw = 3;
 
@@ -196,8 +196,19 @@ if(allEmpty7) {
       y = h/scaleImage
     }
 
-    glass.style.left =  20 + 'px'; 
-    glass.style.top =20 + 'px'; 
+
+    const parentElementStyles = getComputedStyle(glass.parentElement);
+    const paddingLeft = parentElementStyles.paddingLeft;
+    const paddingTop = parentElementStyles.paddingTop;
+
+
+    glass.style.left = paddingLeft;
+    glass.style.top = paddingTop;
+    console.log(glass.style.left);  // например, "20px"
+
+
+
+
 
     glass.style.backgroundPosition = "-" + ((x * scaleImage) -w + bw) + "px -" + ((y * scaleImage) -h + bw) + "px"; 
 

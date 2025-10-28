@@ -4,7 +4,7 @@
   const categoryProductslist  = document.querySelector(".category-products__list");
   const categoryProductsItems = document.querySelectorAll(".category-products__item");
   const categoryAsideLink     = document.querySelectorAll('.categories-aside__link');
-  const categoryProductsTitle = document.querySelector('.category-products__title');
+  const categoryProductsTitle = document.querySelector('.category-products__header-title');
   const categoryAsideSubLink = document.querySelectorAll('.categories-aside__sublink');
   const headerSearchBtn = document.querySelector('.search__button');
   const headerSearchWrapper = document.querySelector('.search__wrapper-field');

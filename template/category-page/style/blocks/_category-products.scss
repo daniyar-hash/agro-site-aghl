@@ -65,6 +65,7 @@
         border-radius: 9px;
         width: 170px;
 
+
      
 
 
@@ -130,7 +131,11 @@
 
     }
 
-    &__title{
+
+
+    &__title,
+    &__header-title
+    {
         text-transform: uppercase;
         font-weight: 800;
         font-size: 26px;
@@ -138,11 +143,14 @@
         line-height: 1;
         min-height: 52px;
         overflow: hidden;
-
         white-space: normal;
         word-break: break-word;      /* переносит слишком длинные слова */
         hyphens: auto;               /* добавляет переносы по слогам */
 
+    }
+
+    &__header-title{
+       font-size:32px;
     }
 
 
@@ -164,6 +172,7 @@
         line-height: 1;
         width: 100%;
         max-width: 100px;
+        justify-content: center;
         margin-top: auto;
         background-color: var(--color-green);
         border-radius: 8px;

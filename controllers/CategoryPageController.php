@@ -57,11 +57,11 @@ class CategoryPageController
 
 
         $subCategoryId = $subCategoryBySlug['id'];
-        $categoryProducts = Product::getProductsListBySubCategory($subCategoryId, $page);
+        $subCategoryProducts = Product::getProductsListBySubCategory($subCategoryId, $page);
 
 
         // echo '<pre>';
-        // echo print_r($categoryProducts);
+        // echo print_r($subCategoryProducts);
         // echo '</pre>';
 
        // Общее количетсво товаров (необходимо для постраничной навигации)

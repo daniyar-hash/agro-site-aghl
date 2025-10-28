@@ -137,7 +137,8 @@ class Product
                 p.slug AS product_slug,
                 p.price,
                 c.slug AS category_slug,
-                sc.slug AS subcategory_slug
+                sc.slug AS subcategory_slug,
+                sc.name AS subcategory_name
             FROM product p
             JOIN category c ON p.category_id = c.id
             JOIN sub_category sc ON p.subcategory_id = sc.id
@@ -171,6 +172,8 @@ class Product
             $products[$i]['product_slug'] = $row['product_slug'];
             $products[$i]['category_slug'] = $row['category_slug'];
             $products[$i]['subcategory_slug'] = $row['subcategory_slug'];
+            $products[$i]['subcategory_name'] = $row['subcategory_name'];
+
 
         
             $i++;

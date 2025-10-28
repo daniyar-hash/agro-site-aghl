@@ -13,6 +13,8 @@
             </div>
         </div>
         <section class="section category-page">
+            <h1 class="visually-hidden"><?= $categoryBySlug['name'] ?></h1>
+
             <div class="category-page__inner container">
                   <div class="category-page__wrapper">
 
@@ -78,25 +80,26 @@
                                     $word = pluralForm($total, ['товар', 'товара', 'товаров']);
                                 ?>
            
-                           <h1 class="category-products__title h2"><?= $categoryBySlug['name'] ?></h1>
+                           <h2 class="category-products__header-title"><?= $categoryBySlug['name'] ?></h2>
                             <span class="category-products__total"><?= $total .' '.$word ?></span>
 
                         </header>
                         <ul class="category-products__list grid grid--4">
                             <?php foreach($categoryProducts as $product):  ?>
                             <li class="category-products__item">
-                                <a href="<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="category-products__link">
+                                <a href="/<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="category-products__link">
                                     <div class="category-products__image-wrapper">
                                         <img src="<?php echo Product::getImage($product['id']) ?>" width="155" height="165" alt="Product" loading="lazy" >
                                     </div>  
                                 </a>
                         <strong class="products-category <?=  $product['subcategory_slug']; ?>"><?=  $product['subcategory_name'];  ?></strong>
                                  
-                                <h2 class="category-products__title"><a href="<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>">
+                                <h2 class="category-products__title">
+                                    <a href="<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>">
                                     <?= htmlspecialchars($product['name']) ?></a>
                                 </h2>
                                 <p class="category-products__price"><?= htmlspecialchars($product['price']) ?>тг. / 1л</p>
-                                <a href="<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="button category-products__button">Подробнее</a>
+                                <a href="/<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="button category-products__button">Подробнее</a>
                                 
                             </li>
                             <?php endforeach;  ?>
