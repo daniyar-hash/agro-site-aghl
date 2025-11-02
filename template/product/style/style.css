@@ -394,7 +394,6 @@ h4, .h4 {
 
 .breadcrumbs {
   color: var(--color-gray-alt);
-  padding-top: 162px;
   padding-bottom: 34px;
   font-weight: 400;
 }
@@ -458,11 +457,6 @@ h4, .h4 {
 }
 .product-page__image {
   border-radius: 9px;
-}
-@media (max-width: 1023px) {
-  .product-page__image {
-    height: auto;
-  }
 }
 .product-page__images-small-wrapper {
   display: flex;
@@ -855,4 +849,8 @@ h4, .h4 {
   --button-large-height:56px;
   --button-small-height: 40px;
   --transition-duration: 0.2s;
+}
+
+.content {
+  padding-top: 162px;
 }/*# sourceMappingURL=style.css.map */

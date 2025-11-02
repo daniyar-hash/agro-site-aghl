@@ -4,7 +4,7 @@
              <div class="breadcrumbs__inner">
                 <ul class="breadcrumbs__list">
                     <li class="breadcrumbs__item ">
-                        <a href="/agro-site-main-page" class="breadcrumbs__link">Главная&nbsp/&nbsp</a>
+                        <a href="/" class="breadcrumbs__link">Главная&nbsp/&nbsp</a>
                     </li>
                     <li class="breadcrumbs__item">
                         <a href="/<?= htmlspecialchars($categoryFromSubCategory['category_slug']) ?>" class="breadcrumbs__link">
@@ -94,7 +94,7 @@
                         <ul class="category-products__list grid grid--4">
                             <?php foreach($subCategoryProducts as $product):  ?>
                             <li class="category-products__item">
-                                <a href="<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="category-products__link">
+                                <a href="/<?= htmlspecialchars($product['category_slug']) ?>/<?= htmlspecialchars($product['subcategory_slug']) ?>/<?= htmlspecialchars($product['product_slug']) ?>" class="category-products__link">
                                     <div class="category-products__image-wrapper">
                                         <img src="<?php echo Product::getImage($product['id']) ?>" width="155" height="165" alt="Product" loading="lazy" >
                                     </div>  

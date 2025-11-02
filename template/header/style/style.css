@@ -665,4 +665,8 @@ h4, .h4 {
 .search__results-link span {
   font-size: 14px;
   background-color: var(--color-gray);
+}
+
+.content {
+  padding-top: 162px;
 }/*# sourceMappingURL=style.css.map */

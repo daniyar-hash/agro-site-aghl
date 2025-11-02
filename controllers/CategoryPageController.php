@@ -13,6 +13,8 @@ class CategoryPageController
     {
      
         // Список категорий для левого меню
+
+        $slug = htmlspecialchars($slug);
     
         $categoryBySlug = Category::getCategoryBySlug($slug);
 

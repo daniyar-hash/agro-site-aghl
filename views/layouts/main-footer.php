@@ -197,7 +197,7 @@
      <div class="mobile-overlay__body">
           <ul class="mobile-overlay__list">
                <li class="mobile-overlay__item">
-                    <a href="" class="mobile-overlay__link">Компания</a>
+                    <a href="/about" class="mobile-overlay__link">Компания</a>
                </li>
                 <li class="mobile-overlay__item">
                     <a href="" class="mobile-overlay__link">Каталог</a>

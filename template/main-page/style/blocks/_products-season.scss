@@ -102,11 +102,9 @@
 
     &__image{
         display:block;
-        border-radius: 9px;
+        border-radius: 9px;  
 
-        @include mobile-s{
-            height:auto;
-        }
+       
     }
 
      &__info{

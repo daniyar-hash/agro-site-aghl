@@ -87,7 +87,7 @@
                     <nav class="header__menu hidden-mobile">
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link">
+                            <a href="/about" class="header__menu-link">
                                 Компания
                             </a>
                         </li>
@@ -142,7 +142,7 @@
                             </a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link">
+                            <a href="/gallery" class="header__menu-link">
                                 Галерея
                             </a>
                         </li>

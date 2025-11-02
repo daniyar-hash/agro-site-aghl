@@ -229,7 +229,7 @@ if(allEmpty7) {
   }
 
 
-   zoomer("product-image", 3);
+   zoomer("product-image", 5);
 
 
 function updateHeaderClass() {

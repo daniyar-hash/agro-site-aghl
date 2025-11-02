@@ -590,11 +590,6 @@ html.is-lock {
   display: block;
   border-radius: 9px;
 }
-@media (max-width: 480px) {
-  .products-season__image {
-    height: auto;
-  }
-}
 .products-season__info {
   display: flex;
   flex-direction: column;

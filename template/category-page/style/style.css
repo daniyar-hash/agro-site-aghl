@@ -671,7 +671,6 @@ h4, .h4 {
 
 .breadcrumbs {
   color: var(--color-gray-alt);
-  padding-top: 90px;
   padding-bottom: 16px;
   font-weight: 400;
   font-size: 16px;
@@ -987,4 +986,7 @@ h4, .h4 {
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+}
+.content {
+  padding-top: 162px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,11 @@
 <?php
 
 return array(
+
+
+        'about' => 'site/about',
+        'gallery' => 'site/gallery',
+
     // Товар:
    // 'product/([0-9]+)' => 'product/view/$1', // actionView в ProductController
     // Каталог:
@@ -62,7 +67,6 @@ return array(
     // 'admin' => 'admin/index',
     // // О магазине
     // 'contacts' => 'site/contact',
-    // 'about' => 'site/about',
     // Главная страница
     'index.php' => 'site/index', // actionIndex в SiteController
     '' => 'site/index', // actionIndex в SiteController
