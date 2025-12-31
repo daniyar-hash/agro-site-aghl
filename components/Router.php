@@ -33,9 +33,22 @@ class Router
      */
     private function getURI()
     {
-        if (!empty($_SERVER['REQUEST_URI'])) {
-            return trim($_SERVER['REQUEST_URI'], '/');
+     
+         if (!empty($_SERVER['REQUEST_URI'])) {
+
+            $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+            return trim($path, '/');              
         }
+
+        
+
+        //      // 🔥 УБИРАЕМ GET-параметры
+        // if ($pos = strpos($uri, '?')) {
+        //     $uri = substr($uri, 0, $pos);
+        // }
+
+   
+        
     }
 
     /**

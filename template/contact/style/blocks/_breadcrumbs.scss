@@ -1,0 +1,38 @@
+.breadcrumbs{
+    
+
+    color: var(--color-gray-alt);
+    padding-bottom: 34px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+
+    &__item{
+        &:not(.is-current) .breadcrumbs__link{
+
+            @include hover{
+                color: var(--color-green-alt);
+        }
+
+        }
+    }
+
+    &__link{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+  
+
+    }
+
+
+
+
+}

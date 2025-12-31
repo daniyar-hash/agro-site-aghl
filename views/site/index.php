@@ -1,5 +1,4 @@
 <?php include ROOT . '/views/layouts/main-header.php'; ?>
-<?php include ROOT . '/views/site/search.php'; ?>
 
 
    <main class="content ">
@@ -195,7 +194,7 @@
                             <li class="reviews__item">
                                 <div class="reviews__item-header">
                                     <div class="reviews__avatar">
-                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70" loading="lazy">
                                     </div>
                                     <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
@@ -213,7 +212,7 @@
                             <li class="reviews__item">
                                 <div class="reviews__item-header">
                                     <div class="reviews__avatar">
-                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70"  loading="lazy">
                                     </div>
                                     <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
@@ -231,7 +230,7 @@
                             <li class="reviews__item">
                                 <div class="reviews__item-header">
                                     <div class="reviews__avatar">
-                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70"  loading="lazy">
                                     </div>
                                     <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
@@ -249,7 +248,7 @@
                             <li class="reviews__item">
                                 <div class="reviews__item-header">
                                     <div class="reviews__avatar">
-                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70"  loading="lazy">
                                     </div>
                                     <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>
@@ -267,7 +266,7 @@
                             <li class="reviews__item">
                                 <div class="reviews__item-header">
                                     <div class="reviews__avatar">
-                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70">
+                                        <img src="../../template/main-page/img/reviews/avatar.jpg" alt="avatar" class="reviews__avatar-image" width="70" height="70"  loading="lazy">
                                     </div>
                                     <h3 class="reviews__person">Имя Фамилия</h3>
                                 </div>

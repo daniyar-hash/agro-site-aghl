@@ -1,4 +1,8 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php
+
+$title = 'Галерея';
+
+include ROOT . '/views/layouts/header.php'; ?>
    <main class="content">
          <div class="breadcrumbs container">
              <div class="breadcrumbs__inner">
@@ -17,19 +21,15 @@
             <div class="company__inner ">
                 <div class="company-info">
                     <h1 class="company-info__title title--page">Галерея</h1>
-              
-
                     <div class="company-info__gallery grid grid--4">
-                        <img src="/template/about/img/1.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/2.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/3.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/4.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/5.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/6.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/7.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/8.webp" alt="About Company photo" width="127" height="150">
-
-
+                        <img src="/template/about/img/1.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/2.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/3.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/4.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/5.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/6.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/7.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/8.webp" alt="About Company photo" width="127" height="150" loading="lazy">
                     </div>
                 </div>
                 <div class="company-menu">
@@ -38,7 +38,6 @@
                         <li>Выставка AgriTek / FarmTek, г. Астана.</li>
                         <li>Выставка AgriTek / FarmTek, г. Астана.</li>
                         <li>Выставка AgriTek / FarmTek, г. Астана.</li>
-
                     </ul>
                 </div>
 

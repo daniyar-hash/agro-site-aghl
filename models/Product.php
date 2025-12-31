@@ -617,7 +617,7 @@ class Product
         return $path . $noImage;
     }
 
-       public static function getImageСulture($id, $elementImg)
+    public static function getImageСulture($id, $elementImg)
     
     {
         // Название изображения-пустышки
@@ -640,6 +640,29 @@ class Product
 
         // Возвращаем путь изображения-пустышки
         return $path . $noImage;
+    }
+
+
+
+     public static function getСertificate($id)
+    {
+        // Название сертификата-пустышки
+        $noCert = 'no-certifikate';  // вывод ошибки модального окна: Сертификат временно отстутствует. 
+
+        // Путь к папке с документами
+        $path = '/upload/documents/';
+
+        // Путь к сертификату товара
+        $pathToProductCert = $path . $id . '.pdf';
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductCert)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductCert;
+        }
+
+        // Возвращаем путь изображения-пустышки
+        return $path . $noCert;
     }
 
 

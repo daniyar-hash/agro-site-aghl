@@ -11,6 +11,9 @@ class SiteController
      */
     public function actionIndex()
     {
+
+
+
         // Список категорий для левого меню
     //    $categories = Category::getCategoriesList();
 
@@ -89,7 +92,7 @@ class SiteController
     }
 
         /**
-     * Action для страницы "О магазине"
+     * Action для страницы "Галерея"
      */
     public function actionGallery()
     {
@@ -101,5 +104,23 @@ class SiteController
         require_once(ROOT . '/views/site/gallery.php');
         return true;
     }
+
+
+    /**
+     * Action для страницы "Контакты"
+     */
+    public function actionContact()
+    {
+
+
+     $categoryWithSubCategories = Category::getCategoryWithSubCategories();   
+
+        // Подключаем вид
+        require_once(ROOT . '/views/site/contact.php');
+        return true;
+    }
+
+
+
 
 }

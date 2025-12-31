@@ -417,7 +417,13 @@ h4, .h4 {
   margin: 0;
   border: none;
   padding: 35px 5px;
-  background-color: var(--color-green);
+  color: var(--color-dark);
+}
+.mobile-overlay .header__mobile-back {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 .mobile-overlay:modal {
   max-width: 100%;
@@ -437,4 +443,33 @@ h4, .h4 {
   row-gap: 30px;
   min-height: 80vh;
   font-size: 24px;
+}
+.mobile-overlay .header__catalog-item {
+  border-bottom: 1px dotted var(--color-gray-alt);
+  color: #343434;
+}
+
+.header__catalog-item:not(.is-open) .header__mobile-back {
+  display: none;
+}
+
+.mobile-overlay .mobile-overlay__list > li > .header__catalog-aside,
+.mobile-overlay .header__catalog-menu > li > .header__catalog-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  inset: 0;
+  background-color: #fff;
+  z-index: 1000;
+  position: fixed;
+}
+
+.mobile-overlay .mobile-overlay__list > li.is-open > .header__catalog-aside,
+.mobile-overlay .header__catalog-menu > li.is-open > .header__catalog-dropdown {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */

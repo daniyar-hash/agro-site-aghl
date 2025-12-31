@@ -6,9 +6,6 @@
   const categoryAsideLink     = document.querySelectorAll('.categories-aside__link');
   const categoryProductsTitle = document.querySelector('.category-products__header-title');
   const categoryAsideSubLink = document.querySelectorAll('.categories-aside__sublink');
-  const headerSearchBtn = document.querySelector('.search__button');
-  const headerSearchWrapper = document.querySelector('.search__wrapper-field');
-  const searchInput  = document.getElementById("searchInput");
 
 
 
@@ -119,34 +116,9 @@ function deleteWrapInnerElement(wrapperClass) {
 
 
 
-    headerSearchBtn.addEventListener('click', (e)=>{
-
-
-    headerSearchWrapper.classList.toggle('hidden');
-    searchInput.focus(); 
-
-
-  })
 
  
-searchInput.addEventListener("keyup", function () {
-    let query = this.value;
 
-    console.log(query)
-
-
-
-    fetch("/views/site/search.php?word=" + encodeURIComponent(query))
-        .then(response => response.text())
-        .then(data => {
-
-          console.log(data)
-            document.querySelector(".search__results-list").innerHTML = data;
-        });
-
-
-        
-});
 
 
 

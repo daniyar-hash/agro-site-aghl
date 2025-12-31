@@ -204,7 +204,7 @@ if(allEmpty7) {
 
     glass.style.left = paddingLeft;
     glass.style.top = paddingTop;
-    console.log(glass.style.left);  // например, "20px"
+    // console.log(glass.style.left);  // например, "20px"
 
 
 
@@ -229,7 +229,7 @@ if(allEmpty7) {
   }
 
 
-   zoomer("product-image", 5);
+   zoomer("product-image", 3);
 
 
 function updateHeaderClass() {
@@ -246,6 +246,31 @@ function updateHeaderClass() {
       }
       
     }
+
+
+// output error no-certificate
+
+const errorCert = document.querySelector('a[href="/upload/documents/no-certifikate"]');
+
+if(errorCert) {
+
+errorCert.addEventListener('click', (e)=>{
+
+e.preventDefault();
+$message = 'Сертификат временно отсутствует !';
+alert($message);
+
+});
+
+}
+  
+
+
+
+
+
+
+//----------//
   
 
   // Проверка при загрузке страницы

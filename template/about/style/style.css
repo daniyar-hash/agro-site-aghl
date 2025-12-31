@@ -342,12 +342,6 @@ h4, .h4 {
     padding-right: 0;
   }
 }
-.company-info .title--page {
-  font-weight: 800;
-  font-size: 30px;
-  text-transform: uppercase;
-  color: var(--color-gray-dark);
-}
 .company-info__title {
   margin-bottom: 20px;
 }

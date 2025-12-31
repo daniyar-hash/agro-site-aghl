@@ -1,4 +1,9 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php 
+$title = 'О компании';
+include ROOT . '/views/layouts/header.php';
+
+
+?>
    <main class="content">
          <div class="breadcrumbs container">
              <div class="breadcrumbs__inner">
@@ -34,14 +39,14 @@
                     </div>
 
                     <div class="company-info__gallery grid grid--4">
-                        <img src="/template/about/img/1.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/2.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/3.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/4.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/5.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/6.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/7.webp" alt="About Company photo" width="127" height="150">
-                        <img src="/template/about/img/8.webp" alt="About Company photo" width="127" height="150">
+                        <img src="/template/about/img/1.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/2.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/3.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/4.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/5.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/6.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/7.webp" alt="About Company photo" width="127" height="150" loading="lazy">
+                        <img src="/template/about/img/8.webp" alt="About Company photo" width="127" height="150" loading="lazy">
 
 
                     </div>

@@ -1,0 +1,459 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg:not(.preserve-fill) *[fill] {
+  fill: currentColor;
+}
+
+svg:not(.preserve-fill) *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --color-light:#FFFFFF;
+  --color-dark:#0E0E0E;
+  --color-gray:#EDEDED;
+  --color-gray-alt:#606060;
+  --color-dark-gray:#1D1D1D;
+  --color-gray-dark:#4a4a49;
+  --color-active: #D93058;
+  --color-green:#23391f;
+  --color-green-alt:#159446;
+  --container-width:1128px;
+  --container-padding-x:20px;
+  --section-base-padding-y:88px;
+  --section-large-padding-y:98px;
+  --font-family-base:"Gilroy",sans-serif;
+  --button-height: 52px;
+  --button-large-height:56px;
+  --button-small-height: 40px;
+  --transition-duration: 0.2s;
+}
+
+body {
+  font-size: clamp(12px, 1.6666666667vw, 24px);
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  color: var(--color-light);
+  background-color: var(--color-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+}
+a, a:hover {
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: currentColor;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+h1, .h1 {
+  font-size: clamp(32px, 3.3333333333vw, 48px);
+}
+
+h2, .h2 {
+  font-size: clamp(26px, 2.5vw, 36px);
+}
+
+h3, .h3 {
+  font-size: clamp(16px, 1.6666666667vw, 24px);
+}
+
+h4, .h4 {
+  font-size: clamp(12px, 1.1111111111vw, 16px);
+}
+
+.title--page {
+  font-weight: 800;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--color-gray-dark);
+  line-height: 31px;
+}
+
+.grid {
+  display: grid;
+  --gridColumns:1;
+  grid-template-columns: repeat(var(--gridColumns), 1fr);
+}
+.grid--2 {
+  --gridColumns:2;
+}
+.grid--3 {
+  --gridColumns:3;
+}
+.grid--4 {
+  --gridColumns:4;
+}
+.grid--5 {
+  --gridColumns:5;
+}
+.grid--6 {
+  --gridColumns:6;
+}
+.grid--7 {
+  --gridColumns:7;
+}
+.grid--8 {
+  --gridColumns:8;
+}
+.grid--9 {
+  --gridColumns:9;
+}
+.grid--10 {
+  --gridColumns:10;
+}
+.grid--11 {
+  --gridColumns:11;
+}
+.grid--12 {
+  --gridColumns:12;
+}
+@media (max-width: 480px) {
+  .grid--4 {
+    --gridColumns:2;
+  }
+}
+
+.breadcrumbs {
+  color: var(--color-gray-alt);
+  padding-bottom: 34px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+.breadcrumbs__list {
+  display: flex;
+  align-items: center;
+}
+@media (hover: hover) {
+  .breadcrumbs__item:not(.is-current) .breadcrumbs__link:hover {
+    color: var(--color-green-alt);
+  }
+}
+@media (hover: none) {
+  .breadcrumbs__item:not(.is-current) .breadcrumbs__link:active {
+    color: var(--color-green-alt);
+  }
+}
+.breadcrumbs__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  color: var(--color-gray-alt);
+  padding: 71px 152px 100px 73px;
+  background-color: var(--color-light);
+  border-radius: 12px;
+  margin-bottom: 95px;
+}
+@media (max-width: 1023px) {
+  .contact {
+    padding-inline: 20px;
+    padding-left: 40px;
+    margin-bottom: 40px;
+    padding-block: 40px;
+  }
+}
+.contact__inner {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+@media (max-width: 767px) {
+  .contact__inner {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+  }
+}
+.contact-info {
+  padding-right: 70px;
+  border-right: 1px solid var(--color-gray-alt);
+  display: flex;
+  flex-direction: column;
+  row-gap: 11px;
+}
+@media (min-width: 1024px) {
+  .contact-info {
+    padding-right: 155px;
+  }
+}
+@media (max-width: 1023px) {
+  .contact-info {
+    padding-left: 0;
+  }
+}
+@media (max-width: 767px) {
+  .contact-info {
+    border-right: unset;
+    padding-right: 0;
+  }
+}
+.contact-info__title {
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .contact-info__title {
+    text-align: center;
+  }
+}
+.contact-info__subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-green);
+  margin-bottom: 34px;
+}
+.contact-info__desc {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-gray-alt);
+  max-width: 450px;
+  margin-bottom: 32px;
+}
+@media (max-width: 1023px) {
+  .contact-info__desc {
+    max-width: 380px;
+  }
+}
+.contact__soc1o {
+  display: flex;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+}
+.contact__soc1o-desc {
+  max-width: 43px;
+}
+.contact__employees {
+  padding-left: 100px;
+}
+@media (max-width: 767px) {
+  .contact__employees {
+    padding-left: 0;
+  }
+}
+
+.employees__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy-Light"), url("/template/styles/fonts/fonts/Gilroy-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("/template/styles/fonts/fonts/Gilroy-Heavy.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+.content {
+  padding-top: 162px;
+}/*# sourceMappingURL=style.css.map */

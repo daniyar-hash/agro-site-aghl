@@ -6,14 +6,8 @@
   const popup = document.querySelector('.modal');
   const btnModalClose = document.querySelector('.modal-close');
   const video = document.getElementById('video');
-  const headerSearchBtn = document.querySelector('.search__button');
-  const headerSearchWrapper = document.querySelector('.search__wrapper-field');
-  const searchInput  = document.getElementById("searchInput");
-
   const burgerBtn = document.querySelector('.burger-button');
   const clodeBtnModal = document.querySelector('.mobile-overlay__close-button');
-
-  
 
   burgerBtn.addEventListener('click', (e)=>{
 
@@ -28,14 +22,7 @@
   })
 
 
-  headerSearchBtn.addEventListener('click', (e)=>{
 
-
-    headerSearchWrapper.classList.toggle('hidden');
-    searchInput.focus();
-
-
-  })
   // const bannerList = document.querySelector(".banner__list");
   // const bannerSlides = document.querySelectorAll(".banner__item");
   
@@ -49,9 +36,9 @@
 
   //--------------------///
 
-   let index = 0;
-   let total = 4;
-   let currentSlide = 0;
+  //  let index = 0;
+  //  let total = 4;
+  //  let currentSlide = 0;
 
   // function changeSlide() {
   // index = (index + 1) % total;  // 1
@@ -144,19 +131,6 @@
     }
   }
 
-
-
-// // Выполнить после загрузки DOM
-// document.addEventListener('DOMContentLoaded', function() {
-//     const hiddenElements = document.querySelectorAll('svg .hide');
-//     hiddenElements.forEach(element => {
-//         element.classList.remove('hide');
-//     });
-// });
-
-
-
-
   // Проверка при загрузке страницы
    window.addEventListener('load', updateHeaderClass);
 
@@ -164,20 +138,135 @@
   window.addEventListener('scroll', updateHeaderClass);
 
 
-const baseUrl = window.location.origin;
+const dialog = document.getElementById('mobileOverlay');
+const openCatalog = dialog.querySelector('[data-open-catalog]');
 
-searchInput.addEventListener("keyup", function () {
-    let query = this.value;
+const closeMenu = dialog.querySelector('[data-close-menu]');
 
-
-    fetch(`${baseUrl}/views/site/search.php?word=${encodeURIComponent(query)}`)
-        .then(response => response.text())
-        .then(data => {
-
-          console.log(data)
-            document.querySelector(".search__results-list").innerHTML = data;
-        });
+const closeCatalog = dialog.querySelector('[data-close-catalog]');
+const closeDialogBtn = dialog.querySelector('[data-dialog-close]');
+const openCategories = openCatalog.querySelectorAll('[data-category]');
+const subCategories = openCatalog.querySelectorAll('[data-subcategory]');
 
 
-        
+subCategories.forEach((elem) =>{
+
+  elem.addEventListener('click', (e) =>{
+    e.stopPropagation()
+  })
+})
+
+
+
+/* открыть каталог */
+openCatalog.addEventListener('click', e => {
+  e.preventDefault();
+  e.currentTarget.classList.add('is-open');
+  // disableDialogClose();
 });
+
+
+/* назад */
+closeCatalog.addEventListener('click', (e) => {
+ e.stopPropagation();
+  openCatalog.classList.remove('is-open');
+  // enableDialogClose();
+
+});
+
+openCategories.forEach((elem)=>{
+
+
+  elem.addEventListener('click', (e)=>{
+
+    
+     e.currentTarget.classList.add('is-open')
+
+    
+  })
+
+})
+
+
+
+document.addEventListener('click', (e) =>{
+
+  const btn = e.target.closest('.header__mobile-back');
+  if(!btn) return
+  const item = btn.closest('.header__catalog-item')
+  if(!item) return
+  item.classList.remove('is-open')
+
+})
+
+
+
+
+
+// /* крестик */
+// closeDialogBtn.addEventListener('click', () => {
+//   if (dialog.classList.contains('catalog-open')) return;
+
+
+//   console.log('ddd')
+//   dialog.close();
+// });
+
+
+
+
+// function disableDialogClose() {
+//   closeDialogBtn.setAttribute('disabled', 'true');
+//   dialog.dataset.locked = 'true';
+// }
+
+// function enableDialogClose() {
+//   closeDialogBtn.removeAttribute('disabled');
+//   delete dialog.dataset.locked;
+// }
+
+
+
+// dialog.addEventListener('cancel', e => {
+//   if (dialog.classList.contains('is-open')) {
+//     e.preventDefault(); // ESC не закрывает
+//   }
+// });
+
+// dialog.addEventListener('click', e => {
+//   if (dialog.classList.contains('is-open')) return;
+
+//   if (e.target === dialog) {
+//     dialog.close();
+//   }
+// });
+
+
+
+/////////////////////////
+
+
+// document.addEventListener('click', e => {
+//   const link = e.target.closest('[data-has-children]');
+
+//   if (!link) return;
+
+//   if (window.innerWidth >= 1024) return;
+
+//   e.preventDefault();
+
+//   const item = link.closest('[data-category]');
+//   item.classList.toggle('is-open');
+// });
+
+
+//////////////////////
+
+
+
+
+
+
+
+
+

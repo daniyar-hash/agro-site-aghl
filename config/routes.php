@@ -1,10 +1,14 @@
 <?php
 
 return array(
+    
 
+        'search/ajax' => 'search/ajax',
+        // 'search'      => 'search/index',
 
         'about' => 'site/about',
         'gallery' => 'site/gallery',
+        'contact' => 'site/contact',
 
     // Товар:
    // 'product/([0-9]+)' => 'product/view/$1', // actionView в ProductController
@@ -66,8 +70,10 @@ return array(
     // // Админпанель:
     // 'admin' => 'admin/index',
     // // О магазине
-    // 'contacts' => 'site/contact',
+
+
+   
     // Главная страница
-    'index.php' => 'site/index', // actionIndex в SiteController
+
     '' => 'site/index', // actionIndex в SiteController
 );

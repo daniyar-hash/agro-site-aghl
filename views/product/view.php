@@ -286,7 +286,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="/upload/documents/Agro_Catalog_Ru_Prev_1802.pdf" class="description__download-link document" target="_blank">Скачать регистрационное удостоверение
+                                <a href="<?= Product::getСertificate($product['id']); ?>" class="description__download-link document" target="_blank">Скачать регистрационное удостоверение
                                     <span class="description__download-icon">
                                         <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.38729 7.83239L4.39087 1.1604L3.58961 1.16083L3.58603 7.83282L4.38729 7.83239Z" fill="#606060"/>

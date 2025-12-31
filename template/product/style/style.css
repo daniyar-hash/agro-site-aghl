@@ -596,12 +596,8 @@ h4, .h4 {
   }
 }
 .product__property-price {
-  display: none;
-}
-.product__property-price {
   font-size: 24px;
   font-weight: 700;
-  display: none;
 }
 .product__property-button {
   padding: 4px 35px;

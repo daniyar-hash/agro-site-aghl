@@ -98,13 +98,13 @@
                     <h2 class="footer__column-title h4">Каталог</h2>
                     <ul class="footer__column-list">
                         <li class="footer__column-item">
-                            <a href="/agro-site-category-page/" class="footer__column-link">Пестициды</a>
+                            <a href="/pesticidy" class="footer__column-link">Пестициды</a>
                         </li>
                         <li class="footer--column-item">
-                            <a href="/" class="footer__column-link">Удобрения</a>
+                            <a href="/udobrenie" class="footer__column-link">Удобрения</a>
                         </li>  
                          <li class="footer--column-item">
-                            <a href="/" class="footer__column-link">Семена</a>
+                            <a href="/semena" class="footer__column-link">Семена</a>
                         </li> 
                     </ul>
                 </div>
@@ -190,28 +190,54 @@
    
 <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
 <form class="mobile-overlay__button-close-wrapper" method="dialog">
-     <button class="mobile-overlay__close-button cross-button" type="submit">
+     <button class="mobile-overlay__close-button cross-button mobile-overlay__close" data-dialog-close type="submit">
           <span class="visually-hidden">Close navigation menu</span>
      </button>
 </form>     
      <div class="mobile-overlay__body">
-          <ul class="mobile-overlay__list">
+            <ul class="mobile-overlay__list">
                <li class="mobile-overlay__item">
                     <a href="/about" class="mobile-overlay__link">Компания</a>
                </li>
-                <li class="mobile-overlay__item">
+                <li class="mobile-overlay__item" data-open-catalog>
                     <a href="" class="mobile-overlay__link">Каталог</a>
+                    <div class="header__catalog-aside">
+                        <button class="header__mobile-back" data-close-catalog type="button">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Arrow-Back--Streamline-Outlined-Material" height="16" width="16">
+                        <g id="arrow-back">
+                            <path id="Vector" d="m6.85 12.75 6.2 6.2L12 20 4 12 12 4l1.05 1.05 -6.2 6.2H20v1.5H6.85Z" fill="#000000" stroke-width="0.5"></path>
+                        </g>
+                        </svg>    
+                        Назад</button>
+                            <?php include 'category_tree.php' ?>
+                    </div>
                </li>
                 <li class="mobile-overlay__item">
-                    <a href="" class="mobile-overlay__link">Услуги</a>
+                    <a href="/gallery" class="mobile-overlay__link">Галерея</a>
                </li>
-                <li class="mobile-overlay__item">
-                    <a href="" class="mobile-overlay__link">Информация</a>
-               </li>
-                <li class="mobile-overlay__item">
-                    <a href="" class="mobile-overlay__link">Контакты</a>
+               <li class="mobile-overlay__item">
+                    <a href="/contact" class="mobile-overlay__link">Контакты</a>
                </li>
           </ul>
+
+            <!-- ЭКРАН КАТАЛОГА -->
+        <!-- <section class="mobile-screen mobile-screen--catalog">
+            <header class="mobile-header">
+                <button class="mobile-back" data-close-catalog>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Arrow-Back--Streamline-Outlined-Material" height="24" width="24">
+                <g id="arrow-back">
+                    <path id="Vector" d="m6.85 12.75 6.2 6.2L12 20 4 12 12 4l1.05 1.05 -6.2 6.2H20v1.5H6.85Z" fill="#000000" stroke-width="0.5"></path>
+                </g>
+                </svg>    
+                Каталог</button>
+              
+            </header>
+
+            <div class="header__catalog-aside" data-open-category>
+             
+    
+            </div>
+        </section> -->
 
      </div>
 </dialog>

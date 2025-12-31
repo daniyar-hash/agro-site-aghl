@@ -1,54 +1,76 @@
 <?php
-// class SearchController {
-//     public function actionIndex() {
-//         // Убедитесь, что перед этим ничего не выводилось
-//         header('Content-Type: application/json; charset=utf-8');
 
-//     //   echo 'ddddddddddddddd';
-        
-//         try {
-//             // Проверка метода запроса (опционально)
-//             if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-//                 throw new Exception('Only GET requests are allowed');
-//             }
 
-//             $db = Db::getConnection();
-//             $q = $_GET['q'] ?? '';
+
+
+class SearchController
+{
+    public function actionAjax()
+    {
+
+        header('Content-Type: text/html; charset=UTF-8');
+
+        // file_put_contents(
+        //     __DIR__ . '/log.txt',
+        //         $_SERVER['REQUEST_URI'] . PHP_EOL,   
+        //         FILE_APPEND
+        //     );
+
+
+        $word = trim($_GET['word'] ?? '');
+        $results = [];
+   
+   
+
+        if ($word !== '') {
+            $results = Search::find($word);
+        }
+
+
+        // var_dump($results);
+
+   
+    if ($results) {
+        foreach ($results as $row) {
+
+
+            $category_link = ($row['category_slug'] ?? '') ? $row['category_slug'].'/' : '';
+            $subcategory_link = ($row['sub_category_slug'] ?? '') ? $row['sub_category_slug'].'/' : '';
+                
+            $row_name = $row['slug'] ?? '';
+            $row_name = $row_name === rtrim($subcategory_link, '/') ? '' : $row_name;
             
-//             if (strlen($q) < 2) {
-//                 echo json_encode([]);
-//                 exit;
-//             }
+            echo  '<li class="search__results-item"><a href="/'.
+            $category_link . $subcategory_link.
+            $row_name . ' " class="search__results-link" >'. htmlspecialchars($row['result_name']) .' <span>'.
+            htmlspecialchars($row['result_type']).'</span></a></li>';
 
-//             $sql = "SELECT 
-//                 p.name AS product_name,
-//                 p.slug AS product_slug,
-//                 p.price,
-//                 category.name AS category_name,
-//                 sub_category.name AS sub_category_name
-//             FROM product p
-//             INNER JOIN category ON p.category_id = category.id
-//             INNER JOIN sub_category ON p.subcategory_id = sub_category.id
-//             WHERE 
-//                 p.name LIKE :search
-//                 OR category.name LIKE :search
-//                 OR sub_category.name LIKE :search
-//             ORDER BY p.id DESC
-//             LIMIT 20";
 
-//             $stmt = $db->prepare($sql);
-//             $stmt->execute(['search' => "%{$q}%"]);
-            
-//             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//             echo json_encode($results, JSON_UNESCAPED_UNICODE);
-//             exit;
-//         } catch (Exception $e) {
-//             http_response_code(500);
-//             echo json_encode([
-//                 'error' => $e->getMessage(),
-//                 'trace' => $e->getTraceAsString() // Только для разработки
-//             ]);
-//             exit;
-//         }
-//     }
-// }
+
+}
+} 
+        else {
+            echo "<div>Ничего не найдено</div>";
+        }
+
+
+
+
+
+
+
+        // foreach ($results as $row) {
+        //     echo '<li class="search__results-item">
+        //             <a href="/' .
+        //                 ($row['category_slug'] ?? '') . '/' .
+        //                 ($row['sub_category_slug'] ?? '') . '/' .
+        //                 ($row['slug'] ?? '') . '">
+        //                 ' . htmlspecialchars($row['result_name']) . '
+        //                 <span>' . htmlspecialchars($row['result_type']) . '</span>
+        //             </a>
+        //           </li>';
+        // }
+
+        return true;
+    }
+}

@@ -8,11 +8,7 @@ error_reporting(E_ALL);
 
 // index.php
 require_once __DIR__ . '/config/paths.php';
-
 require_once(ROOT.'/components/Autoload.php');
-
- 
-
 
 session_start();
 
@@ -23,10 +19,14 @@ if(!empty($_POST['login']) && $_POST['login'] ==='agro'){
 
 if(!empty($_SESSION['auth'])){
 
-   
+
+
 // Вызов Router
 $router = new Router();
 $router->run();
+
+
+
 
 }
 else{

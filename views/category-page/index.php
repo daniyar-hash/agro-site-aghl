@@ -1,4 +1,8 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php
+
+$title = "Категория: {$categoryBySlug['name']}";
+
+include ROOT . '/views/layouts/header.php'; ?>
    <main class="content">
          <div class="breadcrumbs container">
             <div class="breadcrumbs__inner">

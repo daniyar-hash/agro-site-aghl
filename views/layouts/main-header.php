@@ -1,15 +1,21 @@
+<?php  
 
+$title = 'Главная';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
+    <title><?= $title ?? '' ?></title>
     <link rel="stylesheet" href="../../template/main-header/style/style.css">
     <link rel="stylesheet" href="../../template/main-footer/style/style.css">
     <link rel="stylesheet" href="../../template/main-page/style/style.css">
 
     <script src="../../template/main-page/js/script.js" defer></script>
+    <script type="module" src="../../template/main-header/js/search.js" defer></script>  
+
+
 </head>
 <body>
      <header class="header transparent">
@@ -93,51 +99,15 @@
                         </li>
                         <li class="header__menu-item">
                             <a class="header__menu-link header__catalog">
-                                Каталог     </a>
-                                <div class="header__catalog-aside">
-                                    <ul class="header__catalog-menu">
-                                        <?php foreach ($categoryWithSubCategories as $category): ?>
-                                        <li class="header__catalog-item">
-                                            <a href="/<?= htmlspecialchars($category['category_link']) ?>" class="header__catalog-link">
-                                                <span class="header__catalog-link-text"><?= htmlspecialchars($category['name'])  ?></span>
-                                                <span class="header__catalog-link-icon">
-                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                            <div class="header__catalog-dropdown">
+                                Каталог</a>
+                            <div class="header__catalog-aside">
 
-                                            <?php if(!empty($category['subcategories'])) : ?>
-                                                <ul class="header__catalog-menu">
-
-                                                <?php  
-                                                $subs = $category['subcategories'];
-                                                
-                                                for($i=0; $i<count($subs); $i+=2):
-                                                    $link = $subs[$i];
-                                                    $subname = $subs[$i+1];
-                                                
-                                            
-                                                ?>
-                                                    <li class="header__catalog-item">
-                                                        <a href="/<?= $category['category_link'] ?>/<?= htmlspecialchars($link) ?>" class="header__catalog-link">
-                                                            <span class="header__catalog-link-text"><?= htmlspecialchars($subname) ?></span>
-                                                        </a>
-                                                    </li>
-                                              <?php endfor; ?>
-                                                </ul>
-
-                                              <?php endif; ?>
-                                           </div>
-                                        </li>
-                                        <?php endforeach; ?>
-                                     </ul >
-                                 </div>
+                                <?php include 'category_tree.php' ?>
+                            </div>
                         </li>
                      
                         <li class="header__menu-item">
-                            <a href="#" class="header__menu-link">
+                            <a href="/contact" class="header__menu-link">
                                 Контакты
                             </a>
                         </li>
@@ -164,7 +134,6 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0436 8.22951C9.7458 8.05257 9.36118 7.85389 9.01068 7.99669C8.74083 8.10534 8.57023 8.52752 8.39653 8.74172C8.30658 8.85348 8.20112 8.869 8.06464 8.81312C7.05657 8.41266 6.28423 7.73903 5.72902 6.81084C5.63596 6.66805 5.65147 6.55319 5.76623 6.4197C5.93373 6.22103 6.14465 5.99752 6.19118 5.73055C6.2377 5.46358 6.11053 5.15314 6.00197 4.91411C5.86239 4.60989 5.7042 4.17839 5.40023 4.00455C5.12107 3.84623 4.75196 3.93626 4.50382 4.13804C4.07577 4.48882 3.86795 5.03518 3.87416 5.58154C3.87416 5.73675 3.89587 5.88886 3.92999 6.03787C4.01684 6.39797 4.18123 6.73013 4.36734 7.04988C4.50692 7.28891 4.66201 7.52173 4.8264 7.74834C5.36611 8.48096 6.03609 9.11734 6.81153 9.5954C7.19925 9.83444 7.61799 10.0424 8.04913 10.1852C8.53301 10.3466 8.96726 10.5112 9.49146 10.4118C10.0405 10.3063 10.5802 9.96792 10.7973 9.43708C10.8624 9.28187 10.8935 9.10492 10.8593 8.9404C10.7849 8.59892 10.3227 8.39404 10.0467 8.22951H10.0436Z" fill="white"/>
                         </svg>
                     </a>
-                    
                     <button class="header__burger-menu  burger-button visible-mobile" type="button"
                             
                             onclick="mobileOverlay.showModal()"
@@ -189,7 +158,6 @@
                                 </ul>
                             </div>
                         </div>
-                            
                     </div>
                 </div>
             </div>
