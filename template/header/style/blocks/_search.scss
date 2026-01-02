@@ -22,12 +22,16 @@
             @include abs-center;   
             width: 40px;
             height: 60px;   
+
+            @include mobile{
+                display:none;
+            }
      }
      
 
 
     &__button{
-          margin-right: 12px;
+       
           height: 100%;
     }
 

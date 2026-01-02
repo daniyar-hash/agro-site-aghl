@@ -15,6 +15,8 @@
     <script src="../../template/category-page/js/script.js" defer></script>
     <script  src="../../template/product/js/script.js" defer></script>
     <script type="module" src="../../template/main-header/js/search.js" defer></script>  
+    <script src="../../template/main-page/js/script.js" defer></script>
+    <script src="../../template/main-header/js/mobile-overlay.js" defer></script>
 
 
 </head>

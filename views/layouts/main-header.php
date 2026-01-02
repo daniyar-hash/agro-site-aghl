@@ -14,6 +14,7 @@ $title = 'Главная';
 
     <script src="../../template/main-page/js/script.js" defer></script>
     <script type="module" src="../../template/main-header/js/search.js" defer></script>  
+    <script src="../../template/main-header/js/mobile-overlay.js" defer></script>
 
 
 </head>
@@ -142,14 +143,14 @@ $title = 'Главная';
                     </button>
                     <div class="search hidden-mobile">
 
-                        <button type="submit" class="has-icon  search__button">
+                        <button type="button" class="has-icon  search__button">
                             <span class="search__icon">
                               <svg width="20" height="20" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.7711 10.6602L9.36735 8.27395C10.0248 7.40982 10.4135 6.33429 10.4135 5.16891C10.4135 2.31755 8.07631 0 5.20674 0C2.33718 0 0 2.32019 0 5.16891C0 8.01762 2.33718 10.3378 5.20674 10.3378C6.3354 10.3378 7.38154 9.97842 8.23336 9.37062L10.6504 11.7701C10.8048 11.9234 11.0071 12 11.2094 12C11.4117 12 11.614 11.9234 11.7684 11.7701C12.0772 11.4636 12.0772 10.9641 11.7684 10.6576L11.7711 10.6602ZM5.20674 8.76811C3.20763 8.76811 1.58385 7.15349 1.58385 5.17155C1.58385 3.18961 3.21029 1.57498 5.20674 1.57498C7.2032 1.57498 8.82964 3.18961 8.82964 5.17155C8.82964 7.15349 7.2032 8.76811 5.20674 8.76811Z" fill="white"/>
                               </svg>
                             </span>
                         </button>
-                        <div  class=" search__wrapper-field hidden">
+                        <div  class="search__wrapper-field hidden">
                             <input type="text" id="searchInput" class="search__input" name="word" placeholder="Поиск..." required focus>
                             <div class="search__results-wrapper">
                                 <ul class="search__results-list">

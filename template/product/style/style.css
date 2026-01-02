@@ -849,4 +849,105 @@ h4, .h4 {
 
 .content {
   padding-top: 162px;
+}
+
+.mobile-overlay {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: none;
+  padding: 35px 5px;
+  color: var(--color-dark);
+  background-color: #ede9e9;
+}
+.mobile-overlay .header__mobile-back {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.mobile-overlay:modal {
+  max-width: 100%;
+  max-height: 100%;
+}
+.mobile-overlay__button-close-wrapper {
+  display: flex;
+  justify-content: end;
+  padding-top: 27px;
+  padding-right: 14px;
+}
+.mobile-overlay__body {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  align-items: start;
+  margin-top: 30px;
+}
+.mobile-overlay__list {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  font-size: 24px;
+}
+.mobile-overlay__item {
+  width: 100%;
+  border-bottom: 1px dotted var(--color-gray-alt);
+  padding-right: 30px;
+}
+.mobile-overlay__item[data-open-catalog] {
+  order: -1;
+}
+.mobile-overlay__link {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.mobile-overlay .header__call-link.button {
+  border-color: var(--color-green-alt);
+  margin-left: unset;
+  align-self: start;
+}
+.mobile-overlay .header__catalog-item {
+  border-bottom: 1px dotted var(--color-gray-alt);
+  color: #343434;
+}
+.mobile-overlay .header__catalog-item:not(.is-open) .header__mobile-back {
+  display: none;
+}
+.mobile-overlay .search__wrapper-field {
+  right: unset;
+  font-weight: 400;
+}
+.mobile-overlay .search__wrapper-field .search__button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--color-gray-alt);
+  height: unset;
+}
+.mobile-overlay .search__input {
+  border-color: var(--color-gray-alt);
+  border-radius: 10px;
+}
+.mobile-overlay .mobile-overlay__list > li > .header__catalog-aside, .mobile-overlay .header__catalog-menu > li > .header__catalog-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  inset: 0;
+  background-color: #fff;
+  z-index: 1000;
+  position: fixed;
+}
+.mobile-overlay .mobile-overlay__list > li.is-open > .header__catalog-aside, .mobile-overlay .header__catalog-menu > li.is-open > .header__catalog-dropdown {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */

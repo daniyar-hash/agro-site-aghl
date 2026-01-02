@@ -189,28 +189,62 @@
     </section> -->
    
 <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
-<form class="mobile-overlay__button-close-wrapper" method="dialog">
-     <button class="mobile-overlay__close-button cross-button" type="submit">
-          <span class="visually-hidden">Close navigation menu</span>
-     </button>
-</form>     
-     <div class="mobile-overlay__body">
-          <ul class="mobile-overlay__list">
+    <form class="mobile-overlay__button-close-wrapper" method="dialog">
+        <button class="mobile-overlay__close-button cross-button mobile-overlay__close" data-dialog-close type="submit">
+            <span class="visually-hidden">Close navigation menu</span>
+        </button>
+    </form>     
+    <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
                <li class="mobile-overlay__item">
                     <a href="/about" class="mobile-overlay__link">Компания</a>
                </li>
-                <li class="mobile-overlay__item">
-                    <a href="" class="mobile-overlay__link">Каталог</a>
-               </li>
-               <li class="mobile-overlay__item">
-                    <a href="" class="mobile-overlay__link">Контакты</a>
+                <li class="mobile-overlay__item" data-open-catalog>
+                    <a href="" class="mobile-overlay__link">Каталог
+                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4L12 10L8 16" stroke="#1D1D1D" stroke-width="4"/>
+                </svg>
+                    </a>
+
+                    <div class="header__catalog-aside">
+                        <button class="header__mobile-back" data-close-catalog type="button">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Arrow-Back--Streamline-Outlined-Material" height="16" width="16">
+                        <g id="arrow-back">
+                            <path id="Vector" d="m6.85 12.75 6.2 6.2L12 20 4 12 12 4l1.05 1.05 -6.2 6.2H20v1.5H6.85Z" fill="#000000" stroke-width="0.5"></path>
+                        </g>
+                        </svg>    
+                        Назад</button>
+                            <?php include 'category_tree.php' ?>
+                    </div>
                </li>
                 <li class="mobile-overlay__item">
                     <a href="/gallery" class="mobile-overlay__link">Галерея</a>
                </li>
-           
-          </ul>
-
+               <li class="mobile-overlay__item">
+                    <a href="/contact" class="mobile-overlay__link">Контакты</a>
+               </li>
+           </ul>
+            <a href="tel:8(7282)41-36-35" class="header__call-link button">
+            Заказать звонок
+            </a>
+            <div class="search">
+                <div  class=" search__wrapper-field">
+                    <input type="text" id="mobileSearchInput" class="search__input" name="word" placeholder="Поиск..." required focus>
+                    <button type="button" class="has-icon  search__button">
+                    <span class="search__icon">
+                        <svg width="20" height="20" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.7711 10.6602L9.36735 8.27395C10.0248 7.40982 10.4135 6.33429 10.4135 5.16891C10.4135 2.31755 8.07631 0 5.20674 0C2.33718 0 0 2.32019 0 5.16891C0 8.01762 2.33718 10.3378 5.20674 10.3378C6.3354 10.3378 7.38154 9.97842 8.23336 9.37062L10.6504 11.7701C10.8048 11.9234 11.0071 12 11.2094 12C11.4117 12 11.614 11.9234 11.7684 11.7701C12.0772 11.4636 12.0772 10.9641 11.7684 10.6576L11.7711 10.6602ZM5.20674 8.76811C3.20763 8.76811 1.58385 7.15349 1.58385 5.17155C1.58385 3.18961 3.21029 1.57498 5.20674 1.57498C7.2032 1.57498 8.82964 3.18961 8.82964 5.17155C8.82964 7.15349 7.2032 8.76811 5.20674 8.76811Z" fill="white"/>
+                        </svg>
+                    </span>
+                   </button>
+                    <div class="search__results-wrapper">
+                        <ul class="search__results-list">
+                            <li class="search__results-item">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
      </div>
 </dialog>
 </body>
