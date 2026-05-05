@@ -1,90 +1,74 @@
-.category{
-
-
-
-   &__list{
-
+.category {
+  &__list {
     display: flex;
     column-gap: 30px;
 
-
-    @include tablet{
-        flex-wrap: wrap;
-        gap: 30px;
-
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 30px;
     }
 
-    @include mobile{
-        justify-content: center;
-     }
+    @include mobile {
+      justify-content: center;
+    }
+  }
 
+  &__item {
+    width: 287px;
+    height: 320px;
+    border-radius: 12px;
+    position: relative;
 
-   }
-
-    &__item{
-        width: 287px;
-        height: 320px;
-        border-radius: 12px;
-
-        opacity: 0;
-        transform: translateX(-100px);
-        transition: 
-            
-             opacity 1.6s ease,
-             transform 2.6s ease; 
-         &.visible{
-             opacity: 1;   
-             transform: translateX(0);
-         }    
-      
-
-        
-            @include mobile-s{
-               width: 100%;
-            }
-
-        &:first-child{
-            width: 453px;
-
-            @include mobile{
-                max-width: 453px;
-            }
-        }
-
-        @include hover{
-            scale: 1.05;
-        }
-
-
-        &:first-child{
-            background: url("../img/category/1.png") 0 0/cover no-repeat;
-
-            @include mobile-s{
-                background-size: cover;
-                background-position-x:80%;
-
-            }
-          
-        }
-
-        &:nth-child(2){
-                        background: url("../img/category/2.png")  0 0/cover no-repeat;
-         
-                  
-                  
-                      
-        }
-             &:nth-child(3){
-                        background: url("../img/category/3.png") 0 0/cover no-repeat;
-                 
-        }
-       
+    opacity: 0;
+    transform: translateX(-100px);
+    transition:
+      opacity 1.6s ease,
+      transform 2.6s ease;
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
     }
 
+    @include mobile-s {
+      width: 100%;
+    }
 
+    &:first-child {
+      width: 453px;
 
-&__info{
+      @include mobile {
+        max-width: 453px;
+      }
+    }
 
+    @include hover {
+      scale: 1.05;
+    }
+
+    &:first-child {
+      background: url("../img/category/1.png") 0 0 / cover no-repeat;
+
+      @include mobile-s {
+        background-size: cover;
+        background-position-x: 80%;
+      }
+    }
+
+    &:nth-child(2) {
+      background: url("../img/category/2.png") 0 0 / cover no-repeat;
+    }
+    &:nth-child(3) {
+      background: url("../img/category/3.png") 0 0 / cover no-repeat;
+    }
+  }
+
+  &__link-overlay {
+    position: absolute;
+    inset: 0; /* растянуть на весь блок */
+    z-index: 1;
+  }
+
+  &__info {
     color: var(--color-light);
     padding: 44px 50px;
 
@@ -94,70 +78,53 @@
     flex-direction: column;
     row-gap: 15px;
 
+    &-title {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
 
-
-
-
-
-
-&-title{
-
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    &-link{
-
-     
-
-        
-         @include hover{
-            color: var(--color-dark);
-            background-color: var(--color-light);
-            border-radius: 5px;
+      &-link {
+        @include hover {
+          color: var(--color-dark);
+          background-color: var(--color-light);
+          border-radius: 5px;
         }
-
+      }
     }
 
+    &-icon {
+      display: inline-flex;
+      transition-duration: var(--transition-duration);
 
-}
-
-&-icon{
-
-    display: inline-flex;
-    transition-duration: var(--transition-duration);
-
-    @include hover{
-        color:var(--color-accent);
+      @include hover {
+        color: var(--color-accent);
+      }
     }
 
-
-}
-
-
-    
-&-list{
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    list-style-type:disc;
-    padding-left: 20px;
-
-}
-
-&-link{
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: 300;
-
-        @include hover{
-            color: var(--color-dark);
-            background-color: var(--color-light);
-        }
-
+    &-list {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      list-style-type: disc;
+      padding-left: 20px;
     }
 
+    &-link {
+      padding: 5px;
+      border-radius: 5px;
+      font-weight: 300;
 
+      @include hover {
+        color: var(--color-dark);
+        background-color: var(--color-light);
+      }
+    }
+
+    & a {
+      position: relative;
+      z-index: 2;
+    }
   }
 }

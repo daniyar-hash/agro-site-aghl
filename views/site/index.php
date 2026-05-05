@@ -110,9 +110,11 @@
                       <?php  foreach($categoryWithSubCategories as $item):  ?> 
 
                         <li class="category__item">
+
+                        <a href="/<?= $item['category_link']; ?>" class="category__link-overlay"></a>
                             <div href="/" class="category__info">
                                 <h3 class="category__info-title">
-                                    <a href="/<?= $item['category_link']; ?>" class="category__info-title-link"><?= $item['name']; ?></a>
+                                    <span class="category__info-link"><?= $item['name']; ?></span>
                                     <a href="" class="category__info-icon">
                                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14 0C6.26827 0 0 6.26827 0 14C0 21.7317 6.26827 28 14 28C21.7317 28 28 21.7317 28 14C28 6.26827 21.7317 0 14 0ZM15.0285 18.9501L14.2026 18.0639L17.8398 14.6836H7.64781V13.3154H17.8377L14.2026 9.93611L15.0285 9.04985L20.3522 14L15.0285 18.9491V18.9501Z" fill="white"/>

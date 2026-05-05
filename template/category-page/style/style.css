@@ -164,7 +164,7 @@ svg * {
   --container-padding-x:20px;
   --section-base-padding-y:88px;
   --section-large-padding-y:98px;
-  --font-family-base:"Gilroy",sans-serif;
+  --font-family-base:'Gilroy',sans-serif;
   --button-height: 52px;
   --button-large-height:56px;
   --button-small-height: 40px;
@@ -903,8 +903,7 @@ h4, .h4 {
   overflow: hidden;
   white-space: normal;
   word-break: break-word; /* переносит слишком длинные слова */
-  -webkit-hyphens: auto;
-          hyphens: auto; /* добавляет переносы по слогам */
+  hyphens: auto; /* добавляет переносы по слогам */
 }
 .category-products__header-title {
   font-size: 32px;
