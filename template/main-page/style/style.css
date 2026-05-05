@@ -548,6 +548,13 @@ html.is-lock {
   background-color: var(--color-green);
   z-index: -1;
   border-radius: 12px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+}
+.products-season__bg-green.visible::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 .products-season__list {
   gap: 25px;
@@ -580,6 +587,13 @@ html.is-lock {
   background-color: var(--color-light);
   width: 100%;
   height: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
+}
+.products-season__item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .products-season__link {
   display: inline-flex;
@@ -794,7 +808,13 @@ html.is-lock {
   width: 287px;
   height: 320px;
   border-radius: 12px;
-  transition-duration: var(--transition-duration);
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1.6s ease, transform 2.6s ease;
+}
+.category__item.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 @media (max-width: 480px) {
   .category__item {

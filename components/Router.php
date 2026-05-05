@@ -91,6 +91,9 @@ class Router
                     include_once($controllerFile);
                 }
 
+
+               
+
                 // Создать объект, вызвать метод (т.е. action)
                 $controllerObject = new $controllerName;
 

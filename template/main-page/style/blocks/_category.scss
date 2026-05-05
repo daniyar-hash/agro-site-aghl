@@ -25,7 +25,18 @@
         width: 287px;
         height: 320px;
         border-radius: 12px;
-        transition-duration: var(--transition-duration);
+
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: 
+            
+             opacity 1.6s ease,
+             transform 2.6s ease; 
+         &.visible{
+             opacity: 1;   
+             transform: translateX(0);
+         }    
+      
 
         
             @include mobile-s{

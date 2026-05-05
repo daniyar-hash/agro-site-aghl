@@ -110,7 +110,7 @@
                                     </span>
                                 </summary>
                                 <div class="description__detail" style="white-space: pre-line;">
-                                <p><b>Описание:</b><?= $product['description']?></p>
+                                  <p><b>Описание:</b><?= $product['description']?></p>
                                 </div>
                             </details>
                             <div class="description">

@@ -19,6 +19,9 @@ class SearchController
 
         $word = trim($_GET['word'] ?? '');
         $results = [];
+
+
+
    
    
 

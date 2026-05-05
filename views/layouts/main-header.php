@@ -15,6 +15,10 @@ $title = 'Главная';
     <script src="../../template/main-page/js/script.js" defer></script>
     <script type="module" src="../../template/main-header/js/search.js" defer></script>  
     <script src="../../template/main-header/js/mobile-overlay.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../template/main-page/js/animation.js" defer></script>   
+
+
 
 
 </head>
