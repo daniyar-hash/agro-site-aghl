@@ -126,7 +126,7 @@
 
                             <li class="footer-contacts__item">
                                 <span class="visually-hidden">Instagramm</span>
-                                <a href="https://instagram.com/aghl_kz/" class="footer-contacts__link instagramm" target="_blank">
+                                <a href="https://www.instagram.com/agro_him_lider_kz/" class="footer-contacts__link instagramm" target="_blank">
 
                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.0113 2.75659C10.546 2.75659 10.1676 3.13532 10.1676 3.60096C10.1676 4.06661 10.546 4.44533 11.0113 4.44533C11.4765 4.44533 11.855 4.06661 11.855 3.60096C11.855 3.13532 11.4765 2.75659 11.0113 2.75659Z" fill="white"/>
