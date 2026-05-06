@@ -56,7 +56,7 @@
             <div class="product-page__body product">
                     <div class="product__property">
                         <strong class="products-category <?=  $subCategoryProduct['slug']; ?>"><?=  $singulars[$subCategoryProduct['name']] ?? $subCategoryProduct['name'];  ?></strong>
-                        <h2 class="product__property-title h3"><?= $product['name'] ?></h2>
+                        <h2 class="product__property-title"><?= $product['name'] ?></h2>
                         <p class="product__property-price"><?= $product['price'] ?> тнг.</p>
                         <div class="product-about">
                             <ul class=" product-about__list">

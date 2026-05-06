@@ -834,12 +834,12 @@ h4, .h4 {
 }
 @media (max-width: 1023px) {
   .category-products__list.grid--4 {
-    --gridColumns:3;
+    --gridColumns: 3;
   }
 }
 @media (max-width: 480px) {
   .category-products__list.grid--4 {
-    --gridColumns:2;
+    --gridColumns: 2;
   }
 }
 .category-products__list.flex-row {
@@ -896,7 +896,7 @@ h4, .h4 {
 .category-products__title, .category-products__header-title {
   text-transform: uppercase;
   font-weight: 800;
-  font-size: 26px;
+  font-size: 20px;
   color: var(--color-gray-dark);
   line-height: 1;
   min-height: 52px;

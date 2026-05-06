@@ -383,6 +383,9 @@ h4, .h4 {
     max-width: 380px;
   }
 }
+.contact__list {
+  line-height: 20px;
+}
 .contact__soc1o {
   display: flex;
   -moz-column-gap: 6px;

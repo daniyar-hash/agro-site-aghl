@@ -584,11 +584,11 @@ h4, .h4 {
   }
 }
 .product__property-title {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 800;
   text-transform: uppercase;
   color: #4a4a49;
-  margin-bottom: 20px;
+  line-height: 18px;
 }
 @media (max-width: 767px) {
   .product__property-title {
@@ -598,6 +598,7 @@ h4, .h4 {
 .product__property-price {
   font-size: 24px;
   font-weight: 700;
+  margin-bottom: 25px;
 }
 .product__property-button {
   padding: 4px 35px;
