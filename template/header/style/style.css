@@ -296,7 +296,7 @@ h4, .h4 {
 }
 
 .header {
-  --paddingBottom:20px;
+  --paddingBottom: 20px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -327,7 +327,7 @@ h4, .h4 {
 }
 .header__logo {
   width: 50px;
-  height: auto;
+  height: 35px;
   display: flex;
   margin-right: 40px;
   flex-shrink: 0;
@@ -361,7 +361,7 @@ h4, .h4 {
   display: block;
 }
 .header__menu-link {
-  --heightLineLink:4px;
+  --heightLineLink: 4px;
   position: relative;
   display: flex;
   align-items: center;
