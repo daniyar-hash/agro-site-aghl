@@ -1,191 +1,165 @@
+.products-season {
+  line-height: 1;
+  color: var(--color-dark);
+  padding-top: 90px;
 
-.products-season{
-    line-height: 1;
-    color: var(--color-dark);
-    padding-top: 90px;
+  @include tablet {
+    padding-top: 50px;
+  }
 
-    @include tablet{
-      padding-top: 50px;
+  @include mobile {
+    padding-block: 30px;
+  }
+
+  &__title {
+    @include mobile {
+      padding-inline: 0;
     }
 
-    @include mobile{
-        padding-block: 30px;
+    @include mobile-s {
+      padding-inline: 0;
+    }
+  }
+
+  &__bg-green {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    @include mobile {
+      padding-inline: 10px;
     }
 
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      bottom: -33px;
+      background-color: var(--color-green);
+      z-index: -1;
+      border-radius: 12px;
 
-
-    &__title{
-
-    
-
-       @include mobile{
-        padding-inline: 0;
-       }
-
-       @include mobile-s{
-        padding-inline: 0;
-       }
-
-   
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.5s ease;
     }
 
-    &__bg-green{
+    &.visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
+  &__list {
+    gap: 25px;
+    grid-template-columns: repeat(5, minmax(150px, 187px));
+    grid-auto-rows: auto;
 
-        position: relative;
-        display: flex;
-        justify-content: center;
-
-        @include mobile{
-            padding-inline: 10px;  
-        }
-
-        &::after{
-            content: '';
-            position: absolute;
-            width:100%;
-            height: 100%;
-            left: 0;
-            bottom: -33px;
-            background-color: var(--color-green);
-            z-index: -1;
-            border-radius: 12px; 
-
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.5s ease;
-
-
-        }
-
-             &.visible::after{
-
-                opacity: 1;
-                transform: translateY(0);
-            
-        }
-
-     
-
+    @include tablet {
+      grid-template-columns: repeat(5, minmax(140px, 160px));
+      gap: 15px;
     }
 
-
-
-    &__list {
-        
-        gap:25px;
-        grid-template-columns:repeat(5, minmax(150px,187px));
-        grid-auto-rows: auto;
-
-        @include tablet{
-            grid-template-columns:repeat(5, minmax(140px,160px));
-                 gap:15px;
-
-        }
-
-        @include mobile{
-             grid-template-columns:repeat(2, 1fr);
-             justify-content: center;
-       
-        }
-
-        @include mobile-s{
-             grid-template-columns:repeat(1, 1fr);
-       
-        }
-      
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
     }
 
-    &__item{
-        display:flex;
-        flex-direction: column;
-        row-gap: 14px;
-        padding: 8px;
-        border-radius: 15px;
-        background-color: var(--color-light);
-        width: 100%;
-        height: auto;
+    @include mobile-s {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    padding: 8px;
+    border-radius: 15px;
+    background-color: var(--color-light);
+    width: 100%;
+    height: auto;
 
-        opacity: 0;
-        transform: translateY(50px);
-        transition: 
-            
-             opacity 1.6s ease,
-             transform 1.6s ease;  
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+      opacity 1.6s ease,
+      transform 1.6s ease;
 
-        &.visible{
-             opacity: 1;   
-             transform: translateY(0);
-        }
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  &__image {
+    display: block;
+    border-radius: 9px;
+
+    @include mobile {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    row-gap: 12px;
+    color: var(--color-gray-alt);
+
+    .products-category {
+      @include mobile {
+        align-self: center;
+      }
     }
 
-    &__link{
-        display: inline-flex;
-        justify-content: center;
+    @include mobile-s {
+      row-gap: 5px;
     }
+  }
+  &__name {
+    @include fluid-text(27, 16);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #4a4a49;
 
-    &__image{
-        display:block;
-        border-radius: 9px;  
-
-       
+    @include mobile {
+      text-align: center;
     }
+  }
 
-     &__info{
-            
-        display:flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-between;  
-        row-gap: 12px;
-        color:var(--color-gray-alt);
+  &__desc {
+    font-size: 10px;
+    font-weight: 300;
+  }
 
-        .products-category{
-                @include mobile{
+  &__send {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed var(--color-dark);
+    position: relative;
+  }
 
-                align-self: center;
-                }
-        }
-
-        @include mobile-s{
-            row-gap: 5px;  
-        }
-    }
-    &__name{
-
-         @include fluid-text(27, 16);
-        font-weight: 900;
-        text-transform: uppercase;
-        color:#4a4a49;
-    }
-
-    &__desc{
-        font-size: 10px;
-        font-weight: 300;
-    }
-
-    &__send{
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px dashed var(--color-dark);
-        position: relative;
-
-    }
-
-    &__wrapp-card{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 700;
-        font-size: 16px;
-        width:100%;
-      
-    }
-
+  &__wrapp-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    width: 100%;
+  }
 }

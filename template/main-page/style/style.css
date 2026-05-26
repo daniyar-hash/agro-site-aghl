@@ -603,6 +603,12 @@ html.is-lock {
   display: block;
   border-radius: 9px;
 }
+@media (max-width: 767px) {
+  .products-season__image {
+    width: 100%;
+    height: auto;
+  }
+}
 .products-season__info {
   display: flex;
   flex-direction: column;
@@ -626,6 +632,11 @@ html.is-lock {
   font-weight: 900;
   text-transform: uppercase;
   color: #4a4a49;
+}
+@media (max-width: 767px) {
+  .products-season__name {
+    text-align: center;
+  }
 }
 .products-season__desc {
   font-size: 10px;
